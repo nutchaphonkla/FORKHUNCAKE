@@ -871,7 +871,71 @@
     .desk-v3{width:92px;height:83px}.dt-v3{position:absolute;left:0;right:0;top:25px;height:19px;border-radius:5px;background:#b48160;border:4px solid #5f4538}.dl-v3{position:absolute;top:42px;width:11px;height:41px;background:#795743}.dl-v3.a{left:9px}.dl-v3.b{right:9px}.lamp-v3{position:absolute;left:32px;top:-14px;width:31px;height:43px}.ls-v3{height:21px;background:#f2cf82;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);box-shadow:0 0 24px rgba(242,207,130,.42)}.lst-v3{width:4px;height:18px;margin:auto;background:#907056}.lb-v3{width:22px;height:5px;margin:auto;background:#907056;border-radius:4px}
     .plant-v3{width:66px;height:105px}.pp-v3{position:absolute;left:14px;bottom:0;width:39px;height:31px;background:#cb8062;border:4px solid #71483a;clip-path:polygon(7% 0,93% 0,78% 100%,22% 100%)}.ps-v3{position:absolute;left:31px;bottom:27px;width:5px;height:53px;background:#4c9f74}.pl-v3{position:absolute;width:29px;height:19px;border-radius:80% 20% 80% 20%;background:#68ce9a;border:3px solid #377d5b}.pl-v3.a{left:5px;bottom:51px;transform:rotate(24deg)}.pl-v3.b{right:3px;bottom:64px;transform:scaleX(-1) rotate(20deg)}.pl-v3.c{left:10px;bottom:80px}.pf-v3{position:absolute;left:20px;bottom:88px;width:25px;height:25px;border-radius:50%;background:#f1a0c0;border:4px solid #b86387}
     .dog-v3{width:82px;height:67px;animation:dogIdleV3 2.8s ease-in-out infinite}@keyframes dogIdleV3{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-3px)}}.dogbody-v3{position:absolute;left:11px;bottom:0;width:57px;height:38px;border-radius:26px 26px 16px 16px;background:#c98a5a;border:4px solid #604231}.doghead-v3{position:absolute;left:25px;top:0;width:43px;height:39px;border-radius:48%;background:#d79b66;border:4px solid #604231}.dear-v3{position:absolute;top:5px;width:18px;height:30px;border-radius:70% 40% 70% 50%;background:#8d5b3d;border:4px solid #604231}.dear-v3.a{left:-12px;transform:rotate(20deg)}.dear-v3.b{right:-12px;transform:scaleX(-1) rotate(20deg)}.deye-v3{position:absolute;top:13px;width:5px;height:5px;border-radius:50%;background:#2b211c}.deye-v3.a{left:9px}.deye-v3.b{right:9px}.dnose-v3{position:absolute;left:50%;bottom:7px;width:8px;height:6px;transform:translateX(-50%);border-radius:50%;background:#30231d}.dtail-v3{position:absolute;right:-8px;bottom:20px;width:28px;height:12px;border:5px solid #604231;border-left:none;border-radius:0 20px 20px 0;animation:wagV3 .55s ease-in-out infinite alternate;transform-origin:left}@keyframes wagV3{to{transform:rotate(-22deg)}}
-    .dog-speech-v3{position:absolute;right:15px;bottom:115px;z-index:70;max-width:145px;padding:9px 11px;border-radius:14px 14px 4px 14px;background:rgba(247,249,252,.94);color:#202231;font-size:10px;font-weight:800;opacity:0;transform:translateY(6px);pointer-events:none;transition:.25s}.dog-speech-v3.show{opacity:1;transform:none}
+    .dog-speech-v3{
+      position:absolute;
+      left:50%;
+      bottom:calc(100% + 13px);
+      z-index:30;
+      width:max-content;
+      max-width:168px;
+      padding:10px 12px;
+      border-radius:15px 15px 5px 15px;
+      background:rgba(247,249,252,.97);
+      color:#202231;
+      font-size:10px;
+      font-weight:850;
+      line-height:1.45;
+      text-align:center;
+      opacity:0;
+      transform:translate(-50%,8px) scale(.96);
+      transform-origin:50% 100%;
+      pointer-events:none;
+      transition:opacity .2s ease,transform .2s ease;
+      box-shadow:0 12px 28px rgba(0,0,0,.28);
+      white-space:normal;
+    }
+    .dog-speech-v3::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-7px;
+      width:14px;
+      height:14px;
+      background:inherit;
+      transform:translateX(-50%) rotate(45deg);
+      border-radius:0 0 3px 0;
+    }
+    .dog-speech-v3.show{
+      opacity:1;
+      transform:translate(-50%,0) scale(1);
+    }
+    .dog-speech-v3.align-left-v3{
+      left:0;
+      transform:translate(0,8px) scale(.96);
+      transform-origin:20% 100%;
+    }
+    .dog-speech-v3.align-left-v3.show{transform:translate(0,0) scale(1)}
+    .dog-speech-v3.align-left-v3::after{left:25%}
+    .dog-speech-v3.align-right-v3{
+      left:auto;
+      right:0;
+      transform:translate(0,8px) scale(.96);
+      transform-origin:80% 100%;
+    }
+    .dog-speech-v3.align-right-v3.show{transform:translate(0,0) scale(1)}
+    .dog-speech-v3.align-right-v3::after{left:75%}
+    .dog-speech-v3.below-v3{
+      top:calc(100% + 13px);
+      bottom:auto;
+      border-radius:5px 15px 15px 15px;
+      transform-origin:50% 0;
+    }
+    .dog-speech-v3.below-v3::after{
+      top:-7px;
+      bottom:auto;
+      border-radius:3px 0 0 0;
+    }
+    .dog-v3.talking-v3{z-index:2500!important}
     .rug-v3{width:170px;height:70px;border-radius:50%;background:radial-gradient(ellipse,#8e80dc,#685dad);border:5px solid #4e4688;z-index:2}.shelf-v3{width:135px;height:66px}.shelfboard-v3{position:absolute;left:0;right:0;bottom:0;height:10px;background:#92644b;border:3px solid #583e33}.book-v3{position:absolute;bottom:9px;width:14px;border:2px solid rgba(0,0,0,.25)}.book-v3.a{left:14px;height:38px;background:#7c8cff}.book-v3.b{left:30px;height:29px;background:#ee869d}.book-v3.c{left:46px;height:41px;background:#66d6b3}.photo-v3{position:absolute;right:13px;bottom:9px;width:40px;height:39px;background:#d7c19f;border:5px solid #725442}.bean-v3{width:82px;height:65px;border-radius:50% 50% 42% 42%;background:linear-gradient(145deg,#d58bb1,#9477c7);border:5px solid #674f87}.poster-v3{width:72px;height:92px;padding:7px;background:#e8d8f1;border:6px solid #765d83;box-shadow:0 10px 20px rgba(0,0,0,.23)}.poster-v3>div{width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(145deg,#a8b2ff,#e3a8c9);color:#4e3a59;font-weight:950;font-size:20px}
     .edit-hint-v3{display:none;margin-top:10px;padding:10px 12px;border-radius:14px;color:#d9d5ff;background:rgba(124,140,255,.08);border:1px solid rgba(124,140,255,.17);font-size:11px}.edit-hint-v3.show{display:block}
     .shop-grid-v3{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shop-card-v3{padding:13px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--line)}.shop-card-v3 h4{margin:0 0 4px;font-size:13px}.shop-card-v3 p{margin:0 0 9px;color:var(--muted);font-size:10px}.shop-preview-v3{height:70px;display:grid;place-items:center;border-radius:14px;margin-bottom:9px;background:rgba(124,140,255,.08);font-weight:950;color:#d7dcff}.buy-v3{width:100%;border:none;border-radius:12px;padding:10px;background:linear-gradient(135deg,#9ba8ff,#bca4ff);color:#151927;font-size:11px;font-weight:900}.buy-v3:disabled{background:rgba(255,255,255,.06);color:#7f899a}
@@ -1442,6 +1506,490 @@
       }
     }
 
+  
+    /* ===== Easier page scrolling inside the room ===== */
+    .decor-room-v3{
+      touch-action:pan-y !important;
+      overscroll-behavior:contain;
+    }
+
+    .decor-room-v3.editing{
+      touch-action:pan-y !important;
+    }
+
+    .decor-room-v3 .decor-v3{
+      touch-action:manipulation !important;
+    }
+
+    .decor-room-v3.editing .decor-v3{
+      touch-action:none !important;
+    }
+
+    .room-scroll-guide-v3{
+      position:absolute;
+      left:50%;
+      bottom:13px;
+      z-index:5000;
+      transform:translateX(-50%) translateY(6px);
+      width:max-content;
+      max-width:82%;
+      padding:8px 12px;
+      border-radius:999px;
+      color:rgba(245,244,255,.9);
+      background:rgba(15,18,32,.72);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 10px 28px rgba(0,0,0,.25);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      font-size:9px;
+      font-weight:850;
+      letter-spacing:.1px;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease,transform .2s ease;
+    }
+
+    .decor-room-v3.editing .room-scroll-guide-v3{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+    }
+
+    /* ===== Poodle roaming animation ===== */
+    .dog-v3.roaming-v3{
+      transition:
+        left 2.35s cubic-bezier(.42,0,.25,1),
+        top 2.35s cubic-bezier(.42,0,.25,1),
+        filter .18s ease !important;
+      z-index:850 !important;
+    }
+
+    .dog-v3.roaming-v3 .dogbody-v3{
+      animation:poodleWalkBodyV3 .32s ease-in-out infinite alternate;
+    }
+
+    .dog-v3.roaming-v3 .doghead-v3{
+      animation:poodleWalkHeadV3 .32s ease-in-out infinite alternate;
+    }
+
+    .dog-v3.roaming-v3 .dtail-v3{
+      animation:wagV3 .22s ease-in-out infinite alternate;
+    }
+
+    @keyframes poodleWalkBodyV3{
+      from{transform:translateY(0) rotate(-1deg)}
+      to{transform:translateY(-3px) rotate(1deg)}
+    }
+
+    @keyframes poodleWalkHeadV3{
+      from{transform:translateY(0)}
+      to{transform:translateY(-2px)}
+    }
+
+    .dog-v3.resting-v3{
+      transition:left .25s ease,top .25s ease !important;
+    }
+
+    @media(max-width:430px){
+      .room-scroll-guide-v3{
+        bottom:10px;
+        padding:7px 10px;
+        font-size:8px;
+      }
+    }
+
+  
+    /* ===== Inventory V4 ===== */
+    .inventory-grid-v4{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    .inventory-card-v4{
+      display:flex;
+      flex-direction:column;
+      min-height:225px;
+      padding:12px;
+      border-radius:19px;
+      background:rgba(255,255,255,.035);
+      border:1px solid var(--line);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    .inventory-card-v4 h4{
+      margin:10px 0 4px;
+      font-size:13px;
+    }
+    .inventory-card-v4 p{
+      margin:0 0 9px;
+      color:var(--muted);
+      font-size:10px;
+      line-height:1.45;
+    }
+    .inventory-state-v4{
+      display:inline-flex;
+      align-self:flex-start;
+      padding:5px 8px;
+      border-radius:999px;
+      color:#bcebd8;
+      background:rgba(102,214,179,.08);
+      border:1px solid rgba(102,214,179,.18);
+      font-size:9px;
+      font-weight:900;
+    }
+    .inventory-state-v4.stored{
+      color:#dcd6ff;
+      background:rgba(165,139,255,.09);
+      border-color:rgba(165,139,255,.2);
+    }
+    .inventory-action-v4{
+      width:100%;
+      min-height:40px;
+      margin-top:auto;
+      border:none;
+      border-radius:12px;
+      color:#161827;
+      background:linear-gradient(135deg,#a8b3ff,#c1a8ff);
+      font-size:10px;
+      font-weight:900;
+    }
+    .inventory-action-v4.store{
+      color:#e8e9f5;
+      background:rgba(255,255,255,.065);
+      border:1px solid rgba(255,255,255,.09);
+    }
+
+    /* ===== Dog House V4 ===== */
+    .pet-house-summary-v4{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      align-items:center;
+      padding:13px;
+      margin-bottom:12px;
+      border-radius:18px;
+      background:linear-gradient(145deg,rgba(124,140,255,.1),rgba(165,139,255,.055));
+      border:1px solid rgba(153,145,255,.18);
+    }
+    .pet-house-summary-v4 strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .pet-house-summary-v4 span{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      line-height:1.45;
+    }
+    .pet-house-summary-v4 button{
+      min-height:38px;
+      border:none;
+      border-radius:12px;
+      padding:8px 11px;
+      color:#171927;
+      background:linear-gradient(135deg,#a8b3ff,#c2a9ff);
+      font-size:9px;
+      font-weight:900;
+    }
+    .pet-grid-v4{
+      display:grid;
+      gap:12px;
+    }
+    .pet-card-v4{
+      padding:14px;
+      border-radius:22px;
+      background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.022));
+      border:1px solid var(--line);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .pet-card-v4.active-pet-v4{
+      border-color:rgba(165,139,255,.34);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05),
+        0 14px 32px rgba(124,140,255,.1);
+    }
+    .pet-card-head-v4{
+      display:grid;
+      grid-template-columns:92px minmax(0,1fr);
+      gap:12px;
+      align-items:center;
+    }
+    .pet-avatar-v4{
+      position:relative;
+      height:92px;
+      overflow:hidden;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 50% 42%,rgba(165,139,255,.14),transparent 58%),
+        rgba(255,255,255,.032);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .pet-avatar-v4 .dog-v3{
+      position:absolute;
+      left:50%;
+      top:57%;
+      transform:translate(-50%,-50%) scale(.9);
+    }
+    .pet-info-v4{
+      min-width:0;
+    }
+    .pet-info-v4 h4{
+      margin:0 0 3px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size:17px;
+    }
+    .pet-info-v4 p{
+      margin:0;
+      color:var(--muted);
+      font-size:10px;
+      line-height:1.5;
+    }
+    .pet-level-v4{
+      display:inline-flex;
+      margin-top:7px;
+      padding:5px 8px;
+      border-radius:999px;
+      color:#ffe5aa;
+      background:rgba(240,200,120,.08);
+      border:1px solid rgba(240,200,120,.17);
+      font-size:9px;
+      font-weight:900;
+    }
+    .pet-bars-v4{
+      display:grid;
+      gap:8px;
+      margin-top:13px;
+    }
+    .pet-bar-row-v4{
+      display:grid;
+      grid-template-columns:64px 1fr 32px;
+      gap:8px;
+      align-items:center;
+      color:var(--muted);
+      font-size:9px;
+      font-weight:800;
+    }
+    .pet-bar-track-v4{
+      height:8px;
+      overflow:hidden;
+      border-radius:99px;
+      background:rgba(255,255,255,.055);
+    }
+    .pet-bar-fill-v4{
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#68d2aa,#8fa0ff);
+    }
+    .pet-bar-fill-v4.happy{
+      background:linear-gradient(90deg,#f1a1c3,#ae92ff);
+    }
+    .pet-bar-fill-v4.clean{
+      background:linear-gradient(90deg,#78c5ed,#9faaff);
+    }
+    .pet-actions-v4{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:7px;
+      margin-top:12px;
+    }
+    .pet-actions-v4 button,
+    .pet-manage-v4 button{
+      min-height:40px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      color:#e9eaf3;
+      background:rgba(255,255,255,.052);
+      font-size:9px;
+      font-weight:900;
+    }
+    .pet-actions-v4 button:active,
+    .pet-manage-v4 button:active{
+      transform:scale(.97);
+    }
+    .pet-manage-v4{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:7px;
+    }
+    .pet-manage-v4 button.primary{
+      color:#171927;
+      background:linear-gradient(135deg,#a8b3ff,#c2a9ff);
+      border:none;
+    }
+    .pet-empty-v4{
+      padding:28px 18px;
+      text-align:center;
+      color:var(--muted);
+      border:1px dashed var(--line);
+      border-radius:20px;
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    /* ===== Pet naming V4 ===== */
+    .pet-name-sheet-v4{
+      max-width:520px;
+    }
+    .pet-name-preview-v4{
+      position:relative;
+      height:150px;
+      overflow:hidden;
+      margin-bottom:13px;
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 50% 52%,rgba(165,139,255,.16),transparent 48%),
+        linear-gradient(180deg,#343653 0 66%,#846052 66% 100%);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .pet-name-preview-v4 .dog-v3{
+      position:absolute;
+      left:50%;
+      top:60%;
+      transform:translate(-50%,-50%) scale(1.35);
+    }
+    .pet-name-label-v4{
+      display:block;
+      color:var(--muted);
+      font-size:10px;
+      margin:0 0 7px;
+    }
+    .pet-name-input-v4{
+      min-height:52px;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    /* ===== Dog breeds V4 ===== */
+    .dog-v3.breed-poodle .dogbody-v3,
+    .dog-v3.breed-poodle .doghead-v3{
+      background-color:#e7c4a4;
+    }
+
+    .dog-v3.breed-shiba .dogbody-v3{
+      background:#d98243;
+      border-color:#5d3827;
+      box-shadow:none;
+    }
+    .dog-v3.breed-shiba .doghead-v3{
+      background:
+        linear-gradient(180deg,#df8b49 0 58%,#f5ddc5 59% 100%);
+      border-color:#5d3827;
+    }
+    .dog-v3.breed-shiba .dear-v3{
+      top:-10px;
+      width:19px;
+      height:24px;
+      border-radius:3px 12px 3px 12px;
+      background:#c96f37;
+      border-color:#5d3827;
+    }
+    .dog-v3.breed-shiba .dear-v3.a{left:-2px;transform:rotate(38deg)}
+    .dog-v3.breed-shiba .dear-v3.b{right:-2px;transform:scaleX(-1) rotate(38deg)}
+    .dog-v3.breed-shiba::before,
+    .dog-v3.breed-shiba::after{background:#f1c79f;border-color:#5d3827}
+    .dog-v3.breed-shiba .dtail-v3{
+      border-color:#5d3827;
+      width:25px;height:23px;border-width:6px;
+      border-radius:50%;
+    }
+
+    .dog-v3.breed-corgi .dogbody-v3{
+      width:64px;
+      height:34px;
+      background:linear-gradient(180deg,#d98548 0 62%,#f5dfc8 63% 100%);
+      border-color:#5e3929;
+      box-shadow:none;
+    }
+    .dog-v3.breed-corgi .doghead-v3{
+      background:linear-gradient(180deg,#db8949 0 55%,#f5dfc8 56% 100%);
+      border-color:#5e3929;
+    }
+    .dog-v3.breed-corgi .dear-v3{
+      top:-13px;width:20px;height:29px;
+      border-radius:4px 14px 4px 14px;
+      background:#c66f3b;border-color:#5e3929;
+    }
+    .dog-v3.breed-corgi .dear-v3.a{left:-3px;transform:rotate(34deg)}
+    .dog-v3.breed-corgi .dear-v3.b{right:-3px;transform:scaleX(-1) rotate(34deg)}
+    .dog-v3.breed-corgi::before,
+    .dog-v3.breed-corgi::after{
+      height:14px;bottom:1px;background:#f2c89f;border-color:#5e3929;
+    }
+
+    .dog-v3.breed-golden .dogbody-v3{
+      width:66px;height:40px;
+      background:#d9ad65;border-color:#664a2e;box-shadow:none;
+    }
+    .dog-v3.breed-golden .doghead-v3{
+      width:46px;height:42px;
+      background:#e3ba75;border-color:#664a2e;
+    }
+    .dog-v3.breed-golden .dear-v3{
+      top:8px;width:20px;height:34px;
+      background:#b88345;border-color:#664a2e;
+    }
+    .dog-v3.breed-golden .dear-v3.a{left:-14px;transform:rotate(8deg)}
+    .dog-v3.breed-golden .dear-v3.b{right:-14px;transform:scaleX(-1) rotate(8deg)}
+    .dog-v3.breed-golden::before,
+    .dog-v3.breed-golden::after{background:#d9ad65;border-color:#664a2e}
+
+    .dog-v3.breed-husky .dogbody-v3{
+      background:linear-gradient(180deg,#7d8795 0 62%,#e7edf1 63% 100%);
+      border-color:#3d4650;box-shadow:none;
+    }
+    .dog-v3.breed-husky .doghead-v3{
+      background:
+        linear-gradient(90deg,#7d8795 0 25%,#e7edf1 26% 74%,#7d8795 75% 100%);
+      border-color:#3d4650;
+    }
+    .dog-v3.breed-husky .dear-v3{
+      top:-11px;width:19px;height:26px;
+      background:#697481;border-color:#3d4650;
+      border-radius:3px 12px 3px 12px;
+    }
+    .dog-v3.breed-husky .dear-v3.a{left:-2px;transform:rotate(37deg)}
+    .dog-v3.breed-husky .dear-v3.b{right:-2px;transform:scaleX(-1) rotate(37deg)}
+    .dog-v3.breed-husky .deye-v3{background:#4ba4df}
+    .dog-v3.breed-husky::before,
+    .dog-v3.breed-husky::after{background:#dfe6eb;border-color:#3d4650}
+
+    .dog-v3.breed-beagle .dogbody-v3{
+      background:
+        linear-gradient(90deg,#9a6038 0 30%,#f0dfc7 31% 69%,#9a6038 70% 100%);
+      border-color:#533827;box-shadow:none;
+    }
+    .dog-v3.breed-beagle .doghead-v3{
+      background:linear-gradient(180deg,#a96d42 0 48%,#f0dfc7 49% 100%);
+      border-color:#533827;
+    }
+    .dog-v3.breed-beagle .dear-v3{
+      top:5px;width:21px;height:35px;
+      background:#865132;border-color:#533827;
+    }
+    .dog-v3.breed-beagle .dear-v3.a{left:-15px;transform:rotate(8deg)}
+    .dog-v3.breed-beagle .dear-v3.b{right:-15px;transform:scaleX(-1) rotate(8deg)}
+    .dog-v3.breed-beagle::before,
+    .dog-v3.breed-beagle::after{background:#f0dfc7;border-color:#533827}
+
+    .layer-buttons-v3{
+      grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+    #storeItemBtnV4{
+      color:#ffe0e8;
+      background:rgba(255,135,154,.08);
+      border-color:rgba(255,135,154,.17);
+    }
+
+    @media(max-width:430px){
+      .inventory-grid-v4{grid-template-columns:1fr 1fr}
+      .layer-buttons-v3{grid-template-columns:1fr 1fr}
+      .pet-card-head-v4{grid-template-columns:82px minmax(0,1fr)}
+      .pet-avatar-v4{height:84px}
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -1649,6 +2197,8 @@
           <div class="coin-pill-v3">เหรียญ <strong id="coinCountV3">0</strong></div>
           <button class="room-tool-v3" id="editRoomBtnV3" onclick="toggleRoomEditV3()">จัดห้อง</button>
           <button class="room-tool-v3" onclick="openShopV3()">ร้านค้า</button>
+          <button class="room-tool-v3" onclick="openInventoryV4()">คลังของ</button>
+          <button class="room-tool-v3" onclick="openPetHouseV4()">บ้านหมา</button>
           <button class="room-tool-v3" onclick="openHeartGameV3()">เกมหัวใจ</button>
           <button class="room-tool-v3" onclick="resetRoomV3()">รีเซ็ตตำแหน่ง</button>
         </div>
@@ -1687,8 +2237,8 @@
               <div class="deye-v3 a"></div><div class="deye-v3 b"></div><div class="dnose-v3"></div>
             </div>
             <div class="dtail-v3"></div>
+            <div class="dog-speech-v3" id="dogSpeechV3" role="status">พุดเดิ้ลโมจิอยู่ตรงนี้นะ</div>
           </div>
-          <div class="dog-speech-v3" id="dogSpeechV3">พุดเดิ้ลโมจิอยู่ตรงนี้นะ</div>
 
           <div class="decor-v3 shelf-v3 locked-v3" data-item="shelf" style="left:25%;top:24%">
             <div class="book-v3 a"></div><div class="book-v3 b"></div><div class="book-v3 c"></div>
@@ -1709,6 +2259,9 @@
           <div class="decor-v3 tv-v3 locked-v3" data-item="tv" style="left:52%;top:38%"></div>
           <div class="decor-v3 speaker-v3 locked-v3" data-item="speaker" style="left:62%;top:47%"></div>
 
+          <div class="room-scroll-guide-v3" aria-hidden="true">
+            ปัดพื้นที่ว่างขึ้น–ลงเพื่อเลื่อนหน้า
+          </div>
         </div>
 
         <div class="edit-hint-v3" id="editHintV3">
@@ -1726,6 +2279,9 @@
             </button>
             <button type="button" id="bringFrontBtnV3" onclick="moveSelectedLayerV3('front')" disabled>
               นำมาด้านหน้า
+            </button>
+            <button type="button" id="storeItemBtnV4" onclick="storeSelectedItemV4()" disabled>
+              เก็บเข้าคลัง
             </button>
             <button type="button" id="finishRoomEditBtnV3" onclick="toggleRoomEditV3()">
               เสร็จแล้ว
@@ -1886,6 +2442,62 @@
     </div>
   </div>
 
+
+  <div class="modal-v3" id="inventoryModalV4" onclick="closeModalV4Outside(event,'inventoryModalV4')">
+    <div class="sheet-v3">
+      <button class="modal-close-v3" type="button" aria-label="ปิดคลังของ" onclick="closeInventoryV4()">×</button>
+      <div class="handle-v3"></div>
+      <div class="section-head" style="margin-top:0">
+        <h3>คลังของ</h3>
+        <span id="inventoryCountV4">0 ชิ้น</span>
+      </div>
+      <div class="shop-toolbar-v3">
+        <button class="shop-filter-v3 active inventory-filter-v4" onclick="setInventoryFilterV4('all',this)">ทั้งหมด</button>
+        <button class="shop-filter-v3 inventory-filter-v4" onclick="setInventoryFilterV4('room',this)">อยู่ในห้อง</button>
+        <button class="shop-filter-v3 inventory-filter-v4" onclick="setInventoryFilterV4('storage',this)">อยู่ในคลัง</button>
+      </div>
+      <div class="inventory-grid-v4" id="inventoryGridV4"></div>
+    </div>
+  </div>
+
+  <div class="modal-v3" id="petHouseModalV4" onclick="closeModalV4Outside(event,'petHouseModalV4')">
+    <div class="sheet-v3">
+      <button class="modal-close-v3" type="button" aria-label="ปิดบ้านหมา" onclick="closePetHouseV4()">×</button>
+      <div class="handle-v3"></div>
+      <div class="section-head" style="margin-top:0">
+        <h3>บ้านหมา</h3>
+        <span>เหรียญ <b id="petHouseCoinsV4">0</b></span>
+      </div>
+      <div class="pet-house-summary-v4">
+        <div>
+          <strong id="petHouseTitleV4">ยังไม่มีน้องหมา</strong>
+          <span>รับเลี้ยงน้องหมาได้จากหมวดสัตว์เลี้ยงในร้านค้า</span>
+        </div>
+        <button type="button" onclick="openShopPetCategoryV4()">ไปที่ร้านค้า</button>
+      </div>
+      <div class="pet-grid-v4" id="petGridV4"></div>
+    </div>
+  </div>
+
+  <div class="modal-v3" id="petNameModalV4" onclick="closeModalV4Outside(event,'petNameModalV4')">
+    <div class="sheet-v3 pet-name-sheet-v4">
+      <button class="modal-close-v3" type="button" aria-label="ปิดหน้าตั้งชื่อ" onclick="closePetNameV4()">×</button>
+      <div class="handle-v3"></div>
+      <div class="section-head" style="margin-top:0">
+        <h3 id="petNameTitleV4">ตั้งชื่อน้องหมา</h3>
+        <span id="petNamePriceV4"></span>
+      </div>
+      <div class="pet-name-preview-v4" id="petNamePreviewV4"></div>
+      <label class="pet-name-label-v4" for="petNameInputV4">ชื่อน้องหมา</label>
+      <input id="petNameInputV4" class="pet-name-input-v4" maxlength="14"
+             placeholder="เช่น โมจิ, เค้ก, โกโก้" autocomplete="off">
+      <button class="button button-primary" style="width:100%;margin-top:12px"
+              id="confirmPetNameBtnV4" onclick="confirmPetNameV4()">
+        ยืนยัน
+      </button>
+    </div>
+  </div>
+
   <nav class="tabs">
     <button class="tab active" data-page="home" onclick="switchPage('home',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-7h6v7"/></svg></span>
@@ -1928,10 +2540,14 @@
       lastMoodTheme: "tired",
       coins: 80,
       ownedItems: ["window","bed","desk","plant"],
+      placedItems: ["window","bed","desk","plant"],
       roomPositions: {},
       roomLayers: {},
       heartHighScore: 0,
-      dogName: "โมจิ"
+      dogName: "โมจิ",
+      pets: [],
+      activePetId: "",
+      petLastDecayAt: ""
     };
 
     const loveMessages = [
@@ -2047,10 +2663,16 @@
       if(id !== "garden" && typeof editV3 !== "undefined" && editV3){
         toggleRoomEditV3();
       }
+
       document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
       document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
       document.getElementById(id).classList.add("active");
       button.classList.add("active");
+
+      if(typeof syncDogRoamingV3 === "function"){
+        window.setTimeout(()=>syncDogRoamingV3(loadData()),120);
+      }
+
       window.scrollTo({top:0, behavior:"smooth"});
     }
 
@@ -2451,21 +3073,36 @@
 
 
 
+    const DOG_BREEDS_V4 = {
+      poodle:{name:"พุดเดิ้ล",price:120,defaultName:"โมจิ",desc:"ขนฟู อ่อนโยน และชอบอยู่ใกล้เธอ"},
+      shiba:{name:"ชิบะอินุ",price:150,defaultName:"ยูซุ",desc:"ร่าเริง ฉลาด และมีโลกส่วนตัวนิด ๆ"},
+      corgi:{name:"คอร์กี้",price:170,defaultName:"ขนมปัง",desc:"ขาสั้น ร่าเริง และชอบวิ่งเล่น"},
+      golden:{name:"โกลเด้นรีทรีฟเวอร์",price:190,defaultName:"ซันนี่",desc:"ใจดี เป็นมิตร และชอบให้กำลังใจ"},
+      husky:{name:"ไซบีเรียนฮัสกี้",price:210,defaultName:"สกาย",desc:"พลังเยอะ ตาสวย และขี้เล่น"},
+      beagle:{name:"บีเกิล",price:160,defaultName:"โกโก้",desc:"จมูกไว ขี้สงสัย และน่ารักมาก"}
+    };
+
     const SHOP_V3 = [
-      {id:"dog",name:"พุดเดิ้ลโมจิ",price:120,category:"pet",preview:"dog",desc:"แตะเล่นและรับข้อความให้กำลังใจ"},
-      {id:"rug",name:"พรมสีม่วง",price:45,category:"furniture",preview:"rug",desc:"เพิ่มความอบอุ่นให้พื้นห้อง"},
-      {id:"shelf",name:"ชั้นหนังสือ",price:75,category:"furniture",preview:"shelf",desc:"มุมหนังสือและกรอบรูป"},
-      {id:"beanbag",name:"บีนแบ็ก",price:65,category:"furniture",preview:"beanbag",desc:"มุมนั่งพักหลังเลิกงาน"},
-      {id:"poster",name:"โปสเตอร์ K",price:35,category:"decor",preview:"poster",desc:"ของแต่งผนังสำหรับเธอ"},
-      {id:"sideTable",name:"โต๊ะข้างเตียง",price:55,category:"furniture",preview:"sideTable",desc:"วางของชิ้นเล็กข้างเตียง"},
-      {id:"teddy",name:"ตุ๊กตาหมี",price:40,category:"decor",preview:"teddy",desc:"เพื่อนตัวเล็กสำหรับคืนที่เหนื่อย"},
-      {id:"mirror",name:"กระจกเต็มตัว",price:70,category:"decor",preview:"mirror",desc:"เพิ่มมุมแต่งตัวให้ห้อง"},
-      {id:"clock",name:"นาฬิกาติดผนัง",price:30,category:"decor",preview:"clock",desc:"ของตกแต่งเรียบง่ายดูอบอุ่น"},
-      {id:"basket",name:"ตะกร้าเก็บของ",price:35,category:"decor",preview:"basket",desc:"ช่วยให้ห้องดูเป็นระเบียบ"},
-      {id:"flowers",name:"แจกันดอกไม้",price:50,category:"decor",preview:"flowers",desc:"เพิ่มสีสันและความสดใส"},
-      {id:"tv",name:"โทรทัศน์",price:140,category:"furniture",preview:"tv",desc:"มุมดูหนังพักผ่อนในห้อง"},
-      {id:"speaker",name:"ลำโพง",price:85,category:"decor",preview:"speaker",desc:"เปิดเพลงบรรยากาศในจินตนาการ"}
+      {id:"pet_poodle",kind:"pet",breed:"poodle",name:"พุดเดิ้ล",price:120,category:"pet",preview:"pet",desc:"ขนฟู อ่อนโยน และชอบอยู่ใกล้เธอ"},
+      {id:"pet_shiba",kind:"pet",breed:"shiba",name:"ชิบะอินุ",price:150,category:"pet",preview:"pet",desc:"ร่าเริง ฉลาด และมีโลกส่วนตัวนิด ๆ"},
+      {id:"pet_corgi",kind:"pet",breed:"corgi",name:"คอร์กี้",price:170,category:"pet",preview:"pet",desc:"ขาสั้น ร่าเริง และชอบวิ่งเล่น"},
+      {id:"pet_golden",kind:"pet",breed:"golden",name:"โกลเด้นรีทรีฟเวอร์",price:190,category:"pet",preview:"pet",desc:"ใจดี เป็นมิตร และชอบให้กำลังใจ"},
+      {id:"pet_husky",kind:"pet",breed:"husky",name:"ไซบีเรียนฮัสกี้",price:210,category:"pet",preview:"pet",desc:"พลังเยอะ ตาสวย และขี้เล่น"},
+      {id:"pet_beagle",kind:"pet",breed:"beagle",name:"บีเกิล",price:160,category:"pet",preview:"pet",desc:"จมูกไว ขี้สงสัย และน่ารักมาก"},
+      {id:"rug",kind:"item",name:"พรมสีม่วง",price:45,category:"furniture",preview:"rug",desc:"เพิ่มความอบอุ่นให้พื้นห้อง"},
+      {id:"shelf",kind:"item",name:"ชั้นหนังสือ",price:75,category:"furniture",preview:"shelf",desc:"มุมหนังสือและกรอบรูป"},
+      {id:"beanbag",kind:"item",name:"บีนแบ็ก",price:65,category:"furniture",preview:"beanbag",desc:"มุมนั่งพักหลังเลิกงาน"},
+      {id:"poster",kind:"item",name:"โปสเตอร์ K",price:35,category:"decor",preview:"poster",desc:"ของแต่งผนังสำหรับเธอ"},
+      {id:"sideTable",kind:"item",name:"โต๊ะข้างเตียง",price:55,category:"furniture",preview:"sideTable",desc:"วางของชิ้นเล็กข้างเตียง"},
+      {id:"teddy",kind:"item",name:"ตุ๊กตาหมี",price:40,category:"decor",preview:"teddy",desc:"เพื่อนตัวเล็กสำหรับคืนที่เหนื่อย"},
+      {id:"mirror",kind:"item",name:"กระจกเต็มตัว",price:70,category:"decor",preview:"mirror",desc:"เพิ่มมุมแต่งตัวให้ห้อง"},
+      {id:"clock",kind:"item",name:"นาฬิกาติดผนัง",price:30,category:"decor",preview:"clock",desc:"ของตกแต่งเรียบง่ายดูอบอุ่น"},
+      {id:"basket",kind:"item",name:"ตะกร้าเก็บของ",price:35,category:"decor",preview:"basket",desc:"ช่วยให้ห้องดูเป็นระเบียบ"},
+      {id:"flowers",kind:"item",name:"แจกันดอกไม้",price:50,category:"decor",preview:"flowers",desc:"เพิ่มสีสันและความสดใส"},
+      {id:"tv",kind:"item",name:"โทรทัศน์",price:140,category:"furniture",preview:"tv",desc:"มุมดูหนังพักผ่อนในห้อง"},
+      {id:"speaker",kind:"item",name:"ลำโพง",price:85,category:"decor",preview:"speaker",desc:"เปิดเพลงบรรยากาศในจินตนาการ"}
     ];
+
     let editV3=false, dragV3=null, timerV3=null, secondsV3=20, scoreV3=0, playingV3=false, shopFilterV3="all", heartSpawnTimerV3=null;
 
     const BASE_ROOM_ITEMS_V3 = ["window","bed","desk","plant"];
@@ -2490,14 +3127,78 @@
       speaker:"ลำโพง"
     };
 
+    const ROOM_DEFAULT_POSITIONS_V4 = {
+      window:{x:82,y:22},bed:{x:22,y:72},desk:{x:62,y:69},plant:{x:44,y:67},
+      rug:{x:53,y:84},shelf:{x:25,y:24},beanbag:{x:69,y:84},poster:{x:52,y:24},
+      sideTable:{x:34,y:78},teddy:{x:31,y:64},mirror:{x:68,y:25},clock:{x:41,y:20},
+      basket:{x:87,y:86},flowers:{x:56,y:62},tv:{x:52,y:38},speaker:{x:62,y:47},
+      dog:{x:79,y:79}
+    };
+
+    const ROOM_CATALOG_V4 = {
+      window:{id:"window",name:"หน้าต่าง",category:"decor",preview:"window",desc:"หน้าต่างคืนฝนตก"},
+      bed:{id:"bed",name:"เตียง",category:"furniture",preview:"bed",desc:"เตียงสำหรับพักผ่อน"},
+      desk:{id:"desk",name:"โต๊ะและโคมไฟ",category:"furniture",preview:"desk",desc:"มุมทำงานเล็ก ๆ"},
+      plant:{id:"plant",name:"ต้นไม้",category:"decor",preview:"plant",desc:"ต้นไม้ที่เติบโตไปกับเธอ"},
+      rug:{id:"rug",name:"พรมสีม่วง",category:"furniture",preview:"rug",desc:"เพิ่มความอบอุ่นให้พื้นห้อง"},
+      shelf:{id:"shelf",name:"ชั้นหนังสือ",category:"furniture",preview:"shelf",desc:"มุมหนังสือและกรอบรูป"},
+      beanbag:{id:"beanbag",name:"บีนแบ็ก",category:"furniture",preview:"beanbag",desc:"มุมนั่งพักหลังเลิกงาน"},
+      poster:{id:"poster",name:"โปสเตอร์ K",category:"decor",preview:"poster",desc:"ของแต่งผนังสำหรับเธอ"},
+      sideTable:{id:"sideTable",name:"โต๊ะข้างเตียง",category:"furniture",preview:"sideTable",desc:"วางของชิ้นเล็กข้างเตียง"},
+      teddy:{id:"teddy",name:"ตุ๊กตาหมี",category:"decor",preview:"teddy",desc:"เพื่อนตัวเล็กสำหรับคืนที่เหนื่อย"},
+      mirror:{id:"mirror",name:"กระจกเต็มตัว",category:"decor",preview:"mirror",desc:"เพิ่มมุมแต่งตัวให้ห้อง"},
+      clock:{id:"clock",name:"นาฬิกาติดผนัง",category:"decor",preview:"clock",desc:"ของตกแต่งเรียบง่าย"},
+      basket:{id:"basket",name:"ตะกร้าเก็บของ",category:"decor",preview:"basket",desc:"ช่วยให้ห้องดูเป็นระเบียบ"},
+      flowers:{id:"flowers",name:"แจกันดอกไม้",category:"decor",preview:"flowers",desc:"เพิ่มสีสันให้ห้อง"},
+      tv:{id:"tv",name:"โทรทัศน์",category:"furniture",preview:"tv",desc:"มุมดูหนังพักผ่อน"},
+      speaker:{id:"speaker",name:"ลำโพง",category:"decor",preview:"speaker",desc:"ของแต่งสำหรับมุมฟังเพลง"}
+    };
+
     let selectedRoomItemV3 = null;
     let roomDragControllerV3 = null;
 
-    function normalizeRoomV3(data){
-      const currentOwned = Array.isArray(data.ownedItems) ? data.ownedItems : [];
+    function clampPetStatV4(value){
+      return Math.max(0,Math.min(100,Number(value) || 0));
+    }
 
-      // ของเริ่มต้นต้องเป็นเจ้าของเสมอ แม้ข้อมูลเดิมจะเคยบันทึก ownedItems ผิดพลาด
-      data.ownedItems = [...new Set([...BASE_ROOM_ITEMS_V3,...currentOwned])];
+    function makePetIdV4(){
+      return `pet_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
+    }
+
+    function updatePetNeedsV4(data){
+      const now = Date.now();
+
+      data.pets.forEach(pet=>{
+        const last = Number(pet.lastUpdatedAt) || now;
+        const elapsedHours = Math.min(168,Math.max(0,(now-last)/3600000));
+
+        pet.hunger = clampPetStatV4((pet.hunger ?? 100) - elapsedHours*.42);
+        pet.happiness = clampPetStatV4((pet.happiness ?? 100) - elapsedHours*.18);
+        pet.cleanliness = clampPetStatV4((pet.cleanliness ?? 100) - elapsedHours*.12);
+        pet.lastUpdatedAt = now;
+        pet.xp = Math.max(0,Number(pet.xp) || 0);
+      });
+
+      data.petLastDecayAt = String(now);
+      return data;
+    }
+
+    function normalizeRoomV3(data){
+      const originalOwned = Array.isArray(data.ownedItems) ? data.ownedItems : [];
+      const hadLegacyDog = originalOwned.includes("dog");
+
+      data.ownedItems = [...new Set([
+        ...BASE_ROOM_ITEMS_V3,
+        ...originalOwned.filter(itemId=>itemId !== "dog" && ROOM_CATALOG_V4[itemId])
+      ])];
+
+      if(!Array.isArray(data.placedItems)){
+        data.placedItems = [...data.ownedItems];
+      }else{
+        data.placedItems = [...new Set(
+          data.placedItems.filter(itemId=>data.ownedItems.includes(itemId))
+        )];
+      }
 
       if(!data.roomPositions || typeof data.roomPositions !== "object"){
         data.roomPositions = {};
@@ -2507,14 +3208,52 @@
         data.roomLayers = {};
       }
 
+      if(!Array.isArray(data.pets)){
+        data.pets = [];
+      }
+
+      // ย้ายข้อมูลหมาระบบเก่าเป็นพุดเดิ้ลโดยไม่ทำให้หมาหาย
+      if(hadLegacyDog && data.pets.length === 0){
+        const legacyPet = {
+          id:"pet_legacy_poodle",
+          breed:"poodle",
+          name:String(data.dogName || "โมจิ").trim() || "โมจิ",
+          hunger:86,
+          happiness:90,
+          cleanliness:88,
+          xp:20,
+          lastUpdatedAt:Date.now(),
+          adoptedAt:Date.now()
+        };
+        data.pets.push(legacyPet);
+        data.activePetId = legacyPet.id;
+      }
+
+      const validBreeds = new Set(Object.keys(DOG_BREEDS_V4));
+      data.pets = data.pets.map((pet,index)=>({
+        id:String(pet.id || `pet_migrated_${index}_${Date.now()}`),
+        breed:validBreeds.has(pet.breed) ? pet.breed : "poodle",
+        name:String(pet.name || DOG_BREEDS_V4[pet.breed]?.defaultName || "โมจิ").slice(0,14),
+        hunger:clampPetStatV4(pet.hunger ?? 100),
+        happiness:clampPetStatV4(pet.happiness ?? 100),
+        cleanliness:clampPetStatV4(pet.cleanliness ?? 100),
+        xp:Math.max(0,Number(pet.xp) || 0),
+        lastUpdatedAt:Number(pet.lastUpdatedAt) || Date.now(),
+        adoptedAt:Number(pet.adoptedAt) || Date.now()
+      }));
+
+      if(!data.pets.some(pet=>pet.id === data.activePetId)){
+        data.activePetId = data.pets[0]?.id || "";
+      }
+
       if(!Number.isFinite(Number(data.coins))){
         data.coins = 80;
       }else{
         data.coins = Number(data.coins);
       }
 
-      // กำหนดลำดับเริ่มต้นให้ของทุกชิ้น เพื่อให้ควบคุมหน้า/หลังได้แน่นอน
-      data.ownedItems.forEach((itemId,index)=>{
+      const layerItems = [...data.ownedItems,"dog"];
+      layerItems.forEach((itemId,index)=>{
         if(!Number.isFinite(Number(data.roomLayers[itemId]))){
           data.roomLayers[itemId] = (index + 1) * 10;
         }else{
@@ -2522,7 +3261,22 @@
         }
       });
 
-      return data;
+      return updatePetNeedsV4(data);
+    }
+
+    function getActivePetV4(data){
+      return data.pets.find(pet=>pet.id === data.activePetId) || null;
+    }
+
+    function getPetLevelV4(pet){
+      return Math.max(1,Math.floor((Number(pet.xp) || 0)/50)+1);
+    }
+
+    function getRoomDisplayNameV4(itemId,data){
+      if(itemId === "dog"){
+        return getActivePetV4(data)?.name || "น้องหมา";
+      }
+      return ROOM_ITEM_NAMES_V3[itemId] || itemId;
     }
 
     function getRoomItemLayerV3(data,itemId){
@@ -2536,22 +3290,38 @@
       element.style.zIndex = String(100 + layer);
     }
 
+    function applyDogBreedV4(dog,breed){
+      if(!dog) return;
+      [...dog.classList]
+        .filter(className=>className.startsWith("breed-"))
+        .forEach(className=>dog.classList.remove(className));
+      dog.classList.add(`breed-${breed || "poodle"}`);
+      dog.dataset.breed = breed || "poodle";
+    }
+
     function renderRoomV3(data){
       data = normalizeRoomV3(data);
-      const owned = new Set(data.ownedItems);
+
+      const placed = new Set(data.placedItems);
+      const activePet = getActivePetV4(data);
+      const dog = getDogV3();
 
       const coinElement = document.getElementById("coinCountV3");
-      if(coinElement) coinElement.textContent = String(data.coins);
+      if(coinElement) coinElement.textContent = String(Math.floor(data.coins));
 
       document.querySelectorAll(".decor-v3").forEach(element=>{
         const itemId = element.dataset.item;
-        const isOwned = owned.has(itemId);
+        const isVisible = itemId === "dog"
+          ? Boolean(activePet)
+          : placed.has(itemId);
 
-        element.classList.toggle("locked-v3",!isOwned);
-        element.setAttribute("aria-label",ROOM_ITEM_NAMES_V3[itemId] || itemId);
+        element.classList.toggle("locked-v3",!isVisible);
+        element.setAttribute("aria-label",getRoomDisplayNameV4(itemId,data));
 
         const position = data.roomPositions[itemId];
-        if(position && Number.isFinite(Number(position.x)) && Number.isFinite(Number(position.y))){
+        if(position &&
+           Number.isFinite(Number(position.x)) &&
+           Number.isFinite(Number(position.y))){
           element.style.left = `${Number(position.x)}%`;
           element.style.top = `${Number(position.y)}%`;
         }
@@ -2559,29 +3329,46 @@
         applyRoomItemLayerV3(element,data);
       });
 
+      if(dog && activePet){
+        applyDogBreedV4(dog,activePet.breed);
+        const speech = document.getElementById("dogSpeechV3");
+        if(speech && !speech.classList.contains("show")){
+          speech.textContent = `${activePet.name}อยู่ตรงนี้นะ`;
+        }
+      }
+
+      const visibleCount = data.placedItems.length + (activePet ? 1 : 0);
       const ownedCount = document.getElementById("ownedCountV3");
-      if(ownedCount) ownedCount.textContent = String(data.ownedItems.length);
+      if(ownedCount) ownedCount.textContent = String(visibleCount);
 
       const roomTitle = document.getElementById("roomLevelV3");
       if(roomTitle){
-        roomTitle.textContent = owned.has("dog")
-          ? `ห้องของเธอกับ${data.dogName || "โมจิ"}`
+        roomTitle.textContent = activePet
+          ? `ห้องของเธอกับ${activePet.name}`
           : "ห้องเล็กแสนอบอุ่น";
       }
 
       const roomDescription = document.getElementById("roomExpV3");
       if(roomDescription){
         roomDescription.textContent =
-          `ของแต่ง ${data.ownedItems.length} ชิ้น · สถิติเกม ${data.heartHighScore || 0} หัวใจ`;
+          `ของในห้อง ${data.placedItems.length} ชิ้น · น้องหมา ${data.pets.length} ตัว · สถิติเกม ${data.heartHighScore || 0} หัวใจ`;
       }
 
-      if(selectedRoomItemV3 && !owned.has(selectedRoomItemV3.dataset.item)){
-        clearRoomSelectionV3();
-      }else if(selectedRoomItemV3){
-        updateRoomSelectionUiV3();
+      if(selectedRoomItemV3){
+        const selectedId = selectedRoomItemV3.dataset.item;
+        const stillVisible = selectedId === "dog"
+          ? Boolean(activePet)
+          : placed.has(selectedId);
+
+        if(!stillVisible){
+          clearRoomSelectionV3();
+        }else{
+          updateRoomSelectionUiV3();
+        }
       }
 
       createRainV3();
+      syncDogRoamingV3(data);
     }
 
     function selectRoomItemV3(element){
@@ -2611,8 +3398,10 @@
 
       const front = document.getElementById("bringFrontBtnV3");
       const back = document.getElementById("sendBackBtnV3");
+      const store = document.getElementById("storeItemBtnV4");
       if(front) front.disabled = true;
       if(back) back.disabled = true;
+      if(store) store.disabled = true;
     }
 
     function updateRoomSelectionUiV3(){
@@ -2620,23 +3409,29 @@
       const name = document.getElementById("selectedItemNameV3");
       const front = document.getElementById("bringFrontBtnV3");
       const back = document.getElementById("sendBackBtnV3");
+      const store = document.getElementById("storeItemBtnV4");
 
       if(!selectedRoomItemV3){
         if(tools) tools.classList.toggle("show",editV3);
         if(name) name.textContent = editV3 ? "แตะของที่ต้องการย้าย" : "ยังไม่ได้เลือกของ";
         if(front) front.disabled = true;
         if(back) back.disabled = true;
+        if(store) store.disabled = true;
         return;
       }
 
+      const data = normalizeRoomV3(loadData());
+
       if(tools) tools.classList.toggle("show",editV3);
       if(name){
-        name.textContent =
-          ROOM_ITEM_NAMES_V3[selectedRoomItemV3.dataset.item] ||
-          selectedRoomItemV3.dataset.item;
+        name.textContent = getRoomDisplayNameV4(
+          selectedRoomItemV3.dataset.item,
+          data
+        );
       }
       if(front) front.disabled = !editV3;
       if(back) back.disabled = !editV3;
+      if(store) store.disabled = !editV3;
     }
 
     function moveSelectedLayerV3(direction){
@@ -2647,18 +3442,45 @@
 
       const data = normalizeRoomV3(loadData());
       const selectedId = selectedRoomItemV3.dataset.item;
-      const allLayers = data.ownedItems.map(itemId=>getRoomItemLayerV3(data,itemId));
+      const layerIds = [
+        ...data.placedItems,
+        ...(getActivePetV4(data) ? ["dog"] : [])
+      ];
+      const allLayers = layerIds.map(itemId=>getRoomItemLayerV3(data,itemId));
 
       if(direction === "front"){
         data.roomLayers[selectedId] = Math.max(...allLayers,0) + 10;
-        showToast(`นำ${ROOM_ITEM_NAMES_V3[selectedId] || "ของชิ้นนี้"}มาด้านหน้าแล้ว`);
+        showToast(`นำ${getRoomDisplayNameV4(selectedId,data) || "ของชิ้นนี้"}มาด้านหน้าแล้ว`);
       }else{
         data.roomLayers[selectedId] = Math.min(...allLayers,0) - 10;
-        showToast(`ส่ง${ROOM_ITEM_NAMES_V3[selectedId] || "ของชิ้นนี้"}ไปด้านหลังแล้ว`);
+        showToast(`ส่ง${getRoomDisplayNameV4(selectedId,data) || "ของชิ้นนี้"}ไปด้านหลังแล้ว`);
       }
 
       saveData(data);
       selectRoomItemV3(selectedRoomItemV3);
+      softHaptic();
+    }
+
+    function storeSelectedItemV4(){
+      if(!editV3 || !selectedRoomItemV3){
+        showToast("เลือกของที่ต้องการเก็บก่อน");
+        return;
+      }
+
+      const data = normalizeRoomV3(loadData());
+      const itemId = selectedRoomItemV3.dataset.item;
+      const itemName = getRoomDisplayNameV4(itemId,data);
+
+      if(itemId === "dog"){
+        data.activePetId = "";
+        stopDogRoamingV3();
+      }else{
+        data.placedItems = data.placedItems.filter(id=>id !== itemId);
+      }
+
+      clearRoomSelectionV3();
+      saveData(data);
+      showToast(`เก็บ${itemName}เข้าที่พักเรียบร้อยแล้ว`);
       softHaptic();
     }
 
@@ -2678,12 +3500,14 @@
       if(!editV3){
         roomDragControllerV3?.cancel?.();
         clearRoomSelectionV3();
+        syncDogRoamingV3(loadData());
       }else{
+        stopDogRoamingV3({restore:true});
         updateRoomSelectionUiV3();
       }
 
       showToast(editV3
-        ? "แตะของให้มีกรอบ แล้วลากได้ทันที"
+        ? "ลากของเพื่อจัดห้อง หรือปัดพื้นที่ว่างขึ้น–ลงเพื่อเลื่อนหน้า"
         : "บันทึกตำแหน่งห้องแล้ว");
       softHaptic();
     }
@@ -2841,6 +3665,13 @@
 
       item.style.left = `${(x/rect.width)*100}%`;
       item.style.top = `${(y/rect.height)*100}%`;
+
+      if(item.dataset.item === "dog"){
+        const speech = document.getElementById("dogSpeechV3");
+        if(speech && speech.classList.contains("show")){
+          positionDogSpeechV3(item,speech);
+        }
+      }
     }
 
     function savePosV3(item){
@@ -2861,39 +3692,746 @@
       const data = normalizeRoomV3(loadData());
       data.roomPositions = {};
       data.roomLayers = {};
+      data.placedItems.forEach(itemId=>{
+        if(ROOM_DEFAULT_POSITIONS_V4[itemId]){
+          data.roomPositions[itemId] = {...ROOM_DEFAULT_POSITIONS_V4[itemId]};
+        }
+      });
+      if(getActivePetV4(data)){
+        data.roomPositions.dog = {...ROOM_DEFAULT_POSITIONS_V4.dog};
+      }
       clearRoomSelectionV3();
       saveData(data);
       showToast("จัดห้องกลับตำแหน่งเริ่มต้นแล้ว");
+    }
+
+
+    let roomScrollGestureV3 = null;
+    let dogRoamTimerV3 = null;
+    let dogRoamArrivalTimerV3 = null;
+    let dogRoamPausedUntilV3 = 0;
+
+    function setupRoomScrollV3(){
+      const room = document.getElementById("decorRoomV3");
+      if(!room || room.dataset.scrollReadyV3 === "1") return;
+
+      room.dataset.scrollReadyV3 = "1";
+
+      room.addEventListener("touchstart",event=>{
+        if(event.touches.length !== 1) return;
+        if(event.target.closest(".decor-v3")) return;
+
+        const touch = event.touches[0];
+        roomScrollGestureV3 = {
+          startY:touch.clientY,
+          lastY:touch.clientY,
+          startScrollY:window.scrollY,
+          moved:false
+        };
+      },{passive:true});
+
+      room.addEventListener("touchmove",event=>{
+        if(!roomScrollGestureV3 || event.touches.length !== 1) return;
+        if(event.target.closest(".decor-v3")) return;
+
+        const touch = event.touches[0];
+        const deltaY = touch.clientY - roomScrollGestureV3.startY;
+
+        if(Math.abs(deltaY) < 3) return;
+
+        roomScrollGestureV3.moved = true;
+        roomScrollGestureV3.lastY = touch.clientY;
+
+        event.preventDefault();
+        window.scrollTo({
+          top:roomScrollGestureV3.startScrollY - deltaY,
+          behavior:"auto"
+        });
+      },{passive:false});
+
+      const endScrollGesture = ()=>{
+        roomScrollGestureV3 = null;
+      };
+
+      room.addEventListener("touchend",endScrollGesture,{passive:true});
+      room.addEventListener("touchcancel",endScrollGesture,{passive:true});
+    }
+
+    function getDogV3(){
+      return document.querySelector('.decor-v3[data-item="dog"]');
+    }
+
+    function dogCanRoamV3(data){
+      const garden = document.getElementById("garden");
+      const dog = getDogV3();
+
+      return Boolean(
+        dog &&
+        garden?.classList.contains("active") &&
+        !editV3 &&
+        !playingV3 &&
+        Boolean(getActivePetV4(data)) &&
+        Date.now() >= dogRoamPausedUntilV3
+      );
+    }
+
+    function clearDogRoamTimersV3(){
+      window.clearTimeout(dogRoamTimerV3);
+      window.clearTimeout(dogRoamArrivalTimerV3);
+      dogRoamTimerV3 = null;
+      dogRoamArrivalTimerV3 = null;
+    }
+
+    function restoreDogSavedPositionV3(){
+      const dog = getDogV3();
+      if(!dog) return;
+
+      const data = normalizeRoomV3(loadData());
+      const saved = data.roomPositions.dog;
+
+      dog.classList.remove("roaming-v3");
+      dog.classList.add("resting-v3");
+
+      if(saved &&
+         Number.isFinite(Number(saved.x)) &&
+         Number.isFinite(Number(saved.y))){
+        dog.style.left = `${Number(saved.x)}%`;
+        dog.style.top = `${Number(saved.y)}%`;
+      }else{
+        dog.style.left = "79%";
+        dog.style.top = "79%";
+      }
+
+      window.setTimeout(()=>dog.classList.remove("resting-v3"),300);
+    }
+
+    function stopDogRoamingV3(options={}){
+      clearDogRoamTimersV3();
+
+      const dog = getDogV3();
+      if(dog){
+        dog.classList.remove("roaming-v3");
+      }
+
+      if(options.restore){
+        restoreDogSavedPositionV3();
+      }
+    }
+
+    function pauseDogRoamingV3(milliseconds=4200){
+      dogRoamPausedUntilV3 = Date.now() + milliseconds;
+      stopDogRoamingV3();
+
+      window.setTimeout(()=>{
+        syncDogRoamingV3(loadData());
+      },milliseconds + 80);
+    }
+
+    function scheduleDogRoamingV3(delay){
+      clearDogRoamTimersV3();
+
+      const data = normalizeRoomV3(loadData());
+      if(!dogCanRoamV3(data)) return;
+
+      const wait = Number.isFinite(delay)
+        ? delay
+        : 1500 + Math.random()*2600;
+
+      dogRoamTimerV3 = window.setTimeout(()=>{
+        moveDogRandomlyV3();
+      },wait);
+    }
+
+    function moveDogRandomlyV3(){
+      const data = normalizeRoomV3(loadData());
+      if(!dogCanRoamV3(data)) return;
+
+      const dog = getDogV3();
+      if(!dog) return;
+
+      const currentX = Number.parseFloat(dog.style.left) || 79;
+      const currentY = Number.parseFloat(dog.style.top) || 79;
+
+      let nextX = currentX;
+      let nextY = currentY;
+
+      for(let attempt=0;attempt<8;attempt++){
+        nextX = 14 + Math.random()*72;
+        nextY = 70 + Math.random()*18;
+
+        if(Math.abs(nextX-currentX) > 12 ||
+           Math.abs(nextY-currentY) > 6){
+          break;
+        }
+      }
+
+      dog.classList.add("roaming-v3");
+      dog.style.left = `${nextX}%`;
+      dog.style.top = `${nextY}%`;
+
+      dogRoamArrivalTimerV3 = window.setTimeout(()=>{
+        dog.classList.remove("roaming-v3");
+
+        if(Math.random() < .28){
+          showDogAutoMessageV3();
+        }
+
+        scheduleDogRoamingV3(1200 + Math.random()*3000);
+      },2450);
+    }
+
+    function showDogAutoMessageV3(){
+      const data = normalizeRoomV3(loadData());
+      const pet = getActivePetV4(data);
+      const dog = getDogV3();
+      const speech = document.getElementById("dogSpeechV3");
+
+      if(!pet || !dog || !speech || editV3) return;
+
+      const messages = [
+        `${pet.name}เดินตรวจห้องเรียบร้อยแล้ว`,
+        `${pet.name}มานั่งเป็นเพื่อนเธอ`,
+        `พักบ้างนะ ${pet.name}เป็นห่วง`,
+        `${pet.name}ชอบห้องที่เธอแต่งมาก`
+      ];
+
+      speech.textContent =
+        messages[Math.floor(Math.random()*messages.length)];
+
+      positionDogSpeechV3(dog,speech);
+      dog.classList.add("talking-v3");
+      speech.classList.add("show");
+
+      window.clearTimeout(dogSpeechTimerV3);
+      dogSpeechTimerV3 = window.setTimeout(()=>{
+        speech.classList.remove("show");
+        dog.classList.remove("talking-v3");
+      },1800);
+    }
+
+    function syncDogRoamingV3(data){
+      data = normalizeRoomV3(data);
+
+      if(dogCanRoamV3(data)){
+        if(!dogRoamTimerV3 && !dogRoamArrivalTimerV3){
+          scheduleDogRoamingV3();
+        }
+      }else{
+        stopDogRoamingV3({
+          restore:editV3
+        });
+      }
+    }
+
+    let inventoryFilterV4 = "all";
+    let petNameModeV4 = "";
+    let pendingPetBreedV4 = "";
+    let pendingPetIdV4 = "";
+
+    function closeModalV4Outside(event,id){
+      if(event.target.id === id){
+        document.getElementById(id).classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    }
+
+    function openInventoryV4(){
+      inventoryFilterV4 = "all";
+      document.querySelectorAll(".inventory-filter-v4")
+        .forEach((button,index)=>button.classList.toggle("active",index === 0));
+      renderInventoryV4();
+      document.getElementById("inventoryModalV4").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeInventoryV4(){
+      document.getElementById("inventoryModalV4").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    function setInventoryFilterV4(filter,button){
+      inventoryFilterV4 = filter;
+      document.querySelectorAll(".inventory-filter-v4")
+        .forEach(item=>item.classList.remove("active"));
+      button?.classList.add("active");
+      renderInventoryV4();
+    }
+
+    function renderInventoryV4(){
+      const data = normalizeRoomV3(loadData());
+      const placed = new Set(data.placedItems);
+      const allItems = data.ownedItems
+        .map(itemId=>ROOM_CATALOG_V4[itemId])
+        .filter(Boolean);
+
+      const items = allItems.filter(item=>{
+        if(inventoryFilterV4 === "room") return placed.has(item.id);
+        if(inventoryFilterV4 === "storage") return !placed.has(item.id);
+        return true;
+      });
+
+      const count = document.getElementById("inventoryCountV4");
+      if(count){
+        count.textContent =
+          `${data.ownedItems.length} ชิ้น · ในคลัง ${data.ownedItems.length-data.placedItems.length}`;
+      }
+
+      const grid = document.getElementById("inventoryGridV4");
+      if(!items.length){
+        grid.innerHTML = `<div class="pet-empty-v4" style="grid-column:1/-1">
+          ยังไม่มีของในหมวดนี้
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = items.map(item=>{
+        const inRoom = placed.has(item.id);
+        return `<div class="inventory-card-v4">
+          <div class="shop-preview-v3">${shopPreviewV3(item)}</div>
+          <h4>${item.name}</h4>
+          <p>${item.desc}</p>
+          <span class="inventory-state-v4${inRoom ? "" : " stored"}">
+            ${inRoom ? "อยู่ในห้อง" : "อยู่ในคลัง"}
+          </span>
+          <button class="inventory-action-v4${inRoom ? " store" : ""}"
+                  onclick="toggleInventoryItemV4('${item.id}')">
+            ${inRoom ? "เก็บเข้าคลัง" : "นำเข้าห้อง"}
+          </button>
+        </div>`;
+      }).join("");
+    }
+
+    function toggleInventoryItemV4(itemId){
+      const data = normalizeRoomV3(loadData());
+      if(!data.ownedItems.includes(itemId)) return;
+
+      const inRoom = data.placedItems.includes(itemId);
+
+      if(inRoom){
+        data.placedItems = data.placedItems.filter(id=>id !== itemId);
+      }else{
+        data.placedItems.push(itemId);
+
+        if(!data.roomPositions[itemId]){
+          const position = ROOM_DEFAULT_POSITIONS_V4[itemId] || {x:50,y:58};
+          data.roomPositions[itemId] = {...position};
+        }
+
+        const layers = [
+          ...data.placedItems,
+          ...(getActivePetV4(data) ? ["dog"] : [])
+        ].map(id=>getRoomItemLayerV3(data,id));
+        data.roomLayers[itemId] = Math.max(...layers,0)+10;
+      }
+
+      saveData(data);
+      renderInventoryV4();
+      showToast(inRoom
+        ? `เก็บ${ROOM_ITEM_NAMES_V3[itemId]}เข้าคลังแล้ว`
+        : `นำ${ROOM_ITEM_NAMES_V3[itemId]}กลับเข้าห้องแล้ว`);
+    }
+
+    function dogMarkupV4(breed="poodle",extraClass=""){
+      return `<div class="dog-v3 breed-${breed} ${extraClass}">
+        <div class="dogbody-v3"></div>
+        <div class="doghead-v3">
+          <div class="dear-v3 a"></div>
+          <div class="dear-v3 b"></div>
+          <div class="deye-v3 a"></div>
+          <div class="deye-v3 b"></div>
+          <div class="dnose-v3"></div>
+        </div>
+        <div class="dtail-v3"></div>
+      </div>`;
+    }
+
+    function openPetHouseV4(){
+      renderPetHouseV4();
+      document.getElementById("petHouseModalV4").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePetHouseV4(){
+      document.getElementById("petHouseModalV4").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    function openShopPetCategoryV4(){
+      closePetHouseV4();
+      openShopV3();
+      const petButton = document.querySelector('.shop-filter-v3[data-filter="pet"]');
+      setShopFilterV3("pet",petButton);
+    }
+
+    function petStatusTextV4(pet){
+      const average = (pet.hunger + pet.happiness + pet.cleanliness)/3;
+      if(average >= 82) return "อารมณ์ดีมาก";
+      if(average >= 62) return "สบายดี";
+      if(average >= 42) return "อยากให้ดูแลเพิ่ม";
+      return "กำลังรอเธอดูแล";
+    }
+
+    function petBarV4(label,value,className=""){
+      const rounded = Math.round(clampPetStatV4(value));
+      return `<div class="pet-bar-row-v4">
+        <span>${label}</span>
+        <div class="pet-bar-track-v4">
+          <span class="pet-bar-fill-v4 ${className}" style="width:${rounded}%"></span>
+        </div>
+        <b>${rounded}</b>
+      </div>`;
+    }
+
+    function renderPetHouseV4(){
+      const data = normalizeRoomV3(loadData());
+      const activePet = getActivePetV4(data);
+
+      document.getElementById("petHouseCoinsV4").textContent =
+        String(Math.floor(data.coins));
+
+      const title = document.getElementById("petHouseTitleV4");
+      title.textContent = data.pets.length
+        ? `มีน้องหมา ${data.pets.length} ตัว${activePet ? ` · ${activePet.name}อยู่ในห้อง` : " · ทุกตัวพักอยู่ในบ้านหมา"}`
+        : "ยังไม่มีน้องหมา";
+
+      const grid = document.getElementById("petGridV4");
+
+      if(!data.pets.length){
+        grid.innerHTML = `<div class="pet-empty-v4">
+          ยังไม่มีน้องหมา<br>
+          เข้าไปที่ร้านค้า เลือกสายพันธุ์ แล้วตั้งชื่อก่อนรับเลี้ยงได้เลย
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = data.pets.map(pet=>{
+        const breed = DOG_BREEDS_V4[pet.breed] || DOG_BREEDS_V4.poodle;
+        const isActive = pet.id === data.activePetId;
+        const level = getPetLevelV4(pet);
+
+        return `<div class="pet-card-v4${isActive ? " active-pet-v4" : ""}">
+          <div class="pet-card-head-v4">
+            <div class="pet-avatar-v4">${dogMarkupV4(pet.breed)}</div>
+            <div class="pet-info-v4">
+              <h4>${escapeHtml(pet.name)}</h4>
+              <p>${breed.name} · ${petStatusTextV4(pet)}</p>
+              <span class="pet-level-v4">เลเวล ${level} · EXP ${Math.round(pet.xp)}</span>
+            </div>
+          </div>
+          <div class="pet-bars-v4">
+            ${petBarV4("ความอิ่ม",pet.hunger)}
+            ${petBarV4("ความสุข",pet.happiness,"happy")}
+            ${petBarV4("ความสะอาด",pet.cleanliness,"clean")}
+          </div>
+          <div class="pet-actions-v4">
+            <button onclick="carePetV4('${pet.id}','feed')">ให้อาหาร · 2 เหรียญ</button>
+            <button onclick="carePetV4('${pet.id}','play')">เล่นด้วย</button>
+            <button onclick="carePetV4('${pet.id}','groom')">แปรงขน</button>
+          </div>
+          <div class="pet-manage-v4">
+            <button onclick="openRenamePetV4('${pet.id}')">เปลี่ยนชื่อ</button>
+            <button class="${isActive ? "" : "primary"}"
+                    onclick="${isActive ? `sendPetHomeV4('${pet.id}')` : `setActivePetV4('${pet.id}')`}">
+              ${isActive ? "ให้พักในบ้านหมา" : "ให้อยู่ในห้อง"}
+            </button>
+          </div>
+        </div>`;
+      }).join("");
+    }
+
+    function carePetV4(petId,action){
+      const data = normalizeRoomV3(loadData());
+      const pet = data.pets.find(item=>item.id === petId);
+      if(!pet) return;
+
+      if(action === "feed"){
+        if(data.coins < 2){
+          showToast("เหรียญไม่พอให้อาหาร");
+          return;
+        }
+        data.coins -= 2;
+        pet.hunger = clampPetStatV4(pet.hunger + 28);
+        pet.happiness = clampPetStatV4(pet.happiness + 4);
+        pet.xp += 6;
+        showToast(`${pet.name}กินอาหารอิ่มแล้ว`);
+      }
+
+      if(action === "play"){
+        pet.happiness = clampPetStatV4(pet.happiness + 24);
+        pet.hunger = clampPetStatV4(pet.hunger - 4);
+        pet.xp += 6;
+        showToast(`${pet.name}สนุกมาก`);
+      }
+
+      if(action === "groom"){
+        pet.cleanliness = clampPetStatV4(pet.cleanliness + 30);
+        pet.happiness = clampPetStatV4(pet.happiness + 5);
+        pet.xp += 6;
+        showToast(`${pet.name}ขนนุ่มสะอาดแล้ว`);
+      }
+
+      pet.lastUpdatedAt = Date.now();
+      saveData(data);
+      renderPetHouseV4();
+      softHaptic();
+    }
+
+    function setActivePetV4(petId){
+      const data = normalizeRoomV3(loadData());
+      const pet = data.pets.find(item=>item.id === petId);
+      if(!pet) return;
+
+      data.activePetId = petId;
+      if(!data.roomPositions.dog){
+        data.roomPositions.dog = {...ROOM_DEFAULT_POSITIONS_V4.dog};
+      }
+
+      saveData(data);
+      renderPetHouseV4();
+      showToast(`${pet.name}เข้ามาอยู่ในห้องแล้ว`);
+    }
+
+    function sendPetHomeV4(petId){
+      const data = normalizeRoomV3(loadData());
+      const pet = data.pets.find(item=>item.id === petId);
+      if(!pet) return;
+
+      if(data.activePetId === petId){
+        data.activePetId = "";
+      }
+
+      stopDogRoamingV3();
+      saveData(data);
+      renderPetHouseV4();
+      showToast(`${pet.name}กลับไปพักในบ้านหมาแล้ว`);
+    }
+
+    function openAdoptPetV4(breed){
+      const info = DOG_BREEDS_V4[breed];
+      if(!info) return;
+
+      const data = normalizeRoomV3(loadData());
+      if(data.coins < info.price){
+        showToast("เหรียญยังไม่พอรับเลี้ยงน้องหมาตัวนี้");
+        return;
+      }
+
+      petNameModeV4 = "adopt";
+      pendingPetBreedV4 = breed;
+      pendingPetIdV4 = "";
+
+      document.getElementById("petNameTitleV4").textContent =
+        `ตั้งชื่อ${info.name}`;
+      document.getElementById("petNamePriceV4").textContent =
+        `${info.price} เหรียญ`;
+      document.getElementById("petNamePreviewV4").innerHTML =
+        dogMarkupV4(breed);
+      document.getElementById("petNameInputV4").value =
+        info.defaultName;
+      document.getElementById("confirmPetNameBtnV4").textContent =
+        "รับเลี้ยงและให้อยู่ในห้อง";
+
+      document.getElementById("petNameModalV4").classList.add("show");
+      document.body.style.overflow = "hidden";
+
+      setTimeout(()=>document.getElementById("petNameInputV4").focus(),180);
+    }
+
+    function openRenamePetV4(petId){
+      const data = normalizeRoomV3(loadData());
+      const pet = data.pets.find(item=>item.id === petId);
+      if(!pet) return;
+
+      petNameModeV4 = "rename";
+      pendingPetBreedV4 = pet.breed;
+      pendingPetIdV4 = pet.id;
+
+      document.getElementById("petNameTitleV4").textContent =
+        `เปลี่ยนชื่อ${DOG_BREEDS_V4[pet.breed]?.name || "น้องหมา"}`;
+      document.getElementById("petNamePriceV4").textContent = "";
+      document.getElementById("petNamePreviewV4").innerHTML =
+        dogMarkupV4(pet.breed);
+      document.getElementById("petNameInputV4").value = pet.name;
+      document.getElementById("confirmPetNameBtnV4").textContent =
+        "บันทึกชื่อใหม่";
+
+      document.getElementById("petNameModalV4").classList.add("show");
+      document.body.style.overflow = "hidden";
+
+      setTimeout(()=>{
+        const input = document.getElementById("petNameInputV4");
+        input.focus();
+        input.select();
+      },180);
+    }
+
+    function closePetNameV4(){
+      document.getElementById("petNameModalV4").classList.remove("show");
+      document.body.style.overflow = "";
+      petNameModeV4 = "";
+      pendingPetBreedV4 = "";
+      pendingPetIdV4 = "";
+    }
+
+    function confirmPetNameV4(){
+      const input = document.getElementById("petNameInputV4");
+      const name = input.value.trim().slice(0,14);
+
+      if(!name){
+        showToast("กรุณาตั้งชื่อน้องหมาก่อน");
+        input.focus();
+        return;
+      }
+
+      const data = normalizeRoomV3(loadData());
+
+      if(petNameModeV4 === "adopt"){
+        const breedInfo = DOG_BREEDS_V4[pendingPetBreedV4];
+        if(!breedInfo) return;
+
+        if(data.coins < breedInfo.price){
+          showToast("เหรียญไม่พอรับเลี้ยงแล้ว");
+          return;
+        }
+
+        const pet = {
+          id:makePetIdV4(),
+          breed:pendingPetBreedV4,
+          name,
+          hunger:100,
+          happiness:100,
+          cleanliness:100,
+          xp:0,
+          lastUpdatedAt:Date.now(),
+          adoptedAt:Date.now()
+        };
+
+        data.coins -= breedInfo.price;
+        data.pets.push(pet);
+        data.activePetId = pet.id;
+        data.roomPositions.dog = data.roomPositions.dog ||
+          {...ROOM_DEFAULT_POSITIONS_V4.dog};
+
+        saveData(data);
+        closePetNameV4();
+        closeShopV3();
+        showToast(`รับเลี้ยง${name}สำเร็จแล้ว`);
+        return;
+      }
+
+      if(petNameModeV4 === "rename"){
+        const pet = data.pets.find(item=>item.id === pendingPetIdV4);
+        if(!pet) return;
+
+        pet.name = name;
+        saveData(data);
+        closePetNameV4();
+        renderPetHouseV4();
+        showToast(`เปลี่ยนชื่อเป็น${name}แล้ว`);
+      }
     }
 
     function createRainV3(){
       const sky=document.getElementById("roomSkyV3");if(!sky||sky.querySelector(".rain-v3"))return;
       for(let i=0;i<14;i++){const x=document.createElement("span");x.className="rain-v3";x.style.left=`${Math.random()*100}%`;x.style.top=`${-20-Math.random()*120}px`;x.style.animationDelay=`${-Math.random()}s`;x.style.animationDuration=`${.7+Math.random()*.7}s`;sky.appendChild(x)}
     }
+    let dogSpeechTimerV3 = null;
+
+    function positionDogSpeechV3(dog,speech){
+      const room = document.getElementById("decorRoomV3");
+      if(!room || !dog || !speech) return;
+
+      speech.classList.remove("align-left-v3","align-right-v3","below-v3");
+
+      const roomRect = room.getBoundingClientRect();
+      const dogRect = dog.getBoundingClientRect();
+      const centerX = dogRect.left + dogRect.width / 2;
+      const roomX = centerX - roomRect.left;
+
+      if(roomX < 105){
+        speech.classList.add("align-left-v3");
+      }else if(roomRect.width - roomX < 105){
+        speech.classList.add("align-right-v3");
+      }
+
+      if(dogRect.top - roomRect.top < 105){
+        speech.classList.add("below-v3");
+      }
+    }
+
     function petDogV3(e){
       if(editV3){
         if(e)e.stopPropagation();
-        const dog = document.querySelector('.decor-v3[data-item="dog"]');
+        const dog = getDogV3();
         if(dog) selectRoomItemV3(dog);
         return;
-      }if(e)e.stopPropagation();
-      const d=normalizeRoomV3(loadData());if(!d.ownedItems.includes("dog"))return;
-      const msgs=["พุดเดิ้ลโมจิดีใจที่เจอเธอ","วันนี้เก่งมากแล้ว พักก่อนนะ","โมจิจะอยู่ข้าง ๆ เธอ","ลูบหัวอีกครั้งได้นะ"];
-      const s=document.getElementById("dogSpeechV3");s.textContent=msgs[Math.floor(Math.random()*msgs.length)];s.classList.add("show");setTimeout(()=>s.classList.remove("show"),1800);
-      if("vibrate"in navigator)navigator.vibrate([18,30,18]);
+      }
+
+      if(e)e.stopPropagation();
+      pauseDogRoamingV3(5000);
+
+      const data = normalizeRoomV3(loadData());
+      const pet = getActivePetV4(data);
+      if(!pet) return;
+
+      const dog = getDogV3();
+      const speech = document.getElementById("dogSpeechV3");
+      if(!dog || !speech) return;
+
+      pet.happiness = clampPetStatV4(pet.happiness + 3);
+      pet.xp += 1;
+      pet.lastUpdatedAt = Date.now();
+      saveData(data);
+
+      const messages = [
+        `${pet.name}ดีใจที่เจอเธอ`,
+        "วันนี้เก่งมากแล้ว พักก่อนนะ",
+        `${pet.name}จะอยู่ข้าง ๆ เธอ`,
+        "ลูบหัวอีกครั้งได้นะ"
+      ];
+
+      speech.textContent =
+        messages[Math.floor(Math.random()*messages.length)];
+      positionDogSpeechV3(dog,speech);
+
+      dog.classList.add("talking-v3");
+      speech.classList.add("show");
+
+      window.clearTimeout(dogSpeechTimerV3);
+      dogSpeechTimerV3 = window.setTimeout(()=>{
+        speech.classList.remove("show");
+        dog.classList.remove("talking-v3");
+      },2200);
+
+      if("vibrate" in navigator) navigator.vibrate([18,30,18]);
     }
+
     function openShopV3(){shopFilterV3="all";document.querySelectorAll(".shop-filter-v3").forEach((x,i)=>x.classList.toggle("active",i===0));renderShopV3();document.getElementById("shopModalV3").classList.add("show");document.body.style.overflow="hidden"}
     function closeShopV3(){document.getElementById("shopModalV3").classList.remove("show");document.body.style.overflow=""}
-    function closeModalV3(e,id){if(e.target.id===id)document.getElementById(id).classList.remove("show")}
+    function closeModalV3(e,id){
+      if(e.target.id===id){
+        document.getElementById(id).classList.remove("show");
+        document.body.style.overflow="";
+      }
+    }
     function setShopFilterV3(filter,button){
-      shopFilterV3=filter;
-      document.querySelectorAll(".shop-filter-v3").forEach(x=>x.classList.remove("active"));
-      if(button)button.classList.add("active");
+      shopFilterV3 = filter;
+      document.querySelectorAll("#shopModalV3 .shop-filter-v3")
+        .forEach(item=>item.classList.remove("active"));
+      if(button) button.classList.add("active");
       renderShopV3();
     }
+
     function shopPreviewV3(item){
-      const map={
-        dog:`<div class="preview-object-v3 dog-v3"><div class="dogbody-v3"></div><div class="doghead-v3"><div class="dear-v3 a"></div><div class="dear-v3 b"></div><div class="deye-v3 a"></div><div class="deye-v3 b"></div><div class="dnose-v3"></div></div><div class="dtail-v3"></div></div>`,
+      if(item.kind === "pet" || item.preview === "pet"){
+        return dogMarkupV4(item.breed || "poodle","preview-dog-v4");
+      }
+
+      const map = {
+        window:`<div class="preview-object-v3 window-v3"><div class="sky-v3"><div class="moon-v3"></div></div></div>`,
+        bed:`<div class="preview-object-v3 bed-v3"><div class="bh-v3"></div><div class="bb-v3"></div><div class="bm-v3"></div><div class="bl-v3"></div><div class="bp-v3"></div></div>`,
+        desk:`<div class="preview-object-v3 desk-v3"><div class="lamp-v3"><div class="ls-v3"></div><div class="lst-v3"></div><div class="lb-v3"></div></div><div class="dt-v3"></div><div class="dl-v3 a"></div><div class="dl-v3 b"></div></div>`,
+        plant:`<div class="preview-object-v3 plant-v3"><div class="ps-v3"></div><div class="pl-v3 a"></div><div class="pl-v3 b"></div><div class="pl-v3 c"></div><div class="pf-v3"></div><div class="pp-v3"></div></div>`,
         rug:`<div class="preview-object-v3 rug-v3"></div>`,
         shelf:`<div class="preview-object-v3 shelf-v3"><div class="book-v3 a"></div><div class="book-v3 b"></div><div class="book-v3 c"></div><div class="photo-v3"></div><div class="shelfboard-v3"></div></div>`,
         beanbag:`<div class="preview-object-v3 bean-v3"></div>`,
@@ -2907,45 +4445,108 @@
         tv:`<div class="preview-object-v3 tv-v3"></div>`,
         speaker:`<div class="preview-object-v3 speaker-v3"></div>`
       };
-      return map[item.preview]||"";
+
+      return map[item.preview] || "";
     }
+
     function renderShopV3(){
-      const d=normalizeRoomV3(loadData()),owned=new Set(d.ownedItems);
-      document.getElementById("shopCoinsV3").textContent=d.coins;
-      const items=SHOP_V3.filter(x=>shopFilterV3==="all"||x.category===shopFilterV3);
-      const grid=document.getElementById("shopGridV3");
+      const data = normalizeRoomV3(loadData());
+      const owned = new Set(data.ownedItems);
+
+      document.getElementById("shopCoinsV3").textContent =
+        String(Math.floor(data.coins));
+
+      const items = SHOP_V3.filter(item=>
+        shopFilterV3 === "all" || item.category === shopFilterV3
+      );
+
+      const grid = document.getElementById("shopGridV3");
+
       if(!items.length){
-        grid.innerHTML=`<div class="shop-empty-v3">ยังไม่มีสินค้าในหมวดนี้</div>`;
+        grid.innerHTML =
+          `<div class="shop-empty-v3">ยังไม่มีสินค้าในหมวดนี้</div>`;
         return;
       }
-      grid.innerHTML=items.map(x=>{
-        const isOwned=owned.has(x.id),canBuy=d.coins>=x.price;
+
+      grid.innerHTML = items.map(item=>{
+        const isPet = item.kind === "pet";
+        const ownedCount = isPet
+          ? data.pets.filter(pet=>pet.breed === item.breed).length
+          : 0;
+        const isOwned = !isPet && owned.has(item.id);
+        const canBuy = data.coins >= item.price;
+
         return `<div class="shop-card-v3">
-          <div class="shop-preview-v3">${shopPreviewV3(x)}</div>
-          <h4>${x.name}</h4>
-          <p>${x.desc}</p>
+          <div class="shop-preview-v3">${shopPreviewV3(item)}</div>
+          <h4>${item.name}</h4>
+          <p>${item.desc}</p>
           <div class="shop-meta-v3">
-            <span class="shop-price-v3">${x.price} เหรียญ</span>
-            ${isOwned?'<span class="owned-badge-v3">มีแล้ว</span>':""}
+            <span class="shop-price-v3">${item.price} เหรียญ</span>
+            ${isPet && ownedCount
+              ? `<span class="owned-badge-v3">มี ${ownedCount} ตัว</span>`
+              : isOwned
+                ? '<span class="owned-badge-v3">มีแล้ว</span>'
+                : ""}
           </div>
-          <button class="buy-v3" ${isOwned||!canBuy?"disabled":""} onclick="buyV3('${x.id}')">
-            ${isOwned?"ซื้อแล้ว":canBuy?"ซื้อสินค้า":"เหรียญไม่พอ"}
+          <button class="buy-v3"
+                  ${(!isPet && isOwned) || !canBuy ? "disabled" : ""}
+                  onclick="buyV3('${item.id}')">
+            ${!canBuy
+              ? "เหรียญไม่พอ"
+              : isPet
+                ? "รับเลี้ยงและตั้งชื่อ"
+                : isOwned
+                  ? "ซื้อแล้ว"
+                  : "ซื้อสินค้า"}
           </button>
         </div>`;
       }).join("");
     }
+
     function buyV3(id){
-      const item=SHOP_V3.find(x=>x.id===id),d=normalizeRoomV3(loadData());if(!item)return;
-      if(d.ownedItems.includes(id)){showToast("เธอมีของชิ้นนี้แล้ว");return}
-      if(d.coins<item.price){showToast("เหรียญยังไม่พอ เล่นเกมหัวใจก่อนได้");return}
-      d.coins-=item.price;
-      d.ownedItems.push(id);
-      const currentLayers=d.ownedItems.map(itemId=>getRoomItemLayerV3(d,itemId));
-      d.roomLayers[id]=Math.max(...currentLayers,0)+10;
-      saveData(d);
+      const item = SHOP_V3.find(product=>product.id === id);
+      if(!item) return;
+
+      if(item.kind === "pet"){
+        openAdoptPetV4(item.breed);
+        return;
+      }
+
+      const data = normalizeRoomV3(loadData());
+
+      if(data.ownedItems.includes(id)){
+        showToast("เธอมีของชิ้นนี้แล้ว");
+        return;
+      }
+
+      if(data.coins < item.price){
+        showToast("เหรียญยังไม่พอ เล่นเกมหัวใจก่อนได้");
+        return;
+      }
+
+      data.coins -= item.price;
+      data.ownedItems.push(id);
+      data.placedItems.push(id);
+
+      if(!data.roomPositions[id]){
+        data.roomPositions[id] = {
+          ...(ROOM_DEFAULT_POSITIONS_V4[id] || {x:50,y:58})
+        };
+      }
+
+      const layerIds = [
+        ...data.placedItems,
+        ...(getActivePetV4(data) ? ["dog"] : [])
+      ];
+      const currentLayers =
+        layerIds.map(itemId=>getRoomItemLayerV3(data,itemId));
+      data.roomLayers[id] = Math.max(...currentLayers,0)+10;
+
+      saveData(data);
       renderShopV3();
-      showToast(`ซื้อ ${item.name} แล้ว`);
+      showToast(`ซื้อ${item.name}แล้ว และนำเข้าห้องให้แล้ว`);
     }
+
     function openHeartGameV3(){document.getElementById("gameModalV3").classList.add("show");document.body.style.overflow="hidden";resetGameV3()}
     function closeGameV3(){endGameV3(false);document.getElementById("gameModalV3").classList.remove("show");document.body.style.overflow=""}
     function resetGameV3(){secondsV3=20;scoreV3=0;document.getElementById("gameTimeV3").textContent=20;document.getElementById("gameScoreV3").textContent=0;document.getElementById("gameAreaV3").innerHTML="";document.getElementById("startGameV3").disabled=false;document.getElementById("startGameV3").textContent="เริ่มเกม"}
@@ -3052,6 +4653,8 @@
     setupDraft();
     createRain();
     setupDragV3();
+    setupRoomScrollV3();
+    syncDogRoamingV3(loadData());
   </script>
 </body>
 </html>
