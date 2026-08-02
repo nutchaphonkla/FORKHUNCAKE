@@ -4263,6 +4263,194 @@
       }
     }
 
+  
+    /* ===== V15.1 Furniture Scale & New Shop Items ===== */
+    .decor-v3{
+      scale:var(--item-scale-v151,1);
+      rotate:var(--item-rotation-v151,0deg);
+      transform-origin:center;
+    }
+
+    .scale-value-v151{pointer-events:none;opacity:.82}
+
+    .wardrobe-v151{width:92px;height:145px;border:7px solid #4d3b42;border-radius:8px;background:linear-gradient(90deg,#876b68 0 49%,#755a59 50%);box-shadow:inset 0 0 0 4px rgba(255,255,255,.08),0 12px 10px rgba(0,0,0,.22)}
+    .wardrobe-v151::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#4d3b42;transform:translateX(-50%)}
+    .wardrobe-v151 i{position:absolute;top:66px;width:7px;height:7px;border-radius:50%;background:#e6c582}.wardrobe-v151 i:first-child{left:35px}.wardrobe-v151 i:last-child{right:35px}
+
+    .sofa-v151{width:145px;height:76px;border:6px solid #4f4050;border-radius:30px 30px 15px 15px;background:#a783a8;box-shadow:inset 0 -14px 0 rgba(0,0,0,.08),0 13px 9px rgba(0,0,0,.22)}
+    .sofa-v151::before,.sofa-v151::after{content:"";position:absolute;bottom:-13px;width:16px;height:18px;background:#49383d;border-radius:4px}.sofa-v151::before{left:18px}.sofa-v151::after{right:18px}.sofa-v151 i{position:absolute;top:14px;width:55px;height:36px;border-radius:18px;background:#c0a0bf;border:3px solid rgba(70,48,66,.45)}.sofa-v151 i:first-child{left:12px}.sofa-v151 i:last-child{right:12px}
+
+    .coffee-table-v151{width:105px;height:40px;border-radius:50%;background:#8b684e;border:6px solid #4e382d;box-shadow:0 13px 0 -5px #4e382d,0 16px 10px rgba(0,0,0,.2)}
+    .floor-lamp-v151{width:62px;height:125px}.floor-lamp-v151::before{content:"";position:absolute;left:28px;top:34px;width:7px;height:77px;background:#54434a}.floor-lamp-v151::after{content:"";position:absolute;left:12px;top:0;width:42px;height:40px;border-radius:50% 50% 20% 20%;background:#f3d69a;border:5px solid #725a4d;box-shadow:0 0 28px rgba(255,220,145,.35)}.floor-lamp-v151 i{position:absolute;left:14px;bottom:0;width:40px;height:12px;border-radius:50%;background:#59434a}
+    .wall-art-v151{width:80px;height:96px;padding:8px;border:7px solid #584254;border-radius:6px;background:#ead9e7;box-shadow:0 10px 10px rgba(0,0,0,.18)}.wall-art-v151 span{display:grid;place-items:center;width:100%;height:100%;color:#d9789c;background:linear-gradient(145deg,#aeb8ff,#f0b7d1);font-size:34px}
+    .big-plant-v151{width:80px;height:128px}.big-plant-v151::before,.big-plant-v151::after,.big-plant-v151 i{content:"";position:absolute;bottom:35px;left:36px;width:18px;height:75px;border-radius:100% 0 100% 0;background:#5f9968;transform-origin:bottom}.big-plant-v151::before{transform:rotate(-35deg)}.big-plant-v151::after{transform:rotate(35deg)}.big-plant-v151 i{transform:rotate(0deg);background:#72ad77}.big-plant-v151 b{position:absolute;left:13px;bottom:0;width:58px;height:48px;border-radius:9px 9px 22px 22px;background:#a8735d;border:6px solid #62473e}
+
+    .extra-window-v151{filter:drop-shadow(0 0 18px rgba(130,160,255,.16))}
+
+    .shop-preview-v3 .wardrobe-v151,.shop-preview-v3 .sofa-v151,.shop-preview-v3 .coffee-table-v151,.shop-preview-v3 .floor-lamp-v151,.shop-preview-v3 .wall-art-v151,.shop-preview-v3 .big-plant-v151{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%) scale(.72)}
+
+    @media(max-width:520px){
+      .layer-buttons-v3{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+      .layer-buttons-v3 .scale-value-v151{grid-column:auto}
+    }
+
+  
+    /* ===== V15.2 Forced App Install Gate ===== */
+    .install-gate-v152{
+      position:fixed;
+      inset:0;
+      z-index:10000;
+      display:none;
+      place-items:center;
+      padding:
+        calc(24px + env(safe-area-inset-top))
+        18px
+        calc(24px + env(safe-area-inset-bottom));
+      background:
+        radial-gradient(circle at 50% 22%,rgba(138,124,255,.24),transparent 34%),
+        linear-gradient(180deg,#0b1020,#080d17);
+      overflow:auto;
+    }
+
+    .install-gate-v152.show{
+      display:grid;
+    }
+
+    .install-gate-card-v152{
+      width:min(460px,100%);
+      padding:24px 20px;
+      border-radius:28px;
+      text-align:center;
+      color:#f7f6ff;
+      background:rgba(17,22,37,.84);
+      border:1px solid rgba(255,255,255,.11);
+      box-shadow:
+        0 28px 80px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.06);
+      backdrop-filter:blur(24px) saturate(1.18);
+      -webkit-backdrop-filter:blur(24px) saturate(1.18);
+    }
+
+    .install-gate-icon-v152{
+      width:82px;
+      height:82px;
+      display:grid;
+      place-items:center;
+      margin:0 auto 18px;
+      border-radius:26px;
+      color:#fff;
+      background:linear-gradient(145deg,#786af0,#c58ed0);
+      box-shadow:0 20px 48px rgba(112,92,230,.34);
+      font-size:38px;
+    }
+
+    .install-gate-card-v152 > strong{
+      display:block;
+      font-size:24px;
+      line-height:1.25;
+    }
+
+    .install-gate-card-v152 > p{
+      margin:10px auto 18px;
+      max-width:350px;
+      color:rgba(230,230,243,.72);
+      font-size:12px;
+      line-height:1.65;
+    }
+
+    .install-gate-benefits-v152{
+      display:grid;
+      gap:9px;
+      margin-bottom:18px;
+      text-align:left;
+    }
+
+    .install-gate-benefits-v152 span{
+      position:relative;
+      padding:12px 14px 12px 38px;
+      border-radius:15px;
+      color:#efedf8;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.075);
+      font-size:10px;
+    }
+
+    .install-gate-benefits-v152 span::before{
+      content:"✓";
+      position:absolute;
+      left:14px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#b9afff;
+      font-weight:950;
+    }
+
+    .install-gate-primary-v152,
+    .install-gate-secondary-v152{
+      width:100%;
+      min-height:52px;
+      border-radius:17px;
+      font-size:11px;
+      font-weight:950;
+    }
+
+    .install-gate-primary-v152{
+      border:none;
+      color:#171927;
+      background:linear-gradient(135deg,#aab5ff,#c6aaff);
+      box-shadow:0 14px 30px rgba(132,118,240,.22);
+    }
+
+    .install-gate-secondary-v152{
+      margin-top:9px;
+      color:#f4f2fb;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+    }
+
+    .install-gate-card-v152 small{
+      display:block;
+      min-height:18px;
+      margin-top:12px;
+      color:#ffc0ce;
+      font-size:9px;
+      line-height:1.5;
+    }
+
+    body.browser-blocked-v152{
+      overflow:hidden !important;
+    }
+
+    body.browser-blocked-v152 > *:not(#installGateV152):not(script){
+      visibility:hidden !important;
+      pointer-events:none !important;
+    }
+
+    body.browser-blocked-v152 #installGateV152{
+      visibility:visible !important;
+      pointer-events:auto !important;
+    }
+
+    body.browser-blocked-v152 .floating-install-v15{
+      display:none !important;
+    }
+
+    @media(max-width:520px){
+      .install-gate-v152{
+        align-items:end;
+        padding:0;
+      }
+
+      .install-gate-card-v152{
+        width:100%;
+        border-radius:28px 28px 0 0;
+        padding:
+          24px
+          18px
+          calc(22px + env(safe-area-inset-bottom));
+      }
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -4472,6 +4660,7 @@
                   type="button" onclick="toggleRoomEditV3()">จัดห้อง</button>
           <button class="room-tool-v3" type="button" onclick="openShopV3()">ร้านค้า</button>
           <button class="room-tool-v3" type="button" onclick="openInventoryV4()">คลังของ</button>
+          <button class="room-tool-v3" type="button" onclick="openRoomPhotoEditorV142(event)">รูปในห้อง</button>
           <button class="room-tool-v3" type="button" onclick="openPetHouseV4()">บ้านหมา</button>
           <button class="room-tool-v3" type="button" onclick="openHeartGameV3()">เกมหัวใจ</button>
           <button class="room-tool-v3"
@@ -4635,6 +4824,19 @@
           <div class="decor-v3 tv-v3 locked-v3" data-item="tv" style="left:52%;top:38%"></div>
           <div class="decor-v3 speaker-v3 locked-v3" data-item="speaker" style="left:62%;top:47%"></div>
 
+          <div class="decor-v3 window-v3 locked-v3 extra-window-v151" data-item="window2" style="left:18%;top:23%">
+            <div class="sky-v3"><div class="moon-v3"></div></div>
+          </div>
+          <div class="decor-v3 window-v3 locked-v3 extra-window-v151" data-item="window3" style="left:50%;top:22%">
+            <div class="sky-v3"><div class="moon-v3"></div></div>
+          </div>
+          <div class="decor-v3 wardrobe-v151 locked-v3" data-item="wardrobe" style="left:13%;top:48%"><i></i><i></i></div>
+          <div class="decor-v3 sofa-v151 locked-v3" data-item="sofa" style="left:72%;top:78%"><i></i><i></i></div>
+          <div class="decor-v3 coffee-table-v151 locked-v3" data-item="coffeeTable" style="left:56%;top:80%"></div>
+          <div class="decor-v3 floor-lamp-v151 locked-v3" data-item="floorLamp" style="left:88%;top:65%"><i></i></div>
+          <div class="decor-v3 wall-art-v151 locked-v3" data-item="wallArt" style="left:35%;top:23%"><span>♥</span></div>
+          <div class="decor-v3 big-plant-v151 locked-v3" data-item="bigPlant" style="left:92%;top:70%"><i></i><b></b></div>
+
           <div class="decor-v3 pet-bowl-v6 food-bowl-v6 locked-v3"
                data-item="foodBowl" style="left:70%;top:86%"
                onclick="openBowlMenuV6(event,'food')">
@@ -4710,6 +4912,21 @@
             </button>
             <button type="button" id="bringFrontBtnV3" onclick="moveSelectedLayerV3('front')" disabled>
               นำมาด้านหน้า
+            </button>
+            <button type="button" id="scaleDownBtnV151" onclick="adjustSelectedScaleV151(-0.1)" disabled>
+              ย่อ
+            </button>
+            <button type="button" id="scaleValueBtnV151" class="scale-value-v151" disabled>
+              100%
+            </button>
+            <button type="button" id="scaleUpBtnV151" onclick="adjustSelectedScaleV151(0.1)" disabled>
+              ขยาย
+            </button>
+            <button type="button" id="rotateItemBtnV151" onclick="rotateSelectedItemV151()" disabled>
+              หมุน
+            </button>
+            <button type="button" id="resetTransformBtnV151" onclick="resetSelectedTransformV151()" disabled>
+              คืนขนาด
             </button>
             <button type="button" id="storeItemBtnV4" onclick="storeSelectedItemV4()" disabled>
               เก็บเข้าคลัง
@@ -5031,6 +5248,39 @@
     </div>
   </div>
 
+
+  <div class="install-gate-v152" id="installGateV152" aria-hidden="true">
+    <div class="install-gate-card-v152">
+      <div class="install-gate-icon-v152">♥</div>
+      <strong>ติดตั้งพักใจเป็นแอปก่อน</strong>
+      <p>
+        เพื่อให้ข้อมูลและห้องทำงานในโหมดแอป กรุณาติดตั้งพักใจลงหน้าจอโฮมก่อนเริ่มเล่น
+      </p>
+
+      <div class="install-gate-benefits-v152">
+        <span>เปิดเต็มจอเหมือนเกม</span>
+        <span>ไม่มีเมนู Browser รบกวน</span>
+        <span>เข้าห้องได้จากไอคอนบนหน้าจอ</span>
+      </div>
+
+      <button id="installGatePrimaryV152"
+              class="install-gate-primary-v152"
+              type="button"
+              onclick="installFromGateV152()">
+        ติดตั้งแอป
+      </button>
+
+      <button id="installGateIosHelpV152"
+              class="install-gate-secondary-v152"
+              type="button"
+              onclick="openIosInstallGuideV152()">
+        ดูวิธีติดตั้งบน iPhone
+      </button>
+
+      <small id="installGateStatusV152"></small>
+    </div>
+  </div>
+
   <nav class="tabs">
     <button class="tab active" data-page="home" onclick="switchPage('home',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-7h6v7"/></svg></span>
@@ -5076,6 +5326,7 @@
       placedItems: ["window","bed","desk","plant"],
       roomPositions: {},
       roomLayers: {},
+      roomTransforms: {},
       roomPhotoV142: {dataUrl:"",scale:1,offsetX:0,offsetY:0,frameScale:1},
       heartHighScore: 0,
       dogName: "โมจิ",
@@ -5144,6 +5395,15 @@
         pets:Array.isArray(source.pets) ? source.pets : [],
         roomPositions:isPlainObjectV5(source.roomPositions) ? source.roomPositions : {},
         roomLayers:isPlainObjectV5(source.roomLayers) ? source.roomLayers : {},
+        roomTransforms:isPlainObjectV5(source.roomTransforms)
+          ? Object.fromEntries(Object.entries(source.roomTransforms).map(([id,value])=>[
+              id,
+              {
+                scale:Math.max(.45,Math.min(2.5,Number(value?.scale)||1)),
+                rotation:Math.max(-180,Math.min(180,Number(value?.rotation)||0))
+              }
+            ]))
+          : {},
         roomPhotoV142:isPlainObjectV5(source.roomPhotoV142) ? {
           dataUrl:String(source.roomPhotoV142.dataUrl || ""),
           scale:Math.max(1,Math.min(4,Number(source.roomPhotoV142.scale)||1)),
@@ -5198,6 +5458,59 @@
       setTimeout(()=>message.remove(),5000);
     }
 
+
+    const SAVE_DB_V151="pakjai-save-db";
+    const SAVE_STORE_V151="saves";
+
+    function openSaveDbV151(){
+      return new Promise((resolve,reject)=>{
+        if(!window.indexedDB){reject(new Error("IndexedDB unavailable"));return}
+        const request=indexedDB.open(SAVE_DB_V151,1);
+        request.onupgradeneeded=()=>{
+          const db=request.result;
+          if(!db.objectStoreNames.contains(SAVE_STORE_V151))db.createObjectStore(SAVE_STORE_V151);
+        };
+        request.onsuccess=()=>resolve(request.result);
+        request.onerror=()=>reject(request.error);
+      });
+    }
+
+    async function mirrorSaveToIndexedDbV151(data){
+      try{
+        const db=await openSaveDbV151();
+        await new Promise((resolve,reject)=>{
+          const tx=db.transaction(SAVE_STORE_V151,"readwrite");
+          tx.objectStore(SAVE_STORE_V151).put(data,"latest");
+          tx.oncomplete=resolve;
+          tx.onerror=()=>reject(tx.error);
+        });
+        db.close();
+      }catch(error){console.warn("สำรอง IndexedDB ไม่สำเร็จ",error)}
+    }
+
+    async function restoreSaveFromIndexedDbV151(){
+      try{
+        const db=await openSaveDbV151();
+        const data=await new Promise((resolve,reject)=>{
+          const tx=db.transaction(SAVE_STORE_V151,"readonly");
+          const req=tx.objectStore(SAVE_STORE_V151).get("latest");
+          req.onsuccess=()=>resolve(req.result||null);
+          req.onerror=()=>reject(req.error);
+        });
+        db.close();
+        return data;
+      }catch(error){return null}
+    }
+
+    async function requestPersistentStorageV151(){
+      try{
+        if(navigator.storage?.persist){
+          const persisted=await navigator.storage.persisted?.();
+          if(!persisted)await navigator.storage.persist();
+        }
+      }catch{}
+    }
+
     function saveData(data,{render=true}={}){
       if(saveInProgressV5) return false;
       saveInProgressV5=true;
@@ -5210,6 +5523,7 @@
           localStorage.setItem(BACKUP_STORAGE_KEY_V5,previous);
         }
         localStorage.setItem(STORAGE_KEY,JSON.stringify(safeData));
+        mirrorSaveToIndexedDbV151(safeData);
 
         if(render && typeof renderAll==="function"){
           renderAll();
@@ -5912,7 +6226,15 @@
       {id:"basket",kind:"item",name:"ตะกร้าเก็บของ",price:35,category:"decor",preview:"basket",desc:"ช่วยให้ห้องดูเป็นระเบียบ"},
       {id:"flowers",kind:"item",name:"แจกันดอกไม้",price:50,category:"decor",preview:"flowers",desc:"เพิ่มสีสันและความสดใส"},
       {id:"tv",kind:"item",name:"โทรทัศน์",price:140,category:"furniture",preview:"tv",desc:"มุมดูหนังพักผ่อนในห้อง"},
-      {id:"speaker",kind:"item",name:"ลำโพง",price:85,category:"decor",preview:"speaker",desc:"เปิดเพลงบรรยากาศในจินตนาการ"}
+      {id:"speaker",kind:"item",name:"ลำโพง",price:85,category:"decor",preview:"speaker",desc:"เปิดเพลงบรรยากาศในจินตนาการ"},
+      {id:"window2",kind:"item",name:"หน้าต่างบานที่ 2",price:95,category:"decor",preview:"window",desc:"เพิ่มวิวฝนอีกหนึ่งมุมในห้อง"},
+      {id:"window3",kind:"item",name:"หน้าต่างบานที่ 3",price:110,category:"decor",preview:"window",desc:"หน้าต่างเพิ่มได้อีกหนึ่งบาน รวมสูงสุดสามบาน"},
+      {id:"wardrobe",kind:"item",name:"ตู้เสื้อผ้า",price:130,category:"furniture",preview:"wardrobe",desc:"ตู้ไม้โทนอุ่นสำหรับมุมแต่งตัว"},
+      {id:"sofa",kind:"item",name:"โซฟานุ่ม",price:160,category:"furniture",preview:"sofa",desc:"มุมนั่งพักกับน้องหมา"},
+      {id:"coffeeTable",kind:"item",name:"โต๊ะกลาง",price:80,category:"furniture",preview:"coffeeTable",desc:"โต๊ะเล็กกลางห้องสำหรับวางของ"},
+      {id:"floorLamp",kind:"item",name:"โคมไฟตั้งพื้น",price:90,category:"decor",preview:"floorLamp",desc:"เพิ่มแสงอุ่นในห้องยามค่ำ"},
+      {id:"wallArt",kind:"item",name:"ภาพติดผนังหัวใจ",price:60,category:"decor",preview:"wallArt",desc:"ของตกแต่งผนังสำหรับความทรงจำ"},
+      {id:"bigPlant",kind:"item",name:"ต้นไม้กระถางใหญ่",price:100,category:"decor",preview:"bigPlant",desc:"เพิ่มความสดชื่นให้มุมห้อง"}
     ];
 
     let editV3=false, dragV3=null, timerV3=null, secondsV3=20, scoreV3=0, playingV3=false, shopFilterV3="all", heartSpawnTimerV3=null, gameRoundV5=0;
@@ -5937,7 +6259,15 @@
       basket:"ตะกร้าเก็บของ",
       flowers:"แจกันดอกไม้",
       tv:"โทรทัศน์",
-      speaker:"ลำโพง"
+      speaker:"ลำโพง",
+      window2:"หน้าต่างบานที่ 2",
+      window3:"หน้าต่างบานที่ 3",
+      wardrobe:"ตู้เสื้อผ้า",
+      sofa:"โซฟานุ่ม",
+      coffeeTable:"โต๊ะกลาง",
+      floorLamp:"โคมไฟตั้งพื้น",
+      wallArt:"ภาพติดผนังหัวใจ",
+      bigPlant:"ต้นไม้กระถางใหญ่"
     };
 
     const ROOM_DEFAULT_POSITIONS_V4 = {
@@ -5945,6 +6275,8 @@
       rug:{x:53,y:84},shelf:{x:25,y:24},beanbag:{x:69,y:84},poster:{x:52,y:24},
       memoryPhoto:{x:58,y:27},sideTable:{x:34,y:78},teddy:{x:31,y:64},mirror:{x:68,y:25},clock:{x:41,y:20},
       basket:{x:87,y:86},flowers:{x:56,y:62},tv:{x:52,y:38},speaker:{x:62,y:47},
+      window2:{x:18,y:23},window3:{x:50,y:22},wardrobe:{x:13,y:48},sofa:{x:72,y:78},
+      coffeeTable:{x:56,y:80},floorLamp:{x:88,y:65},wallArt:{x:35,y:23},bigPlant:{x:92,y:70},
       dog:{x:79,y:79}
     };
 
@@ -5965,7 +6297,15 @@
       basket:{id:"basket",name:"ตะกร้าเก็บของ",category:"decor",preview:"basket",desc:"ช่วยให้ห้องดูเป็นระเบียบ"},
       flowers:{id:"flowers",name:"แจกันดอกไม้",category:"decor",preview:"flowers",desc:"เพิ่มสีสันให้ห้อง"},
       tv:{id:"tv",name:"โทรทัศน์",category:"furniture",preview:"tv",desc:"มุมดูหนังพักผ่อน"},
-      speaker:{id:"speaker",name:"ลำโพง",category:"decor",preview:"speaker",desc:"ของแต่งสำหรับมุมฟังเพลง"}
+      speaker:{id:"speaker",name:"ลำโพง",category:"decor",preview:"speaker",desc:"ของแต่งสำหรับมุมฟังเพลง"},
+      window2:{id:"window2",name:"หน้าต่างบานที่ 2",category:"decor",preview:"window",desc:"หน้าต่างเสริม"},
+      window3:{id:"window3",name:"หน้าต่างบานที่ 3",category:"decor",preview:"window",desc:"หน้าต่างเสริม"},
+      wardrobe:{id:"wardrobe",name:"ตู้เสื้อผ้า",category:"furniture",preview:"wardrobe",desc:"ตู้ไม้โทนอุ่น"},
+      sofa:{id:"sofa",name:"โซฟานุ่ม",category:"furniture",preview:"sofa",desc:"โซฟาสำหรับพักผ่อน"},
+      coffeeTable:{id:"coffeeTable",name:"โต๊ะกลาง",category:"furniture",preview:"coffeeTable",desc:"โต๊ะเล็กกลางห้อง"},
+      floorLamp:{id:"floorLamp",name:"โคมไฟตั้งพื้น",category:"decor",preview:"floorLamp",desc:"โคมไฟแสงอุ่น"},
+      wallArt:{id:"wallArt",name:"ภาพติดผนังหัวใจ",category:"decor",preview:"wallArt",desc:"ของแต่งผนัง"},
+      bigPlant:{id:"bigPlant",name:"ต้นไม้กระถางใหญ่",category:"decor",preview:"bigPlant",desc:"ต้นไม้ตกแต่ง"}
     };
 
     let selectedRoomItemV3 = null;
@@ -6210,10 +6550,81 @@
     function updatePhotoFrameScaleV142(v){photoDraftV142.frameScale=Math.max(.65,Math.min(1.8,Number(v)/100));syncPhotoEditorV142()}
     function resetPhotoTransformV142(){photoDraftV142.scale=1;photoDraftV142.offsetX=0;photoDraftV142.offsetY=0;syncPhotoEditorV142();softHaptic?.('light')}
     function setupPhotoEditorDragV142(){const p=document.getElementById('photoEditorPreviewV142');if(!p||p.dataset.dragReadyV142==='1')return;p.dataset.dragReadyV142='1';p.addEventListener('pointerdown',e=>{if(!photoDraftV142.dataUrl)return;e.preventDefault();p.setPointerCapture?.(e.pointerId);photoDragV142={pointerId:e.pointerId,startX:e.clientX,startY:e.clientY,offsetX:photoDraftV142.offsetX,offsetY:photoDraftV142.offsetY}});p.addEventListener('pointermove',e=>{if(!photoDragV142||photoDragV142.pointerId!==e.pointerId)return;e.preventDefault();const r=p.getBoundingClientRect(),dx=(e.clientX-photoDragV142.startX)/Math.max(1,r.width)*100,dy=(e.clientY-photoDragV142.startY)/Math.max(1,r.height)*100;photoDraftV142.offsetX=Math.max(-100,Math.min(100,photoDragV142.offsetX+dx));photoDraftV142.offsetY=Math.max(-100,Math.min(100,photoDragV142.offsetY+dy));syncPhotoEditorV142()});const done=e=>{if(photoDragV142&&photoDragV142.pointerId===e.pointerId)photoDragV142=null};p.addEventListener('pointerup',done);p.addEventListener('pointercancel',done)}
-    async function compressRoomPhotoV142(file){if(!file||!file.type.startsWith('image/'))throw new Error('กรุณาเลือกไฟล์รูปภาพ');const url=URL.createObjectURL(file);try{const image=await new Promise((ok,bad)=>{const img=new Image();img.onload=()=>ok(img);img.onerror=()=>bad(new Error('อ่านรูปไม่สำเร็จ'));img.src=url});const max=1100,ratio=Math.min(1,max/Math.max(image.naturalWidth,image.naturalHeight)),w=Math.max(1,Math.round(image.naturalWidth*ratio)),h=Math.max(1,Math.round(image.naturalHeight*ratio)),canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const c=canvas.getContext('2d',{alpha:false});c.fillStyle='#111827';c.fillRect(0,0,w,h);c.drawImage(image,0,0,w,h);return canvas.toDataURL('image/jpeg',.82)}finally{URL.revokeObjectURL(url)}}
+    async function compressRoomPhotoV142(file){if(!file||!file.type.startsWith('image/'))throw new Error('กรุณาเลือกไฟล์รูปภาพ');const url=URL.createObjectURL(file);try{const image=await new Promise((ok,bad)=>{const img=new Image();img.onload=()=>ok(img);img.onerror=()=>bad(new Error('อ่านรูปไม่สำเร็จ'));img.src=url});const max=720,ratio=Math.min(1,max/Math.max(image.naturalWidth,image.naturalHeight)),w=Math.max(1,Math.round(image.naturalWidth*ratio)),h=Math.max(1,Math.round(image.naturalHeight*ratio)),canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const c=canvas.getContext('2d',{alpha:false});c.fillStyle='#111827';c.fillRect(0,0,w,h);c.drawImage(image,0,0,w,h);return canvas.toDataURL('image/jpeg',.72)}finally{URL.revokeObjectURL(url)}}
     async function handleRoomPhotoFileV142(event){const input=event.target,file=input.files?.[0];if(!file)return;try{showToast('กำลังเตรียมรูป...');photoDraftV142.dataUrl=await compressRoomPhotoV142(file);photoDraftV142.scale=1;photoDraftV142.offsetX=0;photoDraftV142.offsetY=0;syncPhotoEditorV142();showToast('เลือกรูปแล้ว ลากหรือซูมได้เลย');softHaptic?.('success')}catch(error){console.error(error);showToast(error.message||'เปิดรูปไม่สำเร็จ')}finally{input.value=''}}
     function removeRoomPhotoV142(){photoDraftV142={dataUrl:'',scale:1,offsetX:0,offsetY:0,frameScale:photoDraftV142.frameScale||1};syncPhotoEditorV142();showToast('ลบรูปออกแล้ว กดบันทึกเพื่อยืนยัน')}
-    function saveRoomPhotoV142(){const data=normalizeRoomV3(loadData());data.roomPhotoV142=normalizeRoomPhotoV142(photoDraftV142);saveData(data);renderRoomPhotoV142(data);closeRoomPhotoEditorV142();showToast(data.roomPhotoV142.dataUrl?'บันทึกรูปในห้องแล้ว':'นำรูปออกจากห้องแล้ว');softHaptic?.('success')}
+    function saveRoomPhotoV142(){const data=normalizeRoomV3(loadData());data.roomPhotoV142=normalizeRoomPhotoV142(photoDraftV142);const ok=saveData(data);if(!ok){showToast('รูปใหญ่เกินพื้นที่เก็บ ลองเลือกรูปใหม่');return}renderRoomPhotoV142(data);closeRoomPhotoEditorV142();showToast(data.roomPhotoV142.dataUrl?'บันทึกรูปในห้องแล้ว':'นำรูปออกจากห้องแล้ว');softHaptic?.('success')}
+
+
+    function normalizeRoomTransformV151(value){
+      const source=value && typeof value==="object" ? value : {};
+      return {
+        scale:Math.max(.45,Math.min(2.5,Number(source.scale)||1)),
+        rotation:Math.max(-180,Math.min(180,Number(source.rotation)||0))
+      };
+    }
+
+    function applyRoomTransformV151(element,data){
+      if(!element)return;
+      const itemId=element.dataset.item;
+      const transform=normalizeRoomTransformV151(data.roomTransforms?.[itemId]);
+      element.style.setProperty("--item-scale-v151",String(transform.scale));
+      element.style.setProperty("--item-rotation-v151",`${transform.rotation}deg`);
+    }
+
+    function updateTransformControlsV151(data){
+      const ids=["scaleDownBtnV151","scaleValueBtnV151","scaleUpBtnV151","rotateItemBtnV151","resetTransformBtnV151"];
+      const disabled=!editV3 || !selectedRoomItemV3 || selectedRoomItemV3.dataset.item==="dog";
+      ids.forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+      const value=document.getElementById("scaleValueBtnV151");
+      if(value){
+        const t=selectedRoomItemV3 ? normalizeRoomTransformV151(data.roomTransforms?.[selectedRoomItemV3.dataset.item]) : {scale:1};
+        value.textContent=`${Math.round(t.scale*100)}%`;
+      }
+    }
+
+    function adjustSelectedScaleV151(delta){
+      if(!editV3 || !selectedRoomItemV3)return;
+      const itemId=selectedRoomItemV3.dataset.item;
+      if(itemId==="dog")return;
+      const data=normalizeRoomV3(loadData());
+      data.roomTransforms ||= {};
+      const current=normalizeRoomTransformV151(data.roomTransforms[itemId]);
+      current.scale=Math.max(.45,Math.min(2.5,Math.round((current.scale+delta)*100)/100));
+      data.roomTransforms[itemId]=current;
+      applyRoomTransformV151(selectedRoomItemV3,data);
+      saveData(data,{render:false});
+      updateTransformControlsV151(data);
+      showToast(`ขนาด ${Math.round(current.scale*100)}%`);
+    }
+
+    function rotateSelectedItemV151(){
+      if(!editV3 || !selectedRoomItemV3)return;
+      const itemId=selectedRoomItemV3.dataset.item;
+      if(itemId==="dog")return;
+      const data=normalizeRoomV3(loadData());
+      data.roomTransforms ||= {};
+      const current=normalizeRoomTransformV151(data.roomTransforms[itemId]);
+      current.rotation=(current.rotation+15)%360;
+      if(current.rotation>180)current.rotation-=360;
+      data.roomTransforms[itemId]=current;
+      applyRoomTransformV151(selectedRoomItemV3,data);
+      saveData(data,{render:false});
+      updateTransformControlsV151(data);
+      showToast(`หมุน ${current.rotation}°`);
+    }
+
+    function resetSelectedTransformV151(){
+      if(!editV3 || !selectedRoomItemV3)return;
+      const itemId=selectedRoomItemV3.dataset.item;
+      const data=normalizeRoomV3(loadData());
+      data.roomTransforms ||= {};
+      data.roomTransforms[itemId]={scale:1,rotation:0};
+      applyRoomTransformV151(selectedRoomItemV3,data);
+      saveData(data,{render:false});
+      updateTransformControlsV151(data);
+      showToast("คืนขนาดและมุมแล้ว");
+    }
 
     function renderRoomV3(data){
       data = normalizeRoomV3(data);
@@ -6248,6 +6659,7 @@
         }
 
         applyRoomItemLayerV3(element,data);
+        applyRoomTransformV151(element,data);
       });
 
       if(dog && activePet){
@@ -6324,6 +6736,7 @@
       if(front) front.disabled = true;
       if(back) back.disabled = true;
       if(store) store.disabled = true;
+      updateTransformControlsV151(normalizeRoomV3(loadData()));
     }
 
     function updateRoomSelectionUiV3(){
@@ -6354,6 +6767,7 @@
       if(front) front.disabled = !editV3;
       if(back) back.disabled = !editV3;
       if(store) store.disabled = !editV3;
+      updateTransformControlsV151(data);
     }
 
     function moveSelectedLayerV3(direction){
@@ -6614,6 +7028,7 @@
       const data = normalizeRoomV3(loadData());
       data.roomPositions = {};
       data.roomLayers = {};
+      data.roomTransforms = {};
       data.placedItems.forEach(itemId=>{
         if(ROOM_DEFAULT_POSITIONS_V4[itemId]){
           data.roomPositions[itemId] = {...ROOM_DEFAULT_POSITIONS_V4[itemId]};
@@ -7463,7 +7878,13 @@
         basket:`<div class="preview-object-v3 basket-v3"></div>`,
         flowers:`<div class="preview-object-v3 flowers-v3"></div>`,
         tv:`<div class="preview-object-v3 tv-v3"></div>`,
-        speaker:`<div class="preview-object-v3 speaker-v3"></div>`
+        speaker:`<div class="preview-object-v3 speaker-v3"></div>`,
+        wardrobe:`<div class="preview-object-v3 wardrobe-v151"><i></i><i></i></div>`,
+        sofa:`<div class="preview-object-v3 sofa-v151"><i></i><i></i></div>`,
+        coffeeTable:`<div class="preview-object-v3 coffee-table-v151"></div>`,
+        floorLamp:`<div class="preview-object-v3 floor-lamp-v151"><i></i></div>`,
+        wallArt:`<div class="preview-object-v3 wall-art-v151"><span>♥</span></div>`,
+        bigPlant:`<div class="preview-object-v3 big-plant-v151"><i></i><b></b></div>`
       };
 
       return map[item.preview] || "";
@@ -9439,6 +9860,105 @@
 
 
 
+
+    function showInstallGateV152(){
+      const gate=document.getElementById("installGateV152");
+      if(!gate)return;
+
+      document.body.classList.add("browser-blocked-v152");
+      gate.classList.add("show");
+      gate.setAttribute("aria-hidden","false");
+
+      const primary=document.getElementById("installGatePrimaryV152");
+      const iosHelp=document.getElementById("installGateIosHelpV152");
+
+      if(primary){
+        primary.textContent=isIosV15()
+          ? "ติดตั้งบน iPhone"
+          : "ติดตั้งแอป";
+      }
+
+      if(iosHelp){
+        iosHelp.style.display=isIosV15() ? "block" : "none";
+      }
+    }
+
+    function hideInstallGateV152(){
+      const gate=document.getElementById("installGateV152");
+      gate?.classList.remove("show");
+      gate?.setAttribute("aria-hidden","true");
+      document.body.classList.remove("browser-blocked-v152");
+    }
+
+    async function installFromGateV152(){
+      const status=document.getElementById("installGateStatusV152");
+
+      if(isStandaloneV15()){
+        hideInstallGateV152();
+        ensurePlayerNameV15();
+        return;
+      }
+
+      if(isIosV15()){
+        openIosInstallGuideV152();
+        return;
+      }
+
+      if(deferredInstallPromptV15){
+        deferredInstallPromptV15.prompt();
+        const result=await deferredInstallPromptV15.userChoice;
+
+        if(result.outcome==="accepted"){
+          if(status)status.textContent="ติดตั้งแล้ว กรุณาเปิดจากไอคอนพักใจบนหน้าจอ";
+        }else{
+          if(status)status.textContent="ต้องติดตั้งแอปก่อนจึงจะเริ่มเล่นได้";
+        }
+
+        deferredInstallPromptV15=null;
+        installPromptReadyV15=false;
+        return;
+      }
+
+      if(status){
+        status.textContent="กรุณาเปิดลิงก์นี้ด้วย Chrome หรือ Safari";
+      }
+    }
+
+    function openIosInstallGuideV152(){
+      const status=document.getElementById("installGateStatusV152");
+      if(status){
+        status.innerHTML=
+          "กด Share ด้านล่างของ Safari → เพิ่มไปยังหน้าจอโฮม → กดเพิ่ม แล้วเปิดจากไอคอนพักใจ";
+      }
+
+      document.getElementById("iosInstallModalV15")
+        ?.classList.add("show");
+      lockModalScrollV5?.("iosInstallModalV15");
+    }
+
+    function enforceAppOnlyV152(){
+      if(isStandaloneV15()){
+        hideInstallGateV152();
+        updateInstallUiV15();
+
+        setTimeout(()=>{
+          ensurePlayerNameV15();
+        },120);
+
+        return true;
+      }
+
+      showInstallGateV152();
+
+      // Make sure name onboarding never appears in browser.
+      document.body.classList.remove("player-name-required-v15");
+      document.getElementById("playerNameModalV15")
+        ?.classList.remove("show");
+      unlockModalScrollV5?.("playerNameModalV15");
+
+      return false;
+    }
+
     let deferredInstallPromptV15=null;
     let installPromptReadyV15=false;
 
@@ -9594,6 +10114,10 @@
     }
 
     function ensurePlayerNameV15(){
+      if(!isStandaloneV15()){
+        return false;
+      }
+
       const data=loadData();
       if(String(data.playerName || "").trim().length>=2)return true;
 
@@ -9629,9 +10153,14 @@
       deferredInstallPromptV15=null;
       installPromptReadyV15=false;
       updateInstallUiV15();
+
       document.getElementById("installAppModalV15")
         ?.classList.remove("show");
-      showToast("ติดตั้งพักใจแล้ว");
+
+      const status=document.getElementById("installGateStatusV152");
+      if(status){
+        status.textContent="ติดตั้งแล้ว กรุณาเปิดจากไอคอนพักใจบนหน้าจอ";
+      }
     });
 
     let portraitRoomActiveV143=false;
@@ -10079,11 +10608,18 @@
     setupParallaxV13();
     syncDogRoamingV3(loadData());
 
-    updateInstallUiV15();
-    const hasPlayerNameV15=ensurePlayerNameV15();
-    if(hasPlayerNameV15){
-      maybeShowInstallPromptV15();
+    requestPersistentStorageV151();
+    if(!localStorage.getItem(STORAGE_KEY)){
+      restoreSaveFromIndexedDbV151().then(restored=>{
+        if(restored){
+          localStorage.setItem(STORAGE_KEY,JSON.stringify(mergeAppDataV5(restored)));
+          renderAll();
+          showToast("กู้ข้อมูลสำรองในเครื่องแล้ว");
+        }
+      });
     }
+    updateInstallUiV15();
+    enforceAppOnlyV152();
 
     setInterval(updateDayNightV13,60000);
 
@@ -10123,6 +10659,7 @@
     });
 
     window.addEventListener("pageshow",event=>{
+      enforceAppOnlyV152();
       if(event.persisted){
         const data=normalizeRoomV3(loadData());
         renderRoomV3(data);
