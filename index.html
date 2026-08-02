@@ -4451,6 +4451,286 @@
       }
     }
 
+  
+    /* ========================================================
+       V15.3 Compact Room Editor + Purchasable Photo Frame
+       ======================================================== */
+    .portrait-edit-v153{
+      min-height:44px;
+      padding:0 12px;
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:14px;
+      color:#f4f2fb;
+      background:rgba(255,255,255,.07);
+      font-size:9px;
+      font-weight:900;
+    }
+
+    .portrait-edit-v153.active{
+      color:#171927;
+      border-color:transparent;
+      background:linear-gradient(135deg,#9fe6d0,#b9b0ff);
+    }
+
+    .compact-edit-tools-v153{
+      position:fixed !important;
+      left:50% !important;
+      right:auto !important;
+      bottom:calc(90px + env(safe-area-inset-bottom)) !important;
+      z-index:2300 !important;
+      width:min(680px,calc(100vw - 20px)) !important;
+      max-width:none !important;
+      margin:0 !important;
+      padding:8px !important;
+      border-radius:20px !important;
+      transform:translate3d(-50%,14px,0) scale(.98);
+      opacity:0;
+      pointer-events:none;
+      background:rgba(12,17,29,.86) !important;
+      border:1px solid rgba(255,255,255,.11) !important;
+      box-shadow:
+        0 18px 54px rgba(0,0,0,.42),
+        inset 0 1px 0 rgba(255,255,255,.055) !important;
+      backdrop-filter:blur(22px) saturate(1.18);
+      -webkit-backdrop-filter:blur(22px) saturate(1.18);
+      transition:
+        transform .22s ease,
+        opacity .18s ease;
+    }
+
+    .compact-edit-tools-v153.show{
+      display:block !important;
+      transform:translate3d(-50%,0,0) scale(1);
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .compact-selected-v153{
+      display:grid !important;
+      grid-template-columns:auto minmax(0,1fr) auto;
+      align-items:center;
+      gap:8px;
+      min-height:34px;
+      padding:0 3px 7px !important;
+      border-bottom:1px solid rgba(255,255,255,.075);
+    }
+
+    .compact-selected-v153 span{
+      color:var(--muted);
+      font-size:8px;
+      white-space:nowrap;
+    }
+
+    .compact-selected-v153 strong{
+      min-width:0;
+      overflow:hidden;
+      color:#f6f5fb;
+      font-size:10px;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    .compact-finish-v153{
+      min-height:32px !important;
+      padding:0 14px !important;
+      border:none !important;
+      border-radius:11px !important;
+      color:#14201e !important;
+      background:linear-gradient(135deg,#9fe6d0,#b8f0dc) !important;
+      font-size:9px !important;
+      font-weight:950 !important;
+    }
+
+    .compact-actions-v153{
+      display:flex !important;
+      grid-template-columns:none !important;
+      gap:6px !important;
+      padding-top:7px;
+      overflow-x:auto;
+      overscroll-behavior-x:contain;
+      scrollbar-width:none;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .compact-actions-v153::-webkit-scrollbar{
+      display:none;
+    }
+
+    .compact-actions-v153 button{
+      flex:0 0 54px;
+      width:54px !important;
+      min-width:54px !important;
+      min-height:50px !important;
+      padding:5px 3px !important;
+      display:grid !important;
+      place-content:center;
+      gap:2px;
+      border-radius:13px !important;
+      color:#efedf8 !important;
+      background:rgba(255,255,255,.055) !important;
+      border:1px solid rgba(255,255,255,.08) !important;
+      font-size:8px !important;
+      line-height:1.1;
+    }
+
+    .compact-actions-v153 button b{
+      display:block;
+      color:#cfc7ff;
+      font-size:17px;
+      line-height:1;
+    }
+
+    .compact-actions-v153 button span{
+      display:block;
+      font-size:7px;
+      font-weight:850;
+      white-space:nowrap;
+    }
+
+    .compact-actions-v153 button:disabled{
+      opacity:.38;
+    }
+
+    .compact-actions-v153 .compact-scale-v153{
+      color:#f4d792 !important;
+      font-size:9px !important;
+      font-weight:950 !important;
+    }
+
+    .compact-actions-v153 .photo-edit-action-v153{
+      color:#171927 !important;
+      background:linear-gradient(135deg,#aab5ff,#d1a8d8) !important;
+      border-color:transparent !important;
+    }
+
+    .compact-actions-v153 .photo-edit-action-v153 b,
+    .compact-actions-v153 .photo-edit-action-v153 span{
+      color:#171927 !important;
+    }
+
+    body.portrait-room-v143.room-editing-v3
+    #garden > .layer-tools-v3{
+      display:block !important;
+    }
+
+    body.portrait-room-v143 .compact-edit-tools-v153{
+      bottom:calc(12px + env(safe-area-inset-bottom)) !important;
+      width:calc(100vw - 18px) !important;
+    }
+
+    body.portrait-room-v143.room-editing-v3
+    .portrait-room-hud-v143{
+      box-shadow:
+        0 14px 38px rgba(0,0,0,.3),
+        0 0 0 1px rgba(166,222,203,.16);
+    }
+
+    body.standalone-game-v11.room-editing-v3
+    #garden > .layer-tools-v3{
+      display:block !important;
+    }
+
+    @media(orientation:landscape) and (min-width:700px){
+      body.standalone-game-v11 .compact-edit-tools-v153,
+      body.wide-room-v8 .compact-edit-tools-v153{
+        left:auto !important;
+        right:max(12px,env(safe-area-inset-right)) !important;
+        top:calc(max(10px,env(safe-area-inset-top)) + 72px) !important;
+        bottom:auto !important;
+        width:78px !important;
+        max-height:calc(100dvh - 94px);
+        transform:translate3d(12px,0,0) scale(.98);
+        overflow:hidden;
+      }
+
+      body.standalone-game-v11 .compact-edit-tools-v153.show,
+      body.wide-room-v8 .compact-edit-tools-v153.show{
+        transform:translate3d(0,0,0) scale(1);
+      }
+
+      body.standalone-game-v11 .compact-selected-v153,
+      body.wide-room-v8 .compact-selected-v153{
+        display:flex !important;
+        flex-direction:column;
+        gap:4px;
+        padding-bottom:7px !important;
+        text-align:center;
+      }
+
+      body.standalone-game-v11 .compact-selected-v153 span,
+      body.wide-room-v8 .compact-selected-v153 span{
+        display:none;
+      }
+
+      body.standalone-game-v11 .compact-selected-v153 strong,
+      body.wide-room-v8 .compact-selected-v153 strong{
+        width:100%;
+        font-size:8px;
+        white-space:normal;
+      }
+
+      body.standalone-game-v11 .compact-finish-v153,
+      body.wide-room-v8 .compact-finish-v153{
+        width:100%;
+        padding:0 5px !important;
+      }
+
+      body.standalone-game-v11 .compact-actions-v153,
+      body.wide-room-v8 .compact-actions-v153{
+        flex-direction:column;
+        max-height:calc(100dvh - 175px);
+        overflow-y:auto;
+        overflow-x:hidden;
+      }
+
+      body.standalone-game-v11 .compact-actions-v153 button,
+      body.wide-room-v8 .compact-actions-v153 button{
+        flex:0 0 48px;
+        width:60px !important;
+        min-width:60px !important;
+        min-height:48px !important;
+      }
+    }
+
+    @media(max-width:430px){
+      .portrait-room-actions-v143{
+        gap:4px;
+      }
+
+      .portrait-edit-v153,
+      .portrait-exit-v143{
+        min-height:40px;
+        padding:0 9px;
+        font-size:8px;
+      }
+
+      body.portrait-room-v143 .portrait-room-hud-v143
+      .hamburger-button-v8{
+        width:40px;
+        height:40px;
+        min-height:40px;
+      }
+
+      .compact-edit-tools-v153{
+        bottom:calc(82px + env(safe-area-inset-bottom)) !important;
+      }
+
+      body.portrait-room-v143 .compact-edit-tools-v153{
+        bottom:calc(8px + env(safe-area-inset-bottom)) !important;
+      }
+
+      .compact-actions-v153 button{
+        flex-basis:50px;
+        width:50px !important;
+        min-width:50px !important;
+      }
+    }
+
+    /* The frame exists in DOM but is visible only after purchase/placement. */
+    .memory-photo-v142.locked-v3{
+      display:none !important;
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -4660,7 +4940,6 @@
                   type="button" onclick="toggleRoomEditV3()">จัดห้อง</button>
           <button class="room-tool-v3" type="button" onclick="openShopV3()">ร้านค้า</button>
           <button class="room-tool-v3" type="button" onclick="openInventoryV4()">คลังของ</button>
-          <button class="room-tool-v3" type="button" onclick="openRoomPhotoEditorV142(event)">รูปในห้อง</button>
           <button class="room-tool-v3" type="button" onclick="openPetHouseV4()">บ้านหมา</button>
           <button class="room-tool-v3" type="button" onclick="openHeartGameV3()">เกมหัวใจ</button>
           <button class="room-tool-v3"
@@ -4678,6 +4957,10 @@
             <span>พื้นที่พักใจของเธอ</span>
           </div>
           <div class="portrait-room-actions-v143">
+            <button type="button"
+                    class="portrait-edit-v153"
+                    id="portraitEditBtnV153"
+                    onclick="toggleRoomEditV3()">จัดห้อง</button>
             <button type="button"
                     class="portrait-exit-v143"
                     onclick="exitPortraitRoomV143()">ออก</button>
@@ -4808,7 +5091,10 @@
             <div>K</div>
           </div>
 
-          <div class="decor-v3 memory-photo-v142" data-item="memoryPhoto" style="left:58%;top:27%" onclick="openRoomPhotoEditorV142(event)">
+          <div class="decor-v3 memory-photo-v142 locked-v3"
+               data-item="memoryPhoto"
+               style="left:58%;top:27%"
+               onclick="openRoomPhotoEditorV142(event)">
             <div class="memory-photo-inner-v142">
               <img id="roomPhotoImageV142" alt="รูปความทรงจำในห้อง">
               <div class="memory-photo-placeholder-v142" id="roomPhotoPlaceholderV142"><span>เพิ่มรูป</span><small>แตะเพื่อเลือกรูปจากอัลบั้ม</small></div>
@@ -4901,38 +5187,90 @@
           โหมดจัดห้องเปิดอยู่ ใช้นิ้วลากของไปวางตำแหน่งที่ต้องการ แล้วกด “เสร็จแล้ว”
         </div>
 
-        <div class="layer-tools-v3" id="layerToolsV3">
-          <div class="selected-info-v3">
-            <span>เลือกอยู่</span>
-            <strong id="selectedItemNameV3">ยังไม่ได้เลือกของ</strong>
+        <div class="layer-tools-v3 compact-edit-tools-v153" id="layerToolsV3">
+          <div class="selected-info-v3 compact-selected-v153">
+            <span>กำลังเลือก</span>
+            <strong id="selectedItemNameV3">แตะของในห้อง</strong>
+            <button type="button"
+                    class="compact-finish-v153"
+                    id="finishRoomEditBtnV3"
+                    onclick="toggleRoomEditV3()">
+              เสร็จ
+            </button>
           </div>
-          <div class="layer-buttons-v3">
-            <button type="button" id="sendBackBtnV3" onclick="moveSelectedLayerV3('back')" disabled>
-              ส่งไปด้านหลัง
+
+          <div class="layer-buttons-v3 compact-actions-v153">
+            <button type="button"
+                    id="sendBackBtnV3"
+                    title="ส่งไปด้านหลัง"
+                    onclick="moveSelectedLayerV3('back')"
+                    disabled>
+              <b>↓</b><span>หลัง</span>
             </button>
-            <button type="button" id="bringFrontBtnV3" onclick="moveSelectedLayerV3('front')" disabled>
-              นำมาด้านหน้า
+
+            <button type="button"
+                    id="bringFrontBtnV3"
+                    title="นำมาด้านหน้า"
+                    onclick="moveSelectedLayerV3('front')"
+                    disabled>
+              <b>↑</b><span>หน้า</span>
             </button>
-            <button type="button" id="scaleDownBtnV151" onclick="adjustSelectedScaleV151(-0.1)" disabled>
-              ย่อ
+
+            <button type="button"
+                    id="scaleDownBtnV151"
+                    title="ย่อ"
+                    onclick="adjustSelectedScaleV151(-0.1)"
+                    disabled>
+              <b>−</b><span>ย่อ</span>
             </button>
-            <button type="button" id="scaleValueBtnV151" class="scale-value-v151" disabled>
+
+            <button type="button"
+                    id="scaleValueBtnV151"
+                    class="scale-value-v151 compact-scale-v153"
+                    disabled>
               100%
             </button>
-            <button type="button" id="scaleUpBtnV151" onclick="adjustSelectedScaleV151(0.1)" disabled>
-              ขยาย
+
+            <button type="button"
+                    id="scaleUpBtnV151"
+                    title="ขยาย"
+                    onclick="adjustSelectedScaleV151(0.1)"
+                    disabled>
+              <b>＋</b><span>ขยาย</span>
             </button>
-            <button type="button" id="rotateItemBtnV151" onclick="rotateSelectedItemV151()" disabled>
-              หมุน
+
+            <button type="button"
+                    id="rotateItemBtnV151"
+                    title="หมุน"
+                    onclick="rotateSelectedItemV151()"
+                    disabled>
+              <b>↻</b><span>หมุน</span>
             </button>
-            <button type="button" id="resetTransformBtnV151" onclick="resetSelectedTransformV151()" disabled>
-              คืนขนาด
+
+            <button type="button"
+                    id="resetTransformBtnV151"
+                    title="คืนค่า"
+                    onclick="resetSelectedTransformV151()"
+                    disabled>
+              <b>↺</b><span>คืนค่า</span>
             </button>
-            <button type="button" id="storeItemBtnV4" onclick="storeSelectedItemV4()" disabled>
-              เก็บเข้าคลัง
+
+            <button type="button"
+                    id="editPhotoBtnV153"
+                    class="photo-edit-action-v153"
+                    title="เพิ่มหรือเปลี่ยนรูป"
+                    onclick="editSelectedPhotoV153()"
+                    hidden
+                    disabled>
+              <b>▣</b><span>แก้รูป</span>
             </button>
-            <button type="button" id="finishRoomEditBtnV3" onclick="toggleRoomEditV3()">
-              เสร็จแล้ว
+
+            <button type="button"
+                    id="storeItemBtnV4"
+                    title="เก็บเข้าคลัง"
+                    onclick="storeSelectedItemV4()"
+                    disabled>
+              <b>⌂</b><span>เก็บ</span>
             </button>
           </div>
         </div>
@@ -6219,6 +6557,7 @@
       {id:"shelf",kind:"item",name:"ชั้นหนังสือ",price:75,category:"furniture",preview:"shelf",desc:"มุมหนังสือและกรอบรูป"},
       {id:"beanbag",kind:"item",name:"บีนแบ็ก",price:65,category:"furniture",preview:"beanbag",desc:"มุมนั่งพักหลังเลิกงาน"},
       {id:"poster",kind:"item",name:"โปสเตอร์ K",price:35,category:"decor",preview:"poster",desc:"ของแต่งผนังสำหรับเธอ"},
+      {id:"memoryPhoto",kind:"item",name:"กรอบรูปความทรงจำ",price:85,category:"decor",preview:"memoryPhoto",desc:"ซื้อแล้วแตะกรอบในห้องเพื่อเลือกรูปจากอัลบั้ม"},
       {id:"sideTable",kind:"item",name:"โต๊ะข้างเตียง",price:55,category:"furniture",preview:"sideTable",desc:"วางของชิ้นเล็กข้างเตียง"},
       {id:"teddy",kind:"item",name:"ตุ๊กตาหมี",price:40,category:"decor",preview:"teddy",desc:"เพื่อนตัวเล็กสำหรับคืนที่เหนื่อย"},
       {id:"mirror",kind:"item",name:"กระจกเต็มตัว",price:70,category:"decor",preview:"mirror",desc:"เพิ่มมุมแต่งตัวให้ห้อง"},
@@ -6239,7 +6578,7 @@
 
     let editV3=false, dragV3=null, timerV3=null, secondsV3=20, scoreV3=0, playingV3=false, shopFilterV3="all", heartSpawnTimerV3=null, gameRoundV5=0;
 
-    const BASE_ROOM_ITEMS_V3 = ["window","bed","desk","plant","memoryPhoto"];
+    const BASE_ROOM_ITEMS_V3 = ["window","bed","desk","plant"];
 
     const ROOM_ITEM_NAMES_V3 = {
       window:"หน้าต่าง",
@@ -6542,7 +6881,73 @@
     let photoDragV142=null;
     function normalizeRoomPhotoV142(value){const s=value&&typeof value==="object"?value:{};return{dataUrl:String(s.dataUrl||""),scale:Math.max(1,Math.min(4,Number(s.scale)||1)),offsetX:Math.max(-100,Math.min(100,Number(s.offsetX)||0)),offsetY:Math.max(-100,Math.min(100,Number(s.offsetY)||0)),frameScale:Math.max(.65,Math.min(1.8,Number(s.frameScale)||1))}}
     function renderRoomPhotoV142(data){const frame=document.querySelector('.decor-v3[data-item="memoryPhoto"]'),inner=frame?.querySelector('.memory-photo-inner-v142'),image=document.getElementById('roomPhotoImageV142');if(!frame||!inner||!image)return;const p=normalizeRoomPhotoV142(data.roomPhotoV142);frame.style.setProperty('--photo-frame-scale-v142',String(p.frameScale));inner.style.setProperty('--photo-scale-v142',String(p.scale));inner.style.setProperty('--photo-x-v142',`${p.offsetX}%`);inner.style.setProperty('--photo-y-v142',`${p.offsetY}%`);if(p.dataUrl){if(image.src!==p.dataUrl)image.src=p.dataUrl;inner.classList.add('has-photo')}else{image.removeAttribute('src');inner.classList.remove('has-photo')}}
-    function openRoomPhotoEditorV142(event){event?.preventDefault();event?.stopPropagation();if(editV3){const f=document.querySelector('.decor-v3[data-item="memoryPhoto"]');if(f)selectRoomItemV3(f);return}resetTransientRoomUIV14?.();clearPetRoamingV6?.();const data=normalizeRoomV3(loadData());photoDraftV142=normalizeRoomPhotoV142(data.roomPhotoV142);document.getElementById('photoEditorModalV142')?.classList.add('show');lockModalScrollV5?.('photoEditorModalV142');syncPhotoEditorV142();setupPhotoEditorDragV142()}
+    function openRoomPhotoEditorV142(event){
+      event?.preventDefault();
+      event?.stopPropagation();
+
+      const data=normalizeRoomV3(loadData());
+      const owned=data.ownedItems.includes("memoryPhoto");
+      const placed=data.placedItems.includes("memoryPhoto");
+
+      if(!owned){
+        showToast("ซื้อกรอบรูปจากร้านค้าก่อน");
+        return;
+      }
+
+      if(!placed){
+        showToast("นำกรอบรูปออกจากคลังก่อน");
+        return;
+      }
+
+      const frame=document.querySelector(
+        '.decor-v3[data-item="memoryPhoto"]'
+      );
+
+      if(editV3){
+        if(frame)selectRoomItemV3(frame);
+        return;
+      }
+
+      resetTransientRoomUIV14?.();
+      clearPetRoamingV6?.();
+
+      photoDraftV142=normalizeRoomPhotoV142(data.roomPhotoV142);
+
+      document.getElementById("photoEditorModalV142")
+        ?.classList.add("show");
+      lockModalScrollV5?.("photoEditorModalV142");
+
+      syncPhotoEditorV142();
+      setupPhotoEditorDragV142();
+    }
+
+    function editSelectedPhotoV153(){
+      if(
+        !editV3 ||
+        !selectedRoomItemV3 ||
+        selectedRoomItemV3.dataset.item!=="memoryPhoto"
+      ){
+        showToast("เลือกกรอบรูปก่อน");
+        return;
+      }
+
+      const frame=selectedRoomItemV3;
+      clearRoomSelectionV3();
+      editV3=false;
+
+      document.getElementById("decorRoomV3")
+        ?.classList.remove("editing");
+      document.body.classList.remove("room-editing-v3");
+
+      syncEditButtonsV153();
+      openRoomPhotoEditorV142({
+        preventDefault(){},
+        stopPropagation(){}
+      });
+
+      // Keep frame available when closing the editor.
+      frame.classList.remove("selected-v3");
+    }
     function closeRoomPhotoEditorV142(){document.getElementById('photoEditorModalV142')?.classList.remove('show');unlockModalScrollV5?.('photoEditorModalV142');photoDragV142=null;if(!document.hidden&&!editV3)scheduleAllPetRoamingV6?.(normalizeRoomV3(loadData()))}
     function closePhotoEditorBackdropV142(event){if(event.target?.id==='photoEditorModalV142')closeRoomPhotoEditorV142()}
     function syncPhotoEditorV142(){const preview=document.getElementById('photoEditorPreviewV142'),image=document.getElementById('photoEditorImageV142'),zoom=document.getElementById('photoZoomRangeV142'),frame=document.getElementById('photoFrameRangeV142');if(!preview||!image)return;if(photoDraftV142.dataUrl){if(image.src!==photoDraftV142.dataUrl)image.src=photoDraftV142.dataUrl;preview.classList.add('has-photo')}else{image.removeAttribute('src');preview.classList.remove('has-photo')}image.style.transform=`translate(calc(-50% + ${photoDraftV142.offsetX}%),calc(-50% + ${photoDraftV142.offsetY}%)) scale(${photoDraftV142.scale})`;if(zoom)zoom.value=String(Math.round(photoDraftV142.scale*100));if(frame)frame.value=String(Math.round(photoDraftV142.frameScale*100));const zl=document.getElementById('photoZoomValueV142'),fl=document.getElementById('photoFrameValueV142');if(zl)zl.textContent=`${Math.round(photoDraftV142.scale*100)}%`;if(fl)fl.textContent=`${Math.round(photoDraftV142.frameScale*100)}%`}
@@ -6733,9 +7138,17 @@
       const front = document.getElementById("bringFrontBtnV3");
       const back = document.getElementById("sendBackBtnV3");
       const store = document.getElementById("storeItemBtnV4");
+      const photo = document.getElementById("editPhotoBtnV153");
+
       if(front) front.disabled = true;
       if(back) back.disabled = true;
       if(store) store.disabled = true;
+
+      if(photo){
+        photo.hidden=true;
+        photo.disabled=true;
+      }
+
       updateTransformControlsV151(normalizeRoomV3(loadData()));
     }
 
@@ -6745,6 +7158,7 @@
       const front = document.getElementById("bringFrontBtnV3");
       const back = document.getElementById("sendBackBtnV3");
       const store = document.getElementById("storeItemBtnV4");
+      const photo = document.getElementById("editPhotoBtnV153");
 
       if(!selectedRoomItemV3){
         if(tools) tools.classList.toggle("show",editV3);
@@ -6752,6 +7166,10 @@
         if(front) front.disabled = true;
         if(back) back.disabled = true;
         if(store) store.disabled = true;
+        if(photo){
+          photo.hidden=true;
+          photo.disabled=true;
+        }
         return;
       }
 
@@ -6767,6 +7185,14 @@
       if(front) front.disabled = !editV3;
       if(back) back.disabled = !editV3;
       if(store) store.disabled = !editV3;
+
+      if(photo){
+        const isPhoto=
+          selectedRoomItemV3.dataset.item==="memoryPhoto";
+        photo.hidden=!isPhoto;
+        photo.disabled=!editV3 || !isPhoto;
+      }
+
       updateTransformControlsV151(data);
     }
 
@@ -6820,17 +7246,26 @@
       softHaptic();
     }
 
+    function syncEditButtonsV153(){
+      const normal=document.getElementById("editRoomBtnV3");
+      const portrait=document.getElementById("portraitEditBtnV153");
+
+      [normal,portrait].forEach(button=>{
+        if(!button)return;
+        button.classList.toggle("active",editV3);
+        button.textContent=editV3 ? "เสร็จ" : "จัดห้อง";
+      });
+    }
+
     function toggleRoomEditV3(){
       editV3 = !editV3;
 
       const room = document.getElementById("decorRoomV3");
-      const button = document.getElementById("editRoomBtnV3");
       const hint = document.getElementById("editHintV3");
 
       room.classList.toggle("editing",editV3);
       document.body.classList.toggle("room-editing-v3",editV3);
-      button.classList.toggle("active",editV3);
-      button.textContent = editV3 ? "เสร็จแล้ว" : "จัดห้อง";
+      syncEditButtonsV153();
       hint.classList.toggle("show",editV3);
 
       if(!editV3){
@@ -7871,6 +8306,7 @@
         shelf:`<div class="preview-object-v3 shelf-v3"><div class="book-v3 a"></div><div class="book-v3 b"></div><div class="book-v3 c"></div><div class="photo-v3"></div><div class="shelfboard-v3"></div></div>`,
         beanbag:`<div class="preview-object-v3 bean-v3"></div>`,
         poster:`<div class="preview-object-v3 poster-v3"><div>K</div></div>`,
+        memoryPhoto:`<div class="preview-object-v3 memory-photo-v142"><div class="memory-photo-inner-v142"><div class="memory-photo-placeholder-v142"><span>รูป</span><small>จากอัลบั้ม</small></div></div></div>`,
         sideTable:`<div class="preview-object-v3 side-table-v3"></div>`,
         teddy:`<div class="preview-object-v3 teddy-v3"></div>`,
         mirror:`<div class="preview-object-v3 mirror-v3"></div>`,
@@ -10186,6 +10622,11 @@
 
       portraitRoomActiveV143=true;
       wideRoomV8=false;
+      editV3=false;
+      document.body.classList.remove("room-editing-v3");
+      document.getElementById("decorRoomV3")
+        ?.classList.remove("editing");
+      syncEditButtonsV153();
 
       document.body.classList.remove(
         "wide-room-v8",
@@ -10209,7 +10650,15 @@
     function exitPortraitRoomV143(){
       resetTransientRoomUIV14?.();
       portraitRoomActiveV143=false;
-      document.body.classList.remove("portrait-room-v143");
+      editV3=false;
+      document.body.classList.remove(
+        "portrait-room-v143",
+        "room-editing-v3"
+      );
+      document.getElementById("decorRoomV3")
+        ?.classList.remove("editing");
+      clearRoomSelectionV3();
+      syncEditButtonsV153();
 
       activateGardenPageV11();
 
