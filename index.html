@@ -6206,6 +6206,327 @@
       pointer-events:none;
     }
 
+  
+    /* ========================================================
+       V18.0 Khaitom-first UX
+       ======================================================== */
+    .khaitom-home-v180{
+      position:relative;
+      overflow:hidden;
+      padding:20px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 22% 20%,rgba(255,224,144,.15),transparent 28%),
+        radial-gradient(circle at 78% 5%,rgba(171,157,255,.18),transparent 32%),
+        linear-gradient(145deg,rgba(28,37,55,.98),rgba(15,22,35,.98));
+      border:1px solid rgba(255,231,168,.13);
+      box-shadow:
+        0 28px 72px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.05);
+      isolation:isolate;
+    }
+
+    .khaitom-home-glow-v180{
+      position:absolute;
+      left:-60px;
+      top:-80px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:rgba(255,213,112,.1);
+      filter:blur(48px);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .khaitom-home-top-v180{
+      display:grid;
+      grid-template-columns:116px minmax(0,1fr);
+      gap:18px;
+      align-items:center;
+    }
+
+    .khaitom-home-character-v180{
+      position:relative;
+      width:112px;
+      height:140px;
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .khaitom-home-shell-v180{
+      position:relative;
+      width:96px;
+      height:118px;
+      border-radius:52% 52% 46% 46% / 58% 58% 42% 42%;
+      background:
+        radial-gradient(circle at 34% 23%,#fffef8 0 11%,transparent 12%),
+        linear-gradient(145deg,#fff5cf,#e9ca7a);
+      border:3px solid rgba(109,77,36,.5);
+      box-shadow:
+        inset -10px -12px 18px rgba(164,111,38,.16),
+        inset 8px 8px 14px rgba(255,255,255,.62),
+        0 20px 35px rgba(0,0,0,.23);
+      animation:khaitomHomeIdleV180 3.2s ease-in-out infinite;
+      transform-origin:50% 90%;
+    }
+
+    @keyframes khaitomHomeIdleV180{
+      0%,100%{transform:translateY(0) rotate(-1deg)}
+      50%{transform:translateY(-6px) rotate(1deg)}
+    }
+
+    .khaitom-home-eye-v180{
+      position:absolute;
+      top:46px;
+      width:8px;
+      height:11px;
+      border-radius:50%;
+      background:#493625;
+      animation:khaitomHomeBlinkV180 5s infinite;
+    }
+
+    .khaitom-home-eye-v180.left{left:28px}
+    .khaitom-home-eye-v180.right{right:28px}
+
+    @keyframes khaitomHomeBlinkV180{
+      0%,45%,49%,100%{transform:scaleY(1)}
+      47%{transform:scaleY(.08)}
+    }
+
+    .khaitom-home-mouth-v180{
+      position:absolute;
+      left:50%;
+      top:66px;
+      width:16px;
+      height:8px;
+      border-bottom:3px solid #604635;
+      border-radius:0 0 50% 50%;
+      transform:translateX(-50%);
+    }
+
+    .khaitom-home-cheek-v180{
+      position:absolute;
+      top:63px;
+      width:15px;
+      height:8px;
+      border-radius:50%;
+      background:rgba(234,135,125,.34);
+    }
+
+    .khaitom-home-cheek-v180.left{left:13px}
+    .khaitom-home-cheek-v180.right{right:13px}
+
+    .khaitom-home-shadow-v180{
+      position:absolute;
+      left:50%;
+      bottom:3px;
+      width:84px;
+      height:16px;
+      border-radius:50%;
+      background:rgba(0,0,0,.22);
+      filter:blur(6px);
+      transform:translateX(-50%);
+    }
+
+    .khaitom-home-copy-v180{
+      min-width:0;
+    }
+
+    .khaitom-home-label-v180{
+      display:inline-flex;
+      min-height:28px;
+      align-items:center;
+      padding:0 10px;
+      border-radius:999px;
+      color:#f5dd9e;
+      background:rgba(255,224,144,.07);
+      border:1px solid rgba(255,224,144,.12);
+      font-size:8px;
+      font-weight:900;
+    }
+
+    .khaitom-home-copy-v180 h2{
+      margin:8px 0 5px;
+      color:#fff2bd;
+      font-size:29px;
+      line-height:1.1;
+      letter-spacing:-.5px;
+    }
+
+    .khaitom-home-copy-v180 p{
+      margin:0;
+      color:#d6d9e4;
+      font-size:12px;
+      line-height:1.65;
+    }
+
+    .khaitom-main-action-v180{
+      width:100%;
+      min-height:64px;
+      margin-top:16px;
+      padding:0 15px 0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border:none;
+      border-radius:18px;
+      color:#241d12;
+      background:linear-gradient(135deg,#ffe4a1,#f5c981);
+      box-shadow:
+        0 17px 36px rgba(202,154,62,.2),
+        inset 0 1px 0 rgba(255,255,255,.45);
+      text-align:left;
+    }
+
+    .khaitom-main-action-v180 small{
+      display:block;
+      margin-bottom:3px;
+      color:rgba(58,43,20,.62);
+      font-size:8px;
+      font-weight:800;
+    }
+
+    .khaitom-main-action-v180 strong{
+      display:block;
+      font-size:13px;
+      font-weight:950;
+    }
+
+    .khaitom-main-action-v180 b{
+      width:37px;
+      height:37px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      color:#fff;
+      background:rgba(79,58,23,.18);
+      font-size:19px;
+    }
+
+    .khaitom-quick-grid-v180{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:9px;
+      margin-top:10px;
+    }
+
+    .khaitom-quick-grid-v180 button{
+      min-height:86px;
+      padding:12px;
+      display:grid;
+      grid-template-columns:34px 1fr;
+      grid-template-rows:auto auto;
+      column-gap:9px;
+      align-items:center;
+      text-align:left;
+      border-radius:17px;
+      color:#f5f4fb;
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.07);
+    }
+
+    .khaitom-quick-grid-v180 button > span{
+      grid-row:1/3;
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:11px;
+      color:#f4dda2;
+      background:rgba(255,224,144,.07);
+      font-size:17px;
+    }
+
+    .khaitom-quick-grid-v180 strong{
+      align-self:end;
+      font-size:11px;
+    }
+
+    .khaitom-quick-grid-v180 small{
+      align-self:start;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:8px;
+      line-height:1.35;
+    }
+
+    .khaitom-home-character-v180:active .khaitom-home-shell-v180,
+    .khaitom-main-action-v180:active,
+    .khaitom-quick-grid-v180 button:active{
+      transform:scale(.97);
+    }
+
+    #vent .need-grid{
+      margin-bottom:12px;
+    }
+
+    #vent .need-card{
+      min-height:92px;
+      padding:13px;
+    }
+
+    #vent .need-card.active{
+      border-color:rgba(255,224,144,.33);
+      background:
+        linear-gradient(145deg,rgba(255,224,144,.09),rgba(165,139,255,.06));
+      box-shadow:0 12px 28px rgba(0,0,0,.12);
+    }
+
+    #vent .card:first-of-type{
+      border-color:rgba(255,224,144,.11);
+    }
+
+    #vent textarea{
+      min-height:180px;
+      background:rgba(8,12,20,.72);
+    }
+
+    .tabs{
+      grid-template-columns:repeat(5,1fr) !important;
+    }
+
+    @media(max-width:440px){
+      .khaitom-home-v180{
+        padding:16px;
+      }
+
+      .khaitom-home-top-v180{
+        grid-template-columns:88px minmax(0,1fr);
+        gap:12px;
+      }
+
+      .khaitom-home-character-v180{
+        width:86px;
+        height:112px;
+      }
+
+      .khaitom-home-shell-v180{
+        width:76px;
+        height:94px;
+      }
+
+      .khaitom-home-eye-v180{top:36px}
+      .khaitom-home-eye-v180.left{left:22px}
+      .khaitom-home-eye-v180.right{right:22px}
+      .khaitom-home-mouth-v180{top:53px}
+      .khaitom-home-cheek-v180{top:50px}
+
+      .khaitom-home-copy-v180 h2{
+        font-size:24px;
+      }
+
+      .khaitom-home-copy-v180 p{
+        font-size:10px;
+      }
+
+      .khaitom-quick-grid-v180{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -6315,13 +6636,69 @@
 
     <main>
       <section class="page active" id="home">
-        <div class="hero">
-          <div class="eyebrow">พื้นที่ของเธอ</div>
-          <h2>วันนี้เหนื่อยแค่ไหน<br>วางความรู้สึกไว้ตรงนี้ก่อนได้นะ</h2>
-          <p>ไม่จำเป็นต้องรีบดีขึ้น และไม่ต้องอธิบายทุกอย่างให้ใครเข้าใจ แค่ได้พักอย่างปลอดภัยก็เพียงพอแล้ว</p>
-          <div class="hero-actions">
-            <button class="button button-primary" onclick="goPage('vent')">ระบายความรู้สึก</button>
-            <button class="button button-secondary" onclick="goPage('calm')">พักใจสักครู่</button>
+        <div class="khaitom-home-v180">
+          <div class="khaitom-home-glow-v180"></div>
+
+          <div class="khaitom-home-top-v180">
+            <div class="khaitom-home-character-v180"
+                 id="khaitomHomeCharacterV180"
+                 onclick="openKhaitomTalkV180()"
+                 role="button"
+                 tabindex="0"
+                 aria-label="คุยกับน้องไข่ต้ม">
+              <div class="khaitom-home-shell-v180">
+                <span class="khaitom-home-eye-v180 left"></span>
+                <span class="khaitom-home-eye-v180 right"></span>
+                <span class="khaitom-home-mouth-v180"></span>
+                <span class="khaitom-home-cheek-v180 left"></span>
+                <span class="khaitom-home-cheek-v180 right"></span>
+              </div>
+              <div class="khaitom-home-shadow-v180"></div>
+            </div>
+
+            <div class="khaitom-home-copy-v180">
+              <span class="khaitom-home-label-v180">เพื่อนพักใจของเธอ</span>
+              <h2>น้องไข่ต้ม</h2>
+              <p id="khaitomHomeGreetingV180">
+                วันนี้เป็นยังไงบ้าง เล่าให้ไข่ต้มฟังได้นะ
+              </p>
+            </div>
+          </div>
+
+          <button class="khaitom-main-action-v180"
+                  type="button"
+                  onclick="openKhaitomTalkV180()">
+            <span>
+              <small>พร้อมฟังเสมอ</small>
+              <strong>คุยกับน้องไข่ต้ม</strong>
+            </span>
+            <b>→</b>
+          </button>
+
+          <div class="khaitom-quick-grid-v180">
+            <button type="button" onclick="openKhaitomTalkV180()">
+              <span>✎</span>
+              <strong>ระบาย</strong>
+              <small>เขียนสิ่งที่อยู่ในใจ</small>
+            </button>
+
+            <button type="button" onclick="openKhaitomQuietV180()">
+              <span>◌</span>
+              <strong>พักเงียบ</strong>
+              <small>พักกับไข่ต้ม 2 นาที</small>
+            </button>
+
+            <button type="button" onclick="goPage('garden')">
+              <span>⌂</span>
+              <strong>เข้าห้อง</strong>
+              <small>ไปหาน้องหมาและแต่งห้อง</small>
+            </button>
+
+            <button type="button" onclick="showLoveMessageV180()">
+              <span>♡</span>
+              <strong>รับกำลังใจ</strong>
+              <small>อ่านข้อความจากไข่ต้ม</small>
+            </button>
           </div>
         </div>
 
@@ -6332,11 +6709,11 @@
 
         <div class="card">
           <div class="moods">
-            <button class="mood" data-mood="สบายใจ" onclick="selectMood(this)"><span class="face">01</span>สบายใจ</button>
-            <button class="mood" data-mood="ปกติ" onclick="selectMood(this)"><span class="face">02</span>ปกติ</button>
-            <button class="mood active" data-mood="เหนื่อย" onclick="selectMood(this)"><span class="face">03</span>เหนื่อย</button>
-            <button class="mood" data-mood="เครียด" onclick="selectMood(this)"><span class="face">04</span>เครียด</button>
-            <button class="mood" data-mood="หนักมาก" onclick="selectMood(this)"><span class="face">05</span>หนักมาก</button>
+            <button class="mood" data-mood="สบายใจ" onclick="selectMood(this)"><span class="face">☺</span>สบายใจ</button>
+            <button class="mood" data-mood="ปกติ" onclick="selectMood(this)"><span class="face">•</span>ปกติ</button>
+            <button class="mood active" data-mood="เหนื่อย" onclick="selectMood(this)"><span class="face">–</span>เหนื่อย</button>
+            <button class="mood" data-mood="เครียด" onclick="selectMood(this)"><span class="face">~</span>เครียด</button>
+            <button class="mood" data-mood="หนักมาก" onclick="selectMood(this)"><span class="face">…</span>หนักมาก</button>
           </div>
         </div>
 
@@ -6347,7 +6724,7 @@
         </div>
 
         <div class="section-head">
-          <h3>ตอนนี้อะไรน่าจะช่วยเธอได้บ้าง</h3>
+          <h3>เลือกพื้นที่ที่อยากไปต่อ</h3>
           <span>เลือกเพียงอย่างเดียวก็ได้</span>
         </div>
 
@@ -6356,7 +6733,7 @@
             <div class="feature-icon">
               <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg></span>
             </div>
-            <h4>ระบายความรู้สึก</h4>
+            <h4>คุยกับไข่ต้ม</h4>
             <p>เขียนทุกอย่างที่อยู่ในใจได้เลย ไม่ต้องกังวลว่าจะเขียนถูกหรือผิด</p>
           </button>
 
@@ -6364,7 +6741,7 @@
             <div class="feature-icon">
               <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
             </div>
-            <h4>ข้อความให้กำลังใจ</h4>
+            <h4>กำลังใจจากไข่ต้ม</h4>
             <p>อ่านข้อความจากน้องไข่ต้ม ในวันที่เธอเหนื่อยหรือท้อ</p>
           </button>
 
@@ -6372,7 +6749,7 @@
             <div class="feature-icon">
               <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8Z"/></svg></span>
             </div>
-            <h4>พักใจสักครู่</h4>
+            <h4>พักกับไข่ต้ม</h4>
             <p>ค่อย ๆ หายใจเข้าออก เพื่อให้ร่างกายและความคิดได้พัก</p>
           </button>
 
@@ -6380,7 +6757,7 @@
             <div class="feature-icon">
               <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21V10"/><path d="M12 14c-4 0-7-2-7-6 4 0 7 2 7 6Z"/><path d="M12 11c4 0 7-2 7-6-4 0-7 2-7 6Z"/></svg></span>
             </div>
-            <h4>การเติบโตของใจ</h4>
+            <h4>ห้องและการเติบโต</h4>
             <p>ทุกครั้งที่เธอดูแลตัวเอง ต้นไม้แห่งนี้จะค่อย ๆ เติบโต</p>
           </button>
         </div>
@@ -6398,7 +6775,7 @@
 
       <section class="page" id="vent">
         <div class="section-head">
-          <h3>บันทึกความรู้สึก</h3>
+          <h3>เล่าให้น้องไข่ต้มฟัง</h3>
           <span>เขียนได้อย่างเป็นส่วนตัว</span>
         </div>
 
@@ -6407,16 +6784,16 @@
           <div class="draft-state"><span class="draft-dot"></span><span id="draftStatus">บันทึกร่างอัตโนมัติในเครื่องนี้</span></div>
 
           <div class="action-grid">
-            <button class="button button-primary" onclick="saveVent()">บันทึกความรู้สึก</button>
-            <button class="button button-secondary" onclick="clearVent()">เขียนแล้วปล่อยผ่าน</button>
+            <button class="button button-primary" onclick="saveVent()">เล่าให้น้องไข่ต้มฟัง</button>
+            <button class="button button-secondary" onclick="clearVent()">ล้างข้อความ</button>
           </div>
 
           <div class="privacy-note">ข้อมูลในเวอร์ชันนี้จะถูกเก็บไว้ใน Safari บนอุปกรณ์เครื่องนี้ และไม่ถูกส่งไปยังบริการภายนอก</div>
         </div>
 
         <div class="section-head">
-          <h3>ตอนนี้อยากให้เราช่วยแบบไหน</h3>
-          <span>ช่วยลดการเดาใจกัน</span>
+          <h3>อยากให้น้องไข่ต้มตอบแบบไหน</h3>
+          <span>เลือกก่อนเขียน เพื่อให้ไข่ต้มตอบได้ตรงใจ</span>
         </div>
 
         <div class="need-grid">
@@ -6535,7 +6912,7 @@
 
       <section class="page" id="calm">
         <div class="section-head">
-          <h3>พักใจสักครู่</h3>
+          <h3>พักกับไข่ต้ม</h3>
           <span>ใช้เวลาประมาณ 2 นาที</span>
         </div>
 
@@ -7296,23 +7673,23 @@
   <nav class="tabs">
     <button class="tab active" data-page="home" onclick="switchPage('home',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-7h6v7"/></svg></span>
-      หน้าหลัก
+      ไข่ต้ม
     </button>
     <button class="tab" data-page="vent" onclick="switchPage('vent',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg></span>
-      บันทึก
+      ระบาย
     </button>
     <button class="tab" data-page="calm" onclick="switchPage('calm',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8Z"/></svg></span>
-      ผ่อนคลาย
+      พักใจ
     </button>
     <button class="tab" data-page="garden" onclick="switchPage('garden',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 21V10"/><path d="M12 14c-4 0-7-2-7-6 4 0 7 2 7 6Z"/><path d="M12 11c4 0 7-2 7-6-4 0-7 2-7 6Z"/></svg></span>
-      ห้องของเธอ
+      ห้อง
     </button>
     <button class="tab" data-page="together" onclick="switchPage('together',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-      ของเรา
+      โปรไฟล์
     </button>
   </nav>
 
@@ -7329,6 +7706,7 @@
       selectedNeed: "",
       khaitomHistoryV170: [],
       khaitomLastResponseV170: null,
+      khaitomReplyHistoryV181: [],
       khaitomQuietCountV170: 0,
       nightCheckins: [],
       roomCareCount: 0,
@@ -7361,7 +7739,7 @@
         foodHeldUntil: 0,
         lastWelcomeAt: 0
       },
-      schemaVersion: 170,
+      schemaVersion: 181,
       lastSavedAt: ""
     };
 
@@ -7545,7 +7923,7 @@
       saveInProgressV5=true;
       try{
         const safeData=mergeAppDataV5(data);
-        safeData.schemaVersion=17.1;
+        safeData.schemaVersion=18.1;
         safeData.lastSavedAt=new Date().toISOString();
         const previous=localStorage.getItem(STORAGE_KEY);
         if(previous){
@@ -7853,32 +8231,432 @@
       const moodThemeMap = {"สบายใจ":"good","ปกติ":"calm","เหนื่อย":"tired","เครียด":"stress","หนักมาก":"heavy"};
       data.lastMoodTheme = moodThemeMap[button.dataset.mood] || "calm";
       saveData(data);
-      showToast(`บันทึกความรู้สึกว่า “${button.dataset.mood}” แล้ว`);
+      showToast(`เล่าให้น้องไข่ต้มฟังว่า “${button.dataset.mood}” แล้ว`);
     }
 
     function showLoveMessage(){
       const message = loveMessages[Math.floor(Math.random() * loveMessages.length)];
       document.getElementById("loveMessage").textContent = `“${message}”`;
-      showToast("เปิดข้อความให้กำลังใจแล้ว");
+      showToast("เปิดกำลังใจจากไข่ต้มแล้ว");
     }
 
-    const KHAITOM_RESPONSES_V170={
-      "ขอแค่รับฟัง":[
-        "ไข่ต้มอ่านจนจบแล้วนะ\nสิ่งที่เธอเจอมันหนักพอที่จะทำให้เหนื่อยได้จริง ๆ\nตอนนี้ยังไม่ต้องรีบหาคำตอบก็ได้",
-        "ขอบคุณที่ไว้ใจเล่าให้ไข่ต้มฟังนะ\nเธอไม่จำเป็นต้องทำเหมือนว่าไม่เป็นอะไร\nพักตรงนี้ก่อนได้เลย",
-        "ไข่ต้มอยู่ตรงนี้และรับฟังทั้งหมดแล้ว\nวันนี้ไม่ต้องเก่งตลอดเวลาก็ได้\nแค่ยอมรับว่ากำลังเหนื่อยก็สำคัญมากแล้ว"
-      ],
-      "อยากได้กำลังใจ":[
-        "วันนี้เธอทำดีที่สุดเท่าที่แรงที่มีจะทำได้แล้วนะ\nเรื่องที่ยังไม่สำเร็จ ไม่ได้ลดคุณค่าของเธอลงเลย",
-        "วันที่หนักไม่ได้แปลว่าเธออ่อนแอ\nมันแปลว่าเธอกำลังพยายามอยู่กับบางอย่างที่ยากมาก\nไข่ต้มภูมิใจที่เธอยังกลับมาดูแลใจตัวเอง",
-        "ไม่เป็นไรเลยถ้าวันนี้เดินได้ช้ากว่าปกติ\nเธอยังเดินอยู่ และนั่นก็มากพอแล้วสำหรับวันนี้"
-      ],
-      "ขอเวลาอยู่เงียบ ๆ":[
-        "ได้เลย ตอนนี้ไม่ต้องพูดอะไรเพิ่มก็ได้\nไข่ต้มจะนั่งอยู่ตรงนี้เงียบ ๆ กับเธอ\nเมื่อพร้อมค่อยกลับมาก็ได้",
-        "โอเคนะ เราจะไม่เร่งและไม่ถามเพิ่ม\nวางโทรศัพท์ไว้ใกล้ ๆ หายใจช้า ๆ\nไข่ต้มจะอยู่ตรงนี้เอง",
-        "ไม่ต้องอธิบายอะไรแล้วก็ได้\nให้สองนาทีนี้เป็นพื้นที่ที่ไม่มีใครคาดหวังอะไรจากเธอนะ"
+    /* ========================================================
+       V18.1 Khaitom Context Response Engine
+       วิเคราะห์อารมณ์ หัวข้อ และสิ่งที่ผู้ใช้ต้องการแบบออฟไลน์
+       ======================================================== */
+    const KHAITOM_BRAIN_V181={
+      categories:{
+        tired:{
+          keywords:["เหนื่อย","ล้า","หมดแรง","เพลีย","ไม่ไหว","อ่อนแรง","หมดพลัง","อยากพัก","แบกไม่ไหว"],
+          reflections:[
+            "วันนี้ดูเหมือนเธอจะใช้พลังไปเยอะมากจริง ๆ",
+            "ฟังดูเหมือนร่างกายและใจกำลังส่งสัญญาณว่าอยากพัก",
+            "สิ่งที่เธอเจออาจหนักเกินกว่าจะรับไว้พร้อมกันทั้งหมด",
+            "การรู้สึกหมดแรงในวันที่ต้องรับหลายอย่างเป็นเรื่องที่เกิดขึ้นได้",
+            "ไข่ต้มรับรู้ได้ว่าเธอพยายามมานานพอสมควรแล้ว"
+          ],
+          supports:[
+            "คืนนี้ยังไม่ต้องจัดการทุกอย่างให้เรียบร้อยก็ได้",
+            "พักก่อนโดยไม่ต้องรู้สึกผิดก็ได้นะ",
+            "เลือกทำเพียงสิ่งที่จำเป็นที่สุด แล้ววางส่วนที่เหลือไว้ก่อนได้",
+            "เธอไม่จำเป็นต้องทำได้ดีทุกอย่างในวันที่แรงเหลือน้อย",
+            "การหยุดพักไม่ใช่การยอมแพ้ แต่เป็นการดูแลตัวเอง"
+          ]
+        },
+        stress:{
+          keywords:["เครียด","กดดัน","กังวล","คิดมาก","ปวดหัว","วุ่นวาย","เรื่องเยอะ","รุม","กดดันมาก"],
+          reflections:[
+            "เรื่องหลายอย่างน่าจะเข้ามาพร้อมกันจนใจไม่มีที่ว่าง",
+            "ความกดดันที่ต่อเนื่องทำให้รู้สึกเหมือนต้องระวังทุกอย่างตลอดเวลาได้",
+            "ฟังดูเหมือนเธอกำลังพยายามควบคุมหลายเรื่องพร้อมกัน",
+            "การคิดวนเมื่อยังมองไม่เห็นทางออกเป็นเรื่องที่เกิดขึ้นได้",
+            "เรื่องนี้คงกินพื้นที่ในใจของเธอมากพอสมควร"
+          ],
+          supports:[
+            "ตอนนี้ยังไม่ต้องแก้ทุกเรื่องในครั้งเดียว",
+            "ลองแยกสิ่งที่ต้องทำวันนี้ออกจากสิ่งที่รอได้",
+            "คืนนี้ขอให้ตัวเองพักจากการหาคำตอบสักครู่ก็ได้",
+            "หากยังคิดไม่ออก การหยุดก่อนก็เป็นทางเลือกที่เหมาะสม",
+            "ค่อย ๆ กลับมาดูทีละส่วนเมื่อใจนิ่งขึ้นก็ได้"
+          ]
+        },
+        sad:{
+          keywords:["เศร้า","เสียใจ","ร้องไห้","ท้อ","เจ็บใจ","ใจพัง","ใจหาย","ไม่โอเค","รู้สึกแย่"],
+          reflections:[
+            "เรื่องนี้ดูเหมือนจะกระทบใจเธอมากจริง ๆ",
+            "ความเสียใจแบบนี้ไม่จำเป็นต้องหายไปเร็ว ๆ",
+            "เธอมีสิทธิ์รู้สึกกับสิ่งที่เกิดขึ้นเต็มที่",
+            "บางเรื่องทำให้ใจหนัก แม้จะอธิบายให้คนอื่นเข้าใจได้ยาก",
+            "ไข่ต้มรับรู้ว่าตอนนี้เธอกำลังอยู่กับความรู้สึกที่ไม่ง่ายเลย"
+          ],
+          supports:[
+            "ยังไม่ต้องรีบทำให้ตัวเองกลับมายิ้มก็ได้",
+            "ร้องไห้หรือพักเงียบ ๆ ก็เป็นวิธีดูแลใจอย่างหนึ่ง",
+            "คืนนี้ให้ตัวเองอ่อนโยนกับความรู้สึกนี้ก่อนนะ",
+            "เธอไม่จำเป็นต้องเก็บอาการเพื่อให้คนอื่นสบายใจ",
+            "ค่อย ๆ ผ่านช่วงนี้ไปทีละนิดก็พอ"
+          ]
+        },
+        lonely:{
+          keywords:["เหงา","คนเดียว","ไม่มีใคร","โดดเดี่ยว","ไม่มีคนฟัง","อยากมีเพื่อน","อยู่ลำพัง"],
+          reflections:[
+            "การอยู่ท่ามกลางความเงียบแล้วรู้สึกเหมือนไม่มีใครเข้าใจมันหนักได้จริง ๆ",
+            "ฟังดูเหมือนตอนนี้เธออยากมีใครสักคนอยู่ข้าง ๆ",
+            "ความเหงาไม่ได้แปลว่าเธอไม่สำคัญสำหรับใคร",
+            "บางคืนความรู้สึกโดดเดี่ยวอาจดังมากกว่าปกติ",
+            "ไข่ต้มรับรู้ว่าเธอกำลังต้องการพื้นที่ที่มีคนรับฟัง"
+          ],
+          supports:[
+            "อย่างน้อยตอนนี้ไข่ต้มกำลังอ่านทุกคำอยู่ตรงนี้",
+            "หากพร้อม ลองส่งข้อความสั้น ๆ ไปหาคนที่ไว้ใจก็ได้",
+            "ยังไม่ต้องพยายามทำให้ตัวเองสดใส แค่อยู่ตรงนี้ด้วยกันก่อน",
+            "เธอไม่จำเป็นต้องผ่านคืนนี้ด้วยการเก็บทุกอย่างไว้คนเดียว",
+            "ความต้องการใครสักคนอยู่ข้าง ๆ เป็นเรื่องปกติมาก"
+          ]
+        },
+        angry:{
+          keywords:["โกรธ","โมโห","หงุดหงิด","รำคาญ","หัวร้อน","แค้น","ไม่ยุติธรรม","โดนเอาเปรียบ"],
+          reflections:[
+            "ฟังดูเหมือนมีบางอย่างข้ามขอบเขตหรือไม่เป็นธรรมกับเธอ",
+            "ความโกรธอาจกำลังบอกว่ามีสิ่งสำคัญถูกกระทบ",
+            "เรื่องนี้คงทำให้เธอรู้สึกไม่ได้รับการเคารพหรือไม่ถูกเข้าใจ",
+            "อารมณ์ที่แรงแบบนี้เกิดขึ้นได้เมื่อสะสมมานาน",
+            "ไข่ต้มรับรู้ว่าเรื่องนี้ทำให้เธอไม่สบายใจมาก"
+          ],
+          supports:[
+            "พักจากการตอบโต้สักครู่ก่อนก็ได้",
+            "ยังไม่ต้องตัดสินใจตอนที่อารมณ์กำลังแรง",
+            "เมื่อใจนิ่งขึ้น ค่อยแยกสิ่งที่เกิดขึ้นออกจากสิ่งที่เธอต้องการ",
+            "การตั้งขอบเขตอย่างชัดเจนไม่ใช่เรื่องผิด",
+            "เธอสามารถยอมรับว่าโกรธ โดยไม่ต้องทำร้ายตัวเองหรือใคร"
+          ]
+        },
+        anxious:{
+          keywords:["กลัว","หวาดกลัว","ระแวง","ไม่มั่นใจ","กลัวอนาคต","ใจสั่น","กังวลอนาคต","ไม่รู้จะเกิดอะไร"],
+          reflections:[
+            "ความไม่แน่นอนอาจทำให้สมองพยายามคิดถึงทุกความเป็นไปได้",
+            "ฟังดูเหมือนเธอกำลังกลัวสิ่งที่ยังควบคุมไม่ได้",
+            "ความกังวลทำให้เรื่องในอนาคตดูใหญ่กว่าที่รับมือไหวได้",
+            "เธออาจกำลังต้องการความชัดเจนในเรื่องที่ยังไม่มีคำตอบ",
+            "ไข่ต้มรับรู้ว่าความกลัวนี้มีผลกับเธอจริง ๆ"
+          ],
+          supports:[
+            "ตอนนี้กลับมาดูสิ่งที่ยืนยันได้ตรงหน้าก่อนก็ได้",
+            "เลือกเพียงขั้นถัดไปที่เล็กที่สุดก็พอ",
+            "ยังไม่จำเป็นต้องรู้คำตอบของทุกอย่างคืนนี้",
+            "หายใจช้า ๆ แล้วมองหาสิ่งรอบตัวที่ทำให้รู้สึกปลอดภัย",
+            "ถ้าความกลัวหนักมาก ลองบอกคนที่ไว้ใจให้มาอยู่ใกล้ ๆ"
+          ]
+        },
+        confused:{
+          keywords:["สับสน","ไม่รู้","เลือกไม่ได้","ลังเล","ไม่แน่ใจ","คิดไม่ออก","ตัน","ไม่รู้ทำยังไง"],
+          reflections:[
+            "ฟังดูเหมือนแต่ละทางเลือกมีทั้งข้อดีและสิ่งที่กังวล",
+            "ตอนนี้ข้อมูลหรือความรู้สึกอาจยังปะปนกันอยู่",
+            "การยังเลือกไม่ได้ไม่ได้แปลว่าเธอตัดสินใจไม่เก่ง",
+            "เรื่องนี้อาจต้องใช้เวลาแยกทีละส่วนมากกว่าการรีบตอบ",
+            "ไข่ต้มรับรู้ว่าเธอกำลังพยายามหาทางที่เหมาะกับตัวเอง"
+          ],
+          supports:[
+            "คืนนี้ยังไม่ต้องบังคับตัวเองให้ได้คำตอบก็ได้",
+            "ลองเขียนทุกตัวเลือกออกมาก่อนโดยยังไม่ตัดสิน",
+            "แยกสิ่งที่จำเป็นออกจากสิ่งที่อยากได้ อาจช่วยให้เห็นภาพชัดขึ้น",
+            "หากต้องเลือกตอนนี้ เลือกทางที่ปลอดภัยและย้อนกลับได้ก่อน",
+            "ค่อยกลับมาคิดใหม่เมื่อพักพอแล้วก็ได้"
+          ]
+        },
+        disappointed:{
+          keywords:["ผิดหวัง","คาดหวัง","ไม่เป็นอย่างที่คิด","ล้มเหลว","พลาด","ไม่สำเร็จ","แพ้","เสียความรู้สึก"],
+          reflections:[
+            "ความผิดหวังมักเกิดขึ้นเมื่อสิ่งนั้นมีความหมายกับเรามาก",
+            "เรื่องนี้คงต่างจากที่เธอหวังไว้มากพอสมควร",
+            "การพลาดบางอย่างไม่ได้ลบความพยายามที่เธอใส่ลงไป",
+            "ฟังดูเหมือนเธอเสียทั้งผลลัพธ์และความหวังบางส่วนไปพร้อมกัน",
+            "ไข่ต้มรับรู้ว่าเธออาจกำลังตำหนิตัวเองอยู่"
+          ],
+          supports:[
+            "ยังไม่ต้องสรุปคุณค่าของตัวเองจากเหตุการณ์เดียว",
+            "ให้เวลาตัวเองเสียใจกับผลลัพธ์นี้ก่อนก็ได้",
+            "เมื่อพร้อม ค่อยดูว่าส่วนไหนเรียนรู้ได้โดยไม่ทำร้ายตัวเอง",
+            "ความผิดพลาดไม่ได้ทำให้เธอหมดโอกาสเริ่มใหม่",
+            "เธอไม่จำเป็นต้องเปลี่ยนความผิดหวังให้เป็นบทเรียนทันที"
+          ]
+        },
+        guilty:{
+          keywords:["รู้สึกผิด","โทษตัวเอง","ผิดของฉัน","ไม่น่าทำ","ไม่น่าพูด","เสียใจที่ทำ","ทำพลาด"],
+          reflections:[
+            "ฟังดูเหมือนเธอกำลังย้อนคิดถึงสิ่งที่เกิดขึ้นซ้ำ ๆ",
+            "ความรู้สึกผิดอาจกำลังบอกว่าเรื่องนี้สำคัญกับค่านิยมของเธอ",
+            "การเห็นว่าสิ่งหนึ่งอาจทำร้ายใคร แปลว่าเธอยังใส่ใจ",
+            "เธออาจกำลังลงโทษตัวเองหนักกว่าที่จำเป็น",
+            "ไข่ต้มรับรู้ว่าเธออยากแก้ไขสิ่งที่เกิดขึ้น"
+          ],
+          supports:[
+            "แยกการรับผิดชอบออกจากการทำร้ายตัวเองนะ",
+            "หากแก้ไขหรือขอโทษได้ ค่อยวางแผนทำเมื่อใจนิ่งขึ้น",
+            "การทำพลาดไม่ได้แปลว่าเธอเป็นคนไม่ดีทั้งหมด",
+            "คืนนี้ยังไม่ต้องลงโทษตัวเองซ้ำอีก",
+            "เรียนรู้จากเรื่องนี้ได้โดยยังเมตตาตัวเองไปพร้อมกัน"
+          ]
+        },
+        happy:{
+          keywords:["ดีใจ","มีความสุข","สนุก","ยิ้ม","สำเร็จ","ได้แล้ว","ภูมิใจ","สมหวัง","โชคดี"],
+          reflections:[
+            "ไข่ต้มดีใจที่วันนี้มีเรื่องทำให้เธอยิ้มได้",
+            "ความสุขเล็ก ๆ แบบนี้ควรได้รับการจดจำเหมือนกัน",
+            "ฟังดูเหมือนความพยายามบางอย่างของเธอได้รับผลตอบแทนแล้ว",
+            "ช่วงเวลานี้มีความหมายกับเธอจริง ๆ",
+            "ไข่ต้มยิ้มตามที่เธอเล่าเลย"
+          ],
+          supports:[
+            "เก็บความรู้สึกนี้ไว้เป็นแรงใจในวันที่หนักได้นะ",
+            "เธอมีสิทธิ์ภูมิใจกับสิ่งที่ทำได้เต็มที่",
+            "ลองบันทึกไว้ว่าอะไรทำให้วันนี้ดีเป็นพิเศษ",
+            "ขอให้เธอได้อยู่กับความสุขนี้โดยไม่ต้องรีบกลัวว่าจะหายไป",
+            "วันนี้ให้ตัวเองฉลองในแบบเล็ก ๆ ที่สบายใจก็ได้"
+          ]
+        },
+        sleep:{
+          keywords:["นอนไม่หลับ","นอนดึก","นอนไม่ได้","หลับไม่ลง","ตื่นกลางคืน","ง่วงแต่หลับไม่ได้"],
+          reflections:[
+            "ฟังดูเหมือนร่างกายอยากพัก แต่ความคิดยังไม่ยอมหยุด",
+            "การนอนไม่หลับทำให้เรื่องที่กังวลดูหนักขึ้นได้",
+            "คืนนี้สมองของเธออาจยังทำงานต่อแม้ร่างกายเหนื่อยแล้ว",
+            "ไข่ต้มรับรู้ว่าเธออยากพักแต่ยังหาจังหวะลงไม่ได้",
+            "การหลับไม่ลงไม่ใช่ความผิดของเธอ"
+          ],
+          supports:[
+            "ยังไม่ต้องบังคับตัวเองให้หลับทันที ลองพักสายตาเฉย ๆ ก่อน",
+            "ลดแสงหน้าจอและหายใจยาวกว่าปกติเล็กน้อยอาจช่วยได้",
+            "วางความคิดที่วนอยู่ไว้ในบันทึก แล้วบอกตัวเองว่าพรุ่งนี้ค่อยกลับมาดู",
+            "หากยังไม่หลับ การนอนนิ่ง ๆ ก็ยังเป็นการพักร่างกาย",
+            "คืนนี้ไข่ต้มจะอยู่เงียบ ๆ เป็นเพื่อนนะ"
+          ]
+        },
+        default:{
+          keywords:[],
+          reflections:[
+            "ไข่ต้มอ่านทุกคำจนจบแล้วนะ",
+            "ขอบคุณที่ไว้ใจเล่าเรื่องนี้ให้ไข่ต้มฟัง",
+            "สิ่งที่เธอเขียนมีความหมาย และสมควรได้รับการรับฟัง",
+            "ไข่ต้มอาจไม่รู้ทุกอย่างที่เกิดขึ้น แต่กำลังรับฟังอยู่ตรงนี้",
+            "เรื่องนี้ดูเหมือนจะมีหลายความรู้สึกอยู่พร้อมกัน",
+            "เธอไม่จำเป็นต้องเรียบเรียงทุกอย่างให้สมบูรณ์ก่อนเล่า",
+            "แค่ได้เขียนสิ่งที่ค้างอยู่ในใจก็เป็นก้าวหนึ่งแล้ว",
+            "ไข่ต้มรับรู้ว่าตอนนี้เธออยากมีพื้นที่ที่ไม่ถูกตัดสิน"
+          ],
+          supports:[
+            "ยังไม่ต้องรีบหาคำตอบในตอนนี้ก็ได้",
+            "เธอสามารถพักตรงนี้ก่อน แล้วค่อยกลับไปจัดการเมื่อพร้อม",
+            "ไม่ว่าความรู้สึกนี้จะซับซ้อนแค่ไหน มันยังสมควรได้รับพื้นที่",
+            "ค่อย ๆ ดูแลตัวเองทีละส่วนก็พอ",
+            "คืนนี้ไม่ต้องเก่งหรือเข้มแข็งตลอดเวลาก็ได้",
+            "หากอยากเขียนต่อ ไข่ต้มจะยังอ่านอยู่ตรงนี้",
+            "เธอไม่จำเป็นต้องตัดสินตัวเองจากความรู้สึกที่กำลังเกิดขึ้น",
+            "พักหายใจสักครู่ก่อนก็ได้ ไม่มีใครเร่งเธออยู่ตรงนี้"
+          ]
+        }
+      },
+
+      topics:{
+        work:{
+          keywords:["งาน","หัวหน้า","ลูกค้า","โปรเจกต์","ประชุม","ออฟฟิศ","เพื่อนร่วมงาน","เดดไลน์","โอที"],
+          lines:[
+            "เรื่องงานสามารถกินทั้งเวลาและพลังใจได้มากกว่าที่คนอื่นมองเห็น",
+            "แรงกดดันจากงานไม่ได้แปลว่าเธอจัดการชีวิตไม่ดี",
+            "สิ่งที่เกิดในงานไม่ควรถูกใช้ตัดสินคุณค่าทั้งหมดของเธอ",
+            "งานเป็นเพียงส่วนหนึ่งของชีวิต ไม่ใช่ตัวตนทั้งหมดของเธอ"
+          ]
+        },
+        love:{
+          keywords:["แฟน","รัก","เลิก","ทะเลาะ","นอกใจ","คิดถึงเขา","ความสัมพันธ์","คนรัก","อกหัก"],
+          lines:[
+            "ความสัมพันธ์ทำให้เรารู้สึกหลายอย่างพร้อมกันได้ทั้งรัก คิดถึง และเจ็บ",
+            "ไข่ต้มจะไม่รีบตัดสินว่าใครถูกหรือผิดจากเรื่องที่เธอเล่า",
+            "สิ่งที่เธอต้องการและขอบเขตของเธอก็มีความสำคัญในความสัมพันธ์",
+            "ยังไม่ต้องรีบตัดสินใจเรื่องใหญ่ตอนที่อารมณ์ยังแรงมาก"
+          ]
+        },
+        family:{
+          keywords:["แม่","พ่อ","พี่","น้อง","ครอบครัว","ญาติ","ที่บ้าน"],
+          lines:[
+            "เรื่องครอบครัวมักซับซ้อน เพราะมีทั้งความรัก หน้าที่ และความคาดหวัง",
+            "การรักครอบครัวไม่ได้แปลว่าเธอต้องรับทุกอย่างไว้คนเดียว",
+            "เธอมีสิทธิ์มีขอบเขต แม้กับคนในครอบครัว",
+            "ความรู้สึกของเธอยังสำคัญ แม้คนอื่นในบ้านจะมองไม่เหมือนกัน"
+          ]
+        },
+        money:{
+          keywords:["เงิน","หนี้","ค่าใช้จ่าย","ไม่มีเงิน","รายได้","ตกงาน","ค่าผ่อน","ค่าเช่า","เงินไม่พอ"],
+          lines:[
+            "เรื่องเงินสร้างแรงกดดันจริง และไม่ใช่เรื่องที่คำปลอบใจสั้น ๆ จะแก้ได้",
+            "ไข่ต้มจะไม่บอกว่าเดี๋ยวทุกอย่างก็ดีขึ้น เพราะตอนนี้มันอาจยังยากจริง ๆ",
+            "คืนนี้อาจเริ่มจากแยกสิ่งที่เร่งด่วนที่สุดออกมาก่อนเพียงหนึ่งอย่าง",
+            "ปัญหาทางการเงินไม่ได้ลดคุณค่าความเป็นคนของเธอ"
+          ]
+        },
+        study:{
+          keywords:["เรียน","สอบ","มหาลัย","โรงเรียน","คะแนน","การบ้าน","วิชา","อ่านหนังสือ"],
+          lines:[
+            "ผลการเรียนหรือคะแนนหนึ่งครั้งไม่ได้บอกความสามารถทั้งหมดของเธอ",
+            "การเรียนภายใต้ความกดดันทำให้เหนื่อยได้มากกว่าที่เห็น",
+            "พักสมองสั้น ๆ อาจช่วยให้กลับมาเห็นโจทย์ชัดขึ้น",
+            "เธอไม่จำเป็นต้องเก่งทุกวิชาเพื่อมีคุณค่า"
+          ]
+        },
+        health:{
+          keywords:["ป่วย","เจ็บ","สุขภาพ","ไม่สบาย","โรงพยาบาล","หมอ","อาการ","ร่างกาย"],
+          lines:[
+            "เรื่องสุขภาพทำให้รู้สึกไม่แน่นอนและกลัวได้จริง ๆ",
+            "การดูแลร่างกายและขอความช่วยเหลือจากผู้เชี่ยวชาญเป็นเรื่องสำคัญ",
+            "ไข่ต้มรับฟังได้ แต่ไม่สามารถวินิจฉัยแทนแพทย์ได้",
+            "หากอาการรุนแรงหรือแย่ลง ควรติดต่อผู้เชี่ยวชาญทางการแพทย์"
+          ]
+        },
+        friendship:{
+          keywords:["เพื่อน","เพื่อนสนิท","กลุ่มเพื่อน","โดนเมิน","ไม่มีเพื่อน","เพื่อนทะเลาะ"],
+          lines:[
+            "เรื่องเพื่อนกระทบใจได้มาก เพราะเรามักคาดหวังพื้นที่ที่ปลอดภัยจากกัน",
+            "การถูกเมินหรือไม่ถูกเข้าใจไม่ได้แปลว่าเธอไม่น่าคบ",
+            "ความสัมพันธ์ที่ดีควรมีพื้นที่ให้พูดถึงความไม่สบายใจ",
+            "เธอไม่จำเป็นต้องฝืนอยู่ในวงที่ทำให้รู้สึกเล็กลงตลอดเวลา"
+          ]
+        }
+      },
+
+      needOpeners:{
+        "ขอแค่รับฟัง":[
+          "ไข่ต้มจะฟังโดยยังไม่รีบแนะนำอะไรนะ",
+          "ตอนนี้ไข่ต้มจะอยู่ในบทบาทคนรับฟังให้เธอก่อน",
+          "ไม่ต้องหาคำตอบทันที ไข่ต้มจะรับฟังสิ่งที่เกิดขึ้น",
+          "เธอไม่ต้องอธิบายให้สมบูรณ์ ไข่ต้มจะฟังตามที่เธอพร้อมเล่า"
+        ],
+        "อยากได้กำลังใจ":[
+          "ไข่ต้มอยากส่งแรงใจให้เธอโดยไม่ลดทอนสิ่งที่กำลังเจอ",
+          "สิ่งที่เกิดขึ้นอาจยังไม่ง่าย แต่เธอไม่จำเป็นต้องดูถูกความพยายามของตัวเอง",
+          "ไข่ต้มจะไม่บอกให้เธอเข้มแข็งตลอดเวลา แต่อยากย้ำว่าเธอยังมีคุณค่าเสมอ",
+          "ขอบคุณที่กลับมาหาพื้นที่ที่อ่อนโยนกับตัวเอง"
+        ],
+        "ขอเวลาอยู่เงียบ ๆ":[
+          "ได้เลย ไข่ต้มจะไม่ถามเพิ่มและไม่เร่งให้เธอตอบ",
+          "ตอนนี้ไม่ต้องพูดอะไรต่อก็ได้ เราพักอยู่ตรงนี้ด้วยกัน",
+          "ไข่ต้มจะลดคำพูดลง และอยู่เงียบ ๆ เป็นเพื่อนเธอ",
+          "ไม่ต้องอธิบายอะไรเพิ่มแล้วนะ ให้ใจได้หยุดพักก่อน"
+        ]
+      },
+
+      closers:[
+        "คืนนี้ค่อย ๆ ดูแลตัวเองทีละนิดก็พอ",
+        "เธอกลับมาเขียนต่อได้ทุกเมื่อที่พร้อม",
+        "ไข่ต้มจะไม่ตัดสินสิ่งที่เธอรู้สึก",
+        "ตอนนี้หายใจช้า ๆ แล้ววางเรื่องนี้ไว้ตรงนี้ก่อนได้",
+        "ขอบคุณที่ให้ไข่ต้มได้อยู่ข้าง ๆ ในช่วงเวลานี้",
+        "ยังไม่ต้องรีบดีขึ้นในทันทีนะ",
+        "แค่ผ่านช่วงเวลานี้ไปทีละนาทีก็เพียงพอแล้ว",
+        "เธอไม่จำเป็นต้องแบกทุกอย่างอยู่คนเดียวในใจ"
       ]
     };
+
+    function khaitomPickV181(items,used=[]){
+      const available=items.filter(item=>!used.includes(item));
+      const pool=available.length?available:items;
+      return pool[Math.floor(Math.random()*pool.length)]||"";
+    }
+
+    function khaitomDetectCategoriesV181(text){
+      const value=String(text||"").toLowerCase();
+      const scores=[];
+
+      Object.entries(KHAITOM_BRAIN_V181.categories).forEach(([key,category])=>{
+        if(key==="default")return;
+        const score=category.keywords.reduce(
+          (total,word)=>total+(value.includes(word.toLowerCase())?1:0),
+          0
+        );
+        if(score>0)scores.push({key,score});
+      });
+
+      scores.sort((a,b)=>b.score-a.score);
+      return scores.map(item=>item.key).slice(0,2);
+    }
+
+    function khaitomDetectTopicV181(text){
+      const value=String(text||"").toLowerCase();
+      let best=null;
+
+      Object.entries(KHAITOM_BRAIN_V181.topics).forEach(([key,topic])=>{
+        const score=topic.keywords.reduce(
+          (total,word)=>total+(value.includes(word.toLowerCase())?1:0),
+          0
+        );
+        if(score>0 && (!best || score>best.score)){
+          best={key,score};
+        }
+      });
+
+      return best?.key||null;
+    }
+
+    function khaitomGetRecentRepliesV181(data){
+      return (data?.khaitomReplyHistoryV181||[])
+        .slice(0,20)
+        .flatMap(item=>item.parts||[]);
+    }
+
+    function khaitomBuildContextReplyV181(need,text,data){
+      const categories=khaitomDetectCategoriesV181(text);
+      const mainKey=categories[0]||"default";
+      const secondaryKey=categories[1]||null;
+      const topicKey=khaitomDetectTopicV181(text);
+      const main=KHAITOM_BRAIN_V181.categories[mainKey]
+        || KHAITOM_BRAIN_V181.categories.default;
+      const secondary=secondaryKey
+        ? KHAITOM_BRAIN_V181.categories[secondaryKey]
+        : null;
+      const topic=topicKey?KHAITOM_BRAIN_V181.topics[topicKey]:null;
+      const used=khaitomGetRecentRepliesV181(data);
+      const parts=[];
+
+      const openerPool=KHAITOM_BRAIN_V181.needOpeners[need]
+        || KHAITOM_BRAIN_V181.needOpeners["ขอแค่รับฟัง"];
+
+      parts.push(khaitomPickV181(openerPool,used));
+      parts.push(khaitomPickV181(main.reflections,used));
+
+      if(secondary){
+        parts.push(khaitomPickV181(secondary.reflections,used));
+      }
+
+      if(topic){
+        parts.push(khaitomPickV181(topic.lines,used));
+      }
+
+      parts.push(khaitomPickV181(main.supports,used));
+
+      if(need==="อยากได้กำลังใจ"){
+        const encouragements=[
+          "สิ่งที่ยังไม่สำเร็จไม่ได้ลบคุณค่าหรือความพยายามของเธอ",
+          "วันที่หนักไม่ได้เป็นหลักฐานว่าเธออ่อนแอ",
+          "เธอยังสมควรได้รับความอ่อนโยน แม้ในวันที่ทำอะไรได้ไม่มาก",
+          "การกลับมาเขียนและดูแลใจตัวเองในวันนี้มีความหมายแล้ว",
+          "เธอไม่จำเป็นต้องพิสูจน์คุณค่าของตัวเองด้วยการฝืนต่อ"
+        ];
+        parts.push(khaitomPickV181(encouragements,used));
+      }
+
+      parts.push(khaitomPickV181(KHAITOM_BRAIN_V181.closers,used));
+
+      const cleanParts=[...new Set(parts.filter(Boolean))];
+
+      return{
+        urgent:false,
+        message:cleanParts.join("\n\n"),
+        reflection:getRecentVentPatternV170(data),
+        detectedCategory:mainKey,
+        detectedTopic:topicKey,
+        parts:cleanParts
+      };
+    }
 
     const KHAITOM_SOLUTION_STEPS_V170={
       "เหนื่อย":[
@@ -7966,32 +8744,33 @@
         return{
           urgent:true,
           message:
-            "ไข่ต้มเป็นห่วงความปลอดภัยของเธอมากตอนนี้\nอย่าอยู่กับความรู้สึกนี้คนเดียวนะ กรุณาไปอยู่ใกล้คนที่ไว้ใจและบอกเขาตรง ๆ ว่าตอนนี้เธอไม่ปลอดภัย",
+            "ไข่ต้มเป็นห่วงความปลอดภัยของเธอมากตอนนี้\n\nอย่าอยู่กับความรู้สึกนี้คนเดียวนะ ไปอยู่ใกล้คนที่ไว้ใจและบอกเขาตรง ๆ ว่าตอนนี้เธออาจไม่ปลอดภัย",
           reflection:
-            "ถ้ามีอันตรายใกล้ตัว ให้ถอยออกจากสิ่งที่อาจใช้ทำร้ายตัวเอง และติดต่อบริการฉุกเฉินในพื้นที่ทันที"
+            "ถ้ามีสิ่งของหรือสถานการณ์ที่อาจทำให้เกิดอันตราย ให้ถอยออกมาก่อน และติดต่อบริการฉุกเฉินในพื้นที่ทันที"
         };
       }
 
       if(need==="ช่วยคิดทางออก"){
+        const context=khaitomBuildContextReplyV181(
+          "ขอแค่รับฟัง",
+          text,
+          data
+        );
+
         return{
           urgent:false,
           solution:true,
           message:
-            "ไข่ต้มจะไม่รีบเสนอคำตอบให้ทันทีนะ\nเราค่อย ๆ แยกเรื่องนี้ทีละส่วนด้วยกันก่อน",
+            `${context.message}\n\nไข่ต้มจะยังไม่รีบสรุปทางออกแทนเธอ เราค่อย ๆ แยกเรื่องนี้ทีละส่วนด้วยกันก่อน`,
           reflection:
-            "เริ่มจากเลือกความรู้สึกที่ชัดที่สุดตอนนี้ ไม่ต้องเลือกให้สมบูรณ์"
+            "เริ่มจากเลือกความรู้สึกที่ชัดที่สุดตอนนี้ ไม่ต้องเลือกให้สมบูรณ์",
+          detectedCategory:context.detectedCategory,
+          detectedTopic:context.detectedTopic,
+          parts:context.parts
         };
       }
 
-      const choices=KHAITOM_RESPONSES_V170[need]
-        || KHAITOM_RESPONSES_V170["ขอแค่รับฟัง"];
-      const message=choices[Math.floor(Math.random()*choices.length)];
-
-      return{
-        urgent:false,
-        message,
-        reflection:getRecentVentPatternV170(data)
-      };
+      return khaitomBuildContextReplyV181(need,text,data);
     }
 
     function setKhaitomThinkingV170(active){
@@ -8084,8 +8863,25 @@
         need,
         message:response.message,
         reflection:response.reflection||"",
+        detectedCategory:response.detectedCategory||"",
+        detectedTopic:response.detectedTopic||"",
         time:item.time
       };
+
+      data.khaitomReplyHistoryV181=Array.isArray(
+        data.khaitomReplyHistoryV181
+      )?data.khaitomReplyHistoryV181:[];
+
+      data.khaitomReplyHistoryV181.unshift({
+        ventId:item.id,
+        parts:Array.isArray(response.parts)?response.parts:[],
+        category:response.detectedCategory||"",
+        topic:response.detectedTopic||"",
+        time:item.time
+      });
+
+      data.khaitomReplyHistoryV181=
+        data.khaitomReplyHistoryV181.slice(0,30);
 
       area.value="";
       data.draft="";
@@ -14106,6 +14902,85 @@
         feedback.classList.remove("show");
       }
     }
+
+
+
+    /* ===== V18.0 Khaitom-first UX ===== */
+    function openKhaitomTalkV180(){
+      goPage("vent");
+
+      requestAnimationFrame(()=>{
+        const selected=document.querySelector(".need-card.active");
+        if(!selected){
+          document.querySelector(
+            '.need-card[data-need="ขอแค่รับฟัง"]'
+          )?.click();
+        }
+
+        const area=document.getElementById("ventText");
+        area?.scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+        setTimeout(()=>{
+          area?.focus();
+        },420);
+      });
+
+      softHaptic?.("light");
+    }
+
+    function openKhaitomQuietV180(){
+      if(typeof khaitomQuietV170==="function"){
+        khaitomQuietV170();
+      }else{
+        goPage("calm");
+      }
+    }
+
+    function showLoveMessageV180(){
+      if(typeof showLoveMessage==="function"){
+        showLoveMessage();
+      }
+
+      const card=document.getElementById("loveMessageCard");
+      card?.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+    }
+
+    function updateKhaitomHomeGreetingV180(){
+      const node=document.getElementById("khaitomHomeGreetingV180");
+      if(!node)return;
+
+      const hour=new Date().getHours();
+      const data=loadData?.() || {};
+      const player=String(data.playerName||"เธอ").trim()||"เธอ";
+
+      if(hour>=5 && hour<11){
+        node.textContent=`อรุณสวัสดิ์ ${player} วันนี้ค่อย ๆ เริ่มก็ได้นะ`;
+      }else if(hour>=11 && hour<17){
+        node.textContent=`วันนี้เป็นยังไงบ้าง ${player} เล่าให้ไข่ต้มฟังได้นะ`;
+      }else if(hour>=17 && hour<22){
+        node.textContent=`กลับมาแล้วนะ ${player} วันนี้เหนื่อยไหม`;
+      }else{
+        node.textContent=`ดึกแล้วนะ ${player} วางเรื่องหนักไว้กับไข่ต้มก่อนได้`;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded",()=>{
+      updateKhaitomHomeGreetingV180();
+
+      document.getElementById("khaitomHomeCharacterV180")
+        ?.addEventListener("keydown",event=>{
+          if(event.key==="Enter" || event.key===" "){
+            event.preventDefault();
+            openKhaitomTalkV180();
+          }
+        });
+    });
 
 </script>
 
