@@ -3850,6 +3850,419 @@
       .dog-action-menu-v6 .dog-action-grid-v6 button{min-height:46px !important;}
     }
 
+  
+    /* ===== V14.2 Room Photo Album ===== */
+    .memory-photo-v142{width:96px;height:116px;padding:8px;border:7px solid #765d83;border-radius:8px;background:#eadcf1;box-shadow:0 12px 22px rgba(0,0,0,.24),inset 0 0 0 2px rgba(255,255,255,.32);transform:translate(-50%,-50%) scale(var(--photo-frame-scale-v142,1));transform-origin:center;overflow:hidden;cursor:pointer}
+    .memory-photo-inner-v142{position:relative;width:100%;height:100%;overflow:hidden;border-radius:3px;background:linear-gradient(145deg,#a8b2ff,#e3a8c9)}
+    .memory-photo-inner-v142 img{position:absolute;left:50%;top:50%;width:100%;height:100%;object-fit:cover;transform:translate(calc(-50% + var(--photo-x-v142,0%)),calc(-50% + var(--photo-y-v142,0%))) scale(var(--photo-scale-v142,1));transform-origin:center;display:none;user-select:none;pointer-events:none}
+    .memory-photo-inner-v142.has-photo img{display:block}.memory-photo-placeholder-v142{position:absolute;inset:0;display:grid;place-content:center;gap:4px;padding:8px;color:#4f405c;text-align:center;background:linear-gradient(145deg,#a8b2ff,#e3a8c9)}
+    .memory-photo-placeholder-v142 span{font-size:12px;font-weight:950}.memory-photo-placeholder-v142 small{font-size:7px;line-height:1.4;opacity:.72}.memory-photo-inner-v142.has-photo .memory-photo-placeholder-v142{display:none}
+    .photo-editor-modal-v142{z-index:2800!important}.photo-editor-sheet-v142{width:min(520px,100%);max-height:calc(100dvh - 28px);overflow:auto}.photo-editor-head-v142{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}.photo-editor-head-v142 strong{display:block;font-size:20px}.photo-editor-head-v142 span{display:block;margin-top:4px;color:var(--muted);font-size:10px}.photo-editor-head-v142 button{width:46px;height:46px;flex:0 0 auto;border:none;border-radius:50%;color:#fff;background:rgba(255,255,255,.08);font-size:26px}
+    .photo-editor-preview-v142{position:relative;width:min(280px,72vw);aspect-ratio:4/5;margin:0 auto 14px;overflow:hidden;border:9px solid #765d83;border-radius:12px;background:#d7c7e4;box-shadow:0 18px 40px rgba(0,0,0,.34),inset 0 0 0 2px rgba(255,255,255,.26);touch-action:none}.photo-editor-preview-v142 img{position:absolute;left:50%;top:50%;width:100%;height:100%;object-fit:cover;display:none;user-select:none;pointer-events:none;transform-origin:center;will-change:transform}.photo-editor-preview-v142.has-photo img{display:block}.photo-editor-empty-v142{position:absolute;inset:0;display:grid;place-content:center;color:#62556f;text-align:center;font-size:12px;font-weight:850;background:linear-gradient(145deg,#b5bcff,#e9b4d2)}.photo-editor-preview-v142.has-photo .photo-editor-empty-v142{display:none}
+    .photo-pick-button-v142{width:100%;min-height:50px;margin-bottom:14px;border:none;border-radius:16px;color:#171927;background:linear-gradient(135deg,#aab5ff,#c5a8ff);font-size:12px;font-weight:950}.photo-control-v142{margin-top:12px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}.photo-control-label-v142{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;color:#f3f2fa;font-size:10px;font-weight:850}.photo-control-label-v142 b{color:#cfc5ff}.photo-control-v142 input[type=range]{width:100%;accent-color:#aa9cff}.photo-editor-hint-v142{margin:12px 0 0;color:var(--muted);font-size:9px;line-height:1.55;text-align:center}.photo-editor-actions-v142{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:9px;margin-top:16px}.photo-editor-actions-v142 button{min-height:48px;border-radius:15px;color:#f2f1f8;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);font-size:10px;font-weight:900}.photo-editor-actions-v142 .primary-v142{color:#171927;border:none;background:linear-gradient(135deg,#aab5ff,#c5a8ff)}.photo-editor-actions-v142 .danger-v142{color:#ffd7df;background:rgba(255,110,135,.07);border-color:rgba(255,120,145,.16)}
+    @media(max-width:520px){.photo-editor-sheet-v142{border-radius:24px 24px 0 0}.photo-editor-actions-v142{grid-template-columns:1fr 1fr}.photo-editor-actions-v142 .primary-v142{grid-column:1/-1}}
+
+  
+    /* ===== V14.3 Portrait Full-screen Room ===== */
+    .portrait-room-hud-v143{display:none}
+
+    body.portrait-room-v143{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      overflow:hidden !important;
+      background:#080d17;
+      overscroll-behavior:none;
+    }
+
+    body.portrait-room-v143 #garden{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:1300;
+      display:block !important;
+      width:100% !important;
+      height:100% !important;
+      max-width:none !important;
+      margin:0 !important;
+      padding:0 !important;
+      overflow:hidden !important;
+      background:#080d17;
+    }
+
+    body.portrait-room-v143 #garden > .section-head,
+    body.portrait-room-v143 #garden > .room-toolbar-normal-v10,
+    body.portrait-room-v143 #garden > .room-commandbar-v8,
+    body.portrait-room-v143 #garden > .room-hud,
+    body.portrait-room-v143 #garden > .room-actions,
+    body.portrait-room-v143 #garden > .progress,
+    body.portrait-room-v143 #garden > .stats,
+    body.portrait-room-v143 #garden > .edit-hint-v3,
+    body.portrait-room-v143 #garden > .layer-tools-v3{
+      display:none !important;
+    }
+
+    body.portrait-room-v143 .portrait-room-hud-v143{
+      position:fixed;
+      top:max(10px,env(safe-area-inset-top));
+      left:max(10px,env(safe-area-inset-left));
+      right:max(10px,env(safe-area-inset-right));
+      z-index:1550;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:10px;
+      min-height:60px;
+      padding:8px;
+      border-radius:20px;
+      background:rgba(10,15,27,.78);
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:0 14px 38px rgba(0,0,0,.3),
+        inset 0 1px 0 rgba(255,255,255,.05);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+
+    .portrait-room-title-v143{
+      min-width:0;
+      text-align:center;
+    }
+
+    .portrait-room-title-v143 strong{
+      display:block;
+      color:#f8f7ff;
+      font-size:14px;
+      line-height:1.1;
+    }
+
+    .portrait-room-title-v143 span{
+      display:block;
+      margin-top:3px;
+      color:rgba(220,222,239,.68);
+      font-size:8px;
+    }
+
+    .portrait-room-actions-v143{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .portrait-exit-v143{
+      min-height:44px;
+      padding:0 13px;
+      border:none;
+      border-radius:14px;
+      color:#171927;
+      background:linear-gradient(135deg,#aab5ff,#c5a8ff);
+      font-size:9px;
+      font-weight:900;
+    }
+
+    body.portrait-room-v143 .portrait-room-hud-v143 .coin-pill-v3{
+      min-height:44px;
+      padding:8px 13px;
+      border-radius:14px;
+      background:rgba(17,21,31,.8);
+      box-shadow:none;
+    }
+
+    body.portrait-room-v143 .portrait-room-hud-v143
+    .hamburger-button-v8{
+      width:44px;
+      height:44px;
+      min-height:44px;
+      border-radius:14px;
+      background:rgba(17,21,31,.8);
+    }
+
+    body.portrait-room-v143 .decor-room-v3{
+      position:fixed !important;
+      inset:0 !important;
+      width:100vw !important;
+      height:100dvh !important;
+      max-width:none !important;
+      max-height:none !important;
+      aspect-ratio:auto !important;
+      margin:0 !important;
+      border:none !important;
+      border-radius:0 !important;
+      box-shadow:none !important;
+      overflow:hidden !important;
+      touch-action:none;
+    }
+
+    body.portrait-room-v143 .decor-room-v3::before,
+    body.portrait-room-v143 .decor-room-v3::after{
+      border-radius:0 !important;
+    }
+
+    body.portrait-room-v143 .weather-badge{
+      top:calc(max(10px,env(safe-area-inset-top)) + 72px) !important;
+      left:max(14px,env(safe-area-inset-left)) !important;
+      z-index:1450 !important;
+    }
+
+    body.portrait-room-v143 .tabs,
+    body.portrait-room-v143 header,
+    body.portrait-room-v143 .app-header{
+      display:none !important;
+    }
+
+    body.portrait-room-v143 .room-drawer-backdrop-v8{z-index:2190 !important}
+    body.portrait-room-v143 .room-drawer-v8{
+      z-index:2200 !important;
+      width:min(390px,88vw);
+    }
+    body.portrait-room-v143 .modal-v3{z-index:2500 !important}
+
+    @media(orientation:portrait){
+      body.portrait-room-v143 .wall-v3{height:64% !important}
+      body.portrait-room-v143 .floor-v3{
+        top:64% !important;
+        height:36% !important;
+      }
+    }
+
+    @media(max-width:420px){
+      body.portrait-room-v143 .portrait-room-hud-v143{gap:6px}
+      body.portrait-room-v143 .portrait-room-title-v143 strong{font-size:12px}
+      body.portrait-room-v143 .portrait-exit-v143{padding:0 10px}
+    }
+
+  
+    /* ===== V15 Install + Player Onboarding ===== */
+    .floating-install-v15{
+      position:fixed;
+      right:14px;
+      top:calc(14px + env(safe-area-inset-top));
+      z-index:1800;
+      min-height:42px;
+      padding:0 14px;
+      border:none;
+      border-radius:999px;
+      color:#171927;
+      background:linear-gradient(135deg,#aab5ff,#c6aaff);
+      box-shadow:0 12px 30px rgba(0,0,0,.26);
+      font-size:10px;
+      font-weight:950;
+      display:none;
+    }
+
+    .floating-install-v15.show{
+      display:block;
+    }
+
+    .install-app-modal-v15,
+    .ios-install-modal-v15,
+    .player-name-modal-v15{
+      z-index:3200 !important;
+    }
+
+    .player-name-modal-v15{
+      pointer-events:none;
+    }
+
+    .player-name-modal-v15.show{
+      pointer-events:auto;
+    }
+
+    .install-app-sheet-v15,
+    .ios-install-sheet-v15,
+    .player-name-sheet-v15{
+      width:min(460px,100%);
+      position:relative;
+      text-align:center;
+    }
+
+    .install-close-v15{
+      position:absolute;
+      top:10px;
+      right:10px;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      font-size:24px;
+    }
+
+    .install-icon-v15,
+    .player-name-icon-v15{
+      width:76px;
+      height:76px;
+      display:grid;
+      place-items:center;
+      margin:6px auto 16px;
+      border-radius:24px;
+      color:#fff;
+      background:linear-gradient(145deg,#786af0,#c58ed0);
+      box-shadow:0 18px 38px rgba(107,91,220,.28);
+      font-size:34px;
+    }
+
+    .install-app-sheet-v15 > strong,
+    .ios-install-sheet-v15 > strong,
+    .player-name-sheet-v15 > strong{
+      display:block;
+      color:#f7f6ff;
+      font-size:21px;
+    }
+
+    .install-app-sheet-v15 > p,
+    .ios-install-sheet-v15 > p,
+    .player-name-sheet-v15 > p{
+      margin:7px 0 16px;
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.6;
+    }
+
+    .install-benefits-v15{
+      display:grid;
+      gap:8px;
+      margin:16px 0;
+      text-align:left;
+    }
+
+    .install-benefits-v15 span{
+      padding:11px 13px;
+      border-radius:14px;
+      color:#ecebf7;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.07);
+      font-size:10px;
+    }
+
+    .install-primary-v15,
+    .install-later-v15{
+      width:100%;
+      min-height:50px;
+      border-radius:16px;
+      font-size:11px;
+      font-weight:950;
+    }
+
+    .install-primary-v15{
+      border:none;
+      color:#171927;
+      background:linear-gradient(135deg,#aab5ff,#c6aaff);
+    }
+
+    .install-primary-v15:disabled{
+      opacity:.45;
+    }
+
+    .install-later-v15{
+      margin-top:8px;
+      color:#f2f1fa;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .ios-install-steps-v15{
+      display:grid;
+      gap:10px;
+      margin:16px 0 18px;
+      text-align:left;
+    }
+
+    .ios-install-steps-v15 div{
+      display:grid;
+      grid-template-columns:36px 1fr;
+      align-items:center;
+      gap:10px;
+      padding:11px;
+      border-radius:15px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.07);
+    }
+
+    .ios-install-steps-v15 b{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:#171927;
+      background:#b8afff;
+    }
+
+    .ios-install-steps-v15 span{
+      color:#efedf8;
+      font-size:10px;
+    }
+
+    .player-name-sheet-v15{
+      text-align:left;
+    }
+
+    .player-name-sheet-v15 > strong,
+    .player-name-sheet-v15 > p{
+      text-align:center;
+    }
+
+    .player-name-sheet-v15 label{
+      display:block;
+      margin-bottom:7px;
+      color:#e7e5f2;
+      font-size:10px;
+      font-weight:850;
+    }
+
+    .player-name-sheet-v15 input{
+      width:100%;
+      min-height:52px;
+      padding:0 14px;
+      border-radius:15px;
+      color:#fff;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.1);
+      outline:none;
+      font-size:15px;
+    }
+
+    .player-name-sheet-v15 input:focus{
+      border-color:rgba(178,165,255,.8);
+      box-shadow:0 0 0 4px rgba(160,145,255,.12);
+    }
+
+    .player-name-sheet-v15 small{
+      display:block;
+      min-height:18px;
+      margin:6px 0 10px;
+      color:#ffb7c7;
+      font-size:9px;
+    }
+
+    body.player-name-required-v15{
+      overflow:hidden !important;
+    }
+
+    body.player-name-required-v15 > *:not(#playerNameModalV15):not(script){
+      pointer-events:none !important;
+    }
+
+    body.standalone-game-v11 .floating-install-v15,
+    body.portrait-room-v143 .floating-install-v15{
+      display:none !important;
+    }
+
+    @media(max-width:520px){
+      .install-app-sheet-v15,
+      .ios-install-sheet-v15,
+      .player-name-sheet-v15{
+        border-radius:24px 24px 0 0;
+      }
+
+      .floating-install-v15{
+        top:auto;
+        right:14px;
+        bottom:calc(84px + env(safe-area-inset-bottom));
+      }
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -4061,8 +4474,31 @@
           <button class="room-tool-v3" type="button" onclick="openInventoryV4()">คลังของ</button>
           <button class="room-tool-v3" type="button" onclick="openPetHouseV4()">บ้านหมา</button>
           <button class="room-tool-v3" type="button" onclick="openHeartGameV3()">เกมหัวใจ</button>
+          <button class="room-tool-v3"
+                  type="button" onclick="enterPortraitRoomV143()">ห้องของฉัน</button>
           <button class="room-tool-v3 wide-entry-v10"
                   type="button" onclick="toggleWideRoomV8(true)">ห้องกว้าง</button>
+        </div>
+
+        <div class="portrait-room-hud-v143" id="portraitRoomHudV143">
+          <div class="coin-pill-v3">
+            เหรียญ <strong id="coinCountPortraitV143">0</strong>
+          </div>
+          <div class="portrait-room-title-v143">
+            <strong>ห้องของฉัน</strong>
+            <span>พื้นที่พักใจของเธอ</span>
+          </div>
+          <div class="portrait-room-actions-v143">
+            <button type="button"
+                    class="portrait-exit-v143"
+                    onclick="exitPortraitRoomV143()">ออก</button>
+            <button class="hamburger-button-v8"
+                    type="button"
+                    aria-label="เปิดเมนูห้อง"
+                    onclick="toggleRoomMenuV8()">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
 
         <div class="room-commandbar-v8 wide-only-v10">
@@ -4111,6 +4547,9 @@
             </button>
             <button onclick="runRoomMenuActionV8('game')">
               <b>เกมหัวใจ</b><span>หาเหรียญเพิ่ม</span>
+            </button>
+            <button onclick="runRoomMenuActionV143('portrait')">
+              <b>ห้องของฉัน</b><span>เต็มจอแนวตั้ง</span>
             </button>
             <button onclick="runRoomMenuActionV8('wide')">
               <b>ห้องกว้าง</b><span>มุมมองแนวนอน</span>
@@ -4178,6 +4617,13 @@
           <div class="decor-v3 bean-v3 locked-v3" data-item="beanbag" style="left:69%;top:84%"></div>
           <div class="decor-v3 poster-v3 locked-v3" data-item="poster" style="left:52%;top:24%">
             <div>K</div>
+          </div>
+
+          <div class="decor-v3 memory-photo-v142" data-item="memoryPhoto" style="left:58%;top:27%" onclick="openRoomPhotoEditorV142(event)">
+            <div class="memory-photo-inner-v142">
+              <img id="roomPhotoImageV142" alt="รูปความทรงจำในห้อง">
+              <div class="memory-photo-placeholder-v142" id="roomPhotoPlaceholderV142"><span>เพิ่มรูป</span><small>แตะเพื่อเลือกรูปจากอัลบั้ม</small></div>
+            </div>
           </div>
 
           <div class="decor-v3 side-table-v3 locked-v3" data-item="sideTable" style="left:34%;top:78%"></div>
@@ -4483,6 +4929,108 @@
     </div>
   </div>
 
+
+  <div class="modal-v3 photo-editor-modal-v142" id="photoEditorModalV142" onclick="closePhotoEditorBackdropV142(event)">
+    <div class="sheet-v3 photo-editor-sheet-v142">
+      <div class="photo-editor-head-v142"><div><strong>รูปในห้อง</strong><span>เลือกรูปจากอัลบั้ม แล้วลากจัดตำแหน่งได้</span></div><button type="button" onclick="closeRoomPhotoEditorV142()">×</button></div>
+      <div class="photo-editor-preview-v142" id="photoEditorPreviewV142"><img id="photoEditorImageV142" alt="ตัวอย่างรูปในกรอบ"><div class="photo-editor-empty-v142" id="photoEditorEmptyV142">ยังไม่ได้เลือกรูป</div></div>
+      <input type="file" id="photoAlbumInputV142" accept="image/*" hidden onchange="handleRoomPhotoFileV142(event)">
+      <button type="button" class="photo-pick-button-v142" onclick="document.getElementById('photoAlbumInputV142').click()">เลือกรูปจากอัลบั้ม</button>
+      <div class="photo-control-v142"><div class="photo-control-label-v142"><span>ซูมรูป</span><b id="photoZoomValueV142">100%</b></div><input type="range" id="photoZoomRangeV142" min="100" max="400" step="1" value="100" oninput="updatePhotoEditorZoomV142(this.value)"></div>
+      <div class="photo-control-v142"><div class="photo-control-label-v142"><span>ขนาดกรอบในห้อง</span><b id="photoFrameValueV142">100%</b></div><input type="range" id="photoFrameRangeV142" min="65" max="180" step="1" value="100" oninput="updatePhotoFrameScaleV142(this.value)"></div>
+      <p class="photo-editor-hint-v142">ใช้นิ้วลากรูปในตัวอย่างเพื่อเลื่อนตำแหน่งภายในกรอบ</p>
+      <div class="photo-editor-actions-v142"><button type="button" onclick="resetPhotoTransformV142()">จัดกลาง</button><button type="button" class="danger-v142" onclick="removeRoomPhotoV142()">ลบรูป</button><button type="button" class="primary-v142" onclick="saveRoomPhotoV142()">บันทึก</button></div>
+    </div>
+  </div>
+
+
+  <div class="modal-v3 install-app-modal-v15"
+       id="installAppModalV15"
+       onclick="closeInstallBackdropV15(event)">
+    <div class="sheet-v3 install-app-sheet-v15">
+      <button class="install-close-v15"
+              type="button"
+              onclick="dismissInstallPromptV15()">×</button>
+
+      <div class="install-icon-v15">♥</div>
+      <strong>ติดตั้งพักใจเป็นแอป</strong>
+      <p>
+        เปิดเต็มจอ ใช้งานง่าย และเข้าห้องของเธอได้จากหน้าจอโฮม
+      </p>
+
+      <div class="install-benefits-v15">
+        <span>เปิดได้เหมือนแอปจริง</span>
+        <span>ข้อมูลห้องยังอยู่ในเครื่องเดิม</span>
+        <span>ไม่ต้องค้นหาลิงก์ทุกครั้ง</span>
+      </div>
+
+      <button class="install-primary-v15"
+              id="installPrimaryBtnV15"
+              type="button"
+              onclick="installAppV15()">
+        ติดตั้งแอป
+      </button>
+
+      <button class="install-later-v15"
+              type="button"
+              onclick="dismissInstallPromptV15()">
+        ไว้ทีหลัง
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-v3 ios-install-modal-v15"
+       id="iosInstallModalV15"
+       onclick="closeIosInstallBackdropV15(event)">
+    <div class="sheet-v3 ios-install-sheet-v15">
+      <button class="install-close-v15"
+              type="button"
+              onclick="closeIosInstallGuideV15()">×</button>
+
+      <strong>เพิ่มพักใจไปยังหน้าจอโฮม</strong>
+      <p>บน iPhone ต้องทำ 3 ขั้นตอนนี้</p>
+
+      <div class="ios-install-steps-v15">
+        <div><b>1</b><span>กดปุ่ม Share ใน Safari</span></div>
+        <div><b>2</b><span>เลือก “เพิ่มไปยังหน้าจอโฮม”</span></div>
+        <div><b>3</b><span>กด “เพิ่ม” ที่มุมขวาบน</span></div>
+      </div>
+
+      <button class="install-primary-v15"
+              type="button"
+              onclick="closeIosInstallGuideV15()">
+        เข้าใจแล้ว
+      </button>
+    </div>
+  </div>
+
+  <div class="modal-v3 player-name-modal-v15"
+       id="playerNameModalV15">
+    <div class="sheet-v3 player-name-sheet-v15">
+      <div class="player-name-icon-v15">♥</div>
+      <strong>ยินดีต้อนรับสู่พักใจ</strong>
+      <p>ตั้งชื่อของเธอก่อนเริ่มใช้งาน</p>
+
+      <label for="playerNameInputV15">ชื่อของเธอ</label>
+      <input id="playerNameInputV15"
+             type="text"
+             maxlength="24"
+             autocomplete="name"
+             placeholder="เช่น ณัชพล"
+             oninput="validatePlayerNameV15()">
+
+      <small id="playerNameErrorV15"></small>
+
+      <button class="install-primary-v15"
+              id="savePlayerNameBtnV15"
+              type="button"
+              disabled
+              onclick="savePlayerNameV15()">
+        เริ่มใช้งาน
+      </button>
+    </div>
+  </div>
+
   <nav class="tabs">
     <button class="tab active" data-page="home" onclick="switchPage('home',this)">
       <span class="icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-7h6v7"/></svg></span>
@@ -4528,6 +5076,7 @@
       placedItems: ["window","bed","desk","plant"],
       roomPositions: {},
       roomLayers: {},
+      roomPhotoV142: {dataUrl:"",scale:1,offsetX:0,offsetY:0,frameScale:1},
       heartHighScore: 0,
       dogName: "โมจิ",
       pets: [],
@@ -4537,6 +5086,9 @@
       petRepairVersion: 0,
       petBondMigrationV9: false,
       lastPetReactionAt: {},
+      playerName: "",
+      playerCreatedAt: 0,
+      installPromptDismissedAt: 0,
       schemaVersion: 5,
       lastSavedAt: ""
     };
@@ -4592,6 +5144,16 @@
         pets:Array.isArray(source.pets) ? source.pets : [],
         roomPositions:isPlainObjectV5(source.roomPositions) ? source.roomPositions : {},
         roomLayers:isPlainObjectV5(source.roomLayers) ? source.roomLayers : {},
+        roomPhotoV142:isPlainObjectV5(source.roomPhotoV142) ? {
+          dataUrl:String(source.roomPhotoV142.dataUrl || ""),
+          scale:Math.max(1,Math.min(4,Number(source.roomPhotoV142.scale)||1)),
+          offsetX:Math.max(-100,Math.min(100,Number(source.roomPhotoV142.offsetX)||0)),
+          offsetY:Math.max(-100,Math.min(100,Number(source.roomPhotoV142.offsetY)||0)),
+          frameScale:Math.max(.65,Math.min(1.8,Number(source.roomPhotoV142.frameScale)||1))
+        } : {...defaultData.roomPhotoV142},
+        playerName:String(source.playerName || "").trim().slice(0,24),
+        playerCreatedAt:Number(source.playerCreatedAt) || 0,
+        installPromptDismissedAt:Number(source.installPromptDismissedAt) || 0,
         schemaVersion:5
       };
     }
@@ -4853,6 +5415,10 @@
 
 
     function switchPage(id, button){
+      if(portraitRoomActiveV143 && id!=="garden"){
+        portraitRoomActiveV143=false;
+        document.body.classList.remove("portrait-room-v143");
+      }
       resetTransientRoomUIV14();
       if(id !== "garden" && typeof editV3 !== "undefined" && editV3){
         toggleRoomEditV3();
@@ -5351,7 +5917,7 @@
 
     let editV3=false, dragV3=null, timerV3=null, secondsV3=20, scoreV3=0, playingV3=false, shopFilterV3="all", heartSpawnTimerV3=null, gameRoundV5=0;
 
-    const BASE_ROOM_ITEMS_V3 = ["window","bed","desk","plant"];
+    const BASE_ROOM_ITEMS_V3 = ["window","bed","desk","plant","memoryPhoto"];
 
     const ROOM_ITEM_NAMES_V3 = {
       window:"หน้าต่าง",
@@ -5363,6 +5929,7 @@
       shelf:"ชั้นหนังสือ",
       beanbag:"บีนแบ็ก",
       poster:"โปสเตอร์ K",
+      memoryPhoto:"กรอบรูปความทรงจำ",
       sideTable:"โต๊ะข้างเตียง",
       teddy:"ตุ๊กตาหมี",
       mirror:"กระจกเต็มตัว",
@@ -5376,7 +5943,7 @@
     const ROOM_DEFAULT_POSITIONS_V4 = {
       window:{x:82,y:22},bed:{x:22,y:72},desk:{x:62,y:69},plant:{x:44,y:67},
       rug:{x:53,y:84},shelf:{x:25,y:24},beanbag:{x:69,y:84},poster:{x:52,y:24},
-      sideTable:{x:34,y:78},teddy:{x:31,y:64},mirror:{x:68,y:25},clock:{x:41,y:20},
+      memoryPhoto:{x:58,y:27},sideTable:{x:34,y:78},teddy:{x:31,y:64},mirror:{x:68,y:25},clock:{x:41,y:20},
       basket:{x:87,y:86},flowers:{x:56,y:62},tv:{x:52,y:38},speaker:{x:62,y:47},
       dog:{x:79,y:79}
     };
@@ -5390,6 +5957,7 @@
       shelf:{id:"shelf",name:"ชั้นหนังสือ",category:"furniture",preview:"shelf",desc:"มุมหนังสือและกรอบรูป"},
       beanbag:{id:"beanbag",name:"บีนแบ็ก",category:"furniture",preview:"beanbag",desc:"มุมนั่งพักหลังเลิกงาน"},
       poster:{id:"poster",name:"โปสเตอร์ K",category:"decor",preview:"poster",desc:"ของแต่งผนังสำหรับเธอ"},
+      memoryPhoto:{id:"memoryPhoto",name:"กรอบรูปความทรงจำ",category:"decor",preview:"memoryPhoto",desc:"เลือกรูปจากอัลบั้มและปรับซูมได้"},
       sideTable:{id:"sideTable",name:"โต๊ะข้างเตียง",category:"furniture",preview:"sideTable",desc:"วางของชิ้นเล็กข้างเตียง"},
       teddy:{id:"teddy",name:"ตุ๊กตาหมี",category:"decor",preview:"teddy",desc:"เพื่อนตัวเล็กสำหรับคืนที่เหนื่อย"},
       mirror:{id:"mirror",name:"กระจกเต็มตัว",category:"decor",preview:"mirror",desc:"เพิ่มมุมแต่งตัวให้ห้อง"},
@@ -5629,6 +6197,24 @@
       dog.dataset.breed = breed || "poodle";
     }
 
+
+    let photoDraftV142={dataUrl:"",scale:1,offsetX:0,offsetY:0,frameScale:1};
+    let photoDragV142=null;
+    function normalizeRoomPhotoV142(value){const s=value&&typeof value==="object"?value:{};return{dataUrl:String(s.dataUrl||""),scale:Math.max(1,Math.min(4,Number(s.scale)||1)),offsetX:Math.max(-100,Math.min(100,Number(s.offsetX)||0)),offsetY:Math.max(-100,Math.min(100,Number(s.offsetY)||0)),frameScale:Math.max(.65,Math.min(1.8,Number(s.frameScale)||1))}}
+    function renderRoomPhotoV142(data){const frame=document.querySelector('.decor-v3[data-item="memoryPhoto"]'),inner=frame?.querySelector('.memory-photo-inner-v142'),image=document.getElementById('roomPhotoImageV142');if(!frame||!inner||!image)return;const p=normalizeRoomPhotoV142(data.roomPhotoV142);frame.style.setProperty('--photo-frame-scale-v142',String(p.frameScale));inner.style.setProperty('--photo-scale-v142',String(p.scale));inner.style.setProperty('--photo-x-v142',`${p.offsetX}%`);inner.style.setProperty('--photo-y-v142',`${p.offsetY}%`);if(p.dataUrl){if(image.src!==p.dataUrl)image.src=p.dataUrl;inner.classList.add('has-photo')}else{image.removeAttribute('src');inner.classList.remove('has-photo')}}
+    function openRoomPhotoEditorV142(event){event?.preventDefault();event?.stopPropagation();if(editV3){const f=document.querySelector('.decor-v3[data-item="memoryPhoto"]');if(f)selectRoomItemV3(f);return}resetTransientRoomUIV14?.();clearPetRoamingV6?.();const data=normalizeRoomV3(loadData());photoDraftV142=normalizeRoomPhotoV142(data.roomPhotoV142);document.getElementById('photoEditorModalV142')?.classList.add('show');lockModalScrollV5?.('photoEditorModalV142');syncPhotoEditorV142();setupPhotoEditorDragV142()}
+    function closeRoomPhotoEditorV142(){document.getElementById('photoEditorModalV142')?.classList.remove('show');unlockModalScrollV5?.('photoEditorModalV142');photoDragV142=null;if(!document.hidden&&!editV3)scheduleAllPetRoamingV6?.(normalizeRoomV3(loadData()))}
+    function closePhotoEditorBackdropV142(event){if(event.target?.id==='photoEditorModalV142')closeRoomPhotoEditorV142()}
+    function syncPhotoEditorV142(){const preview=document.getElementById('photoEditorPreviewV142'),image=document.getElementById('photoEditorImageV142'),zoom=document.getElementById('photoZoomRangeV142'),frame=document.getElementById('photoFrameRangeV142');if(!preview||!image)return;if(photoDraftV142.dataUrl){if(image.src!==photoDraftV142.dataUrl)image.src=photoDraftV142.dataUrl;preview.classList.add('has-photo')}else{image.removeAttribute('src');preview.classList.remove('has-photo')}image.style.transform=`translate(calc(-50% + ${photoDraftV142.offsetX}%),calc(-50% + ${photoDraftV142.offsetY}%)) scale(${photoDraftV142.scale})`;if(zoom)zoom.value=String(Math.round(photoDraftV142.scale*100));if(frame)frame.value=String(Math.round(photoDraftV142.frameScale*100));const zl=document.getElementById('photoZoomValueV142'),fl=document.getElementById('photoFrameValueV142');if(zl)zl.textContent=`${Math.round(photoDraftV142.scale*100)}%`;if(fl)fl.textContent=`${Math.round(photoDraftV142.frameScale*100)}%`}
+    function updatePhotoEditorZoomV142(v){photoDraftV142.scale=Math.max(1,Math.min(4,Number(v)/100));syncPhotoEditorV142()}
+    function updatePhotoFrameScaleV142(v){photoDraftV142.frameScale=Math.max(.65,Math.min(1.8,Number(v)/100));syncPhotoEditorV142()}
+    function resetPhotoTransformV142(){photoDraftV142.scale=1;photoDraftV142.offsetX=0;photoDraftV142.offsetY=0;syncPhotoEditorV142();softHaptic?.('light')}
+    function setupPhotoEditorDragV142(){const p=document.getElementById('photoEditorPreviewV142');if(!p||p.dataset.dragReadyV142==='1')return;p.dataset.dragReadyV142='1';p.addEventListener('pointerdown',e=>{if(!photoDraftV142.dataUrl)return;e.preventDefault();p.setPointerCapture?.(e.pointerId);photoDragV142={pointerId:e.pointerId,startX:e.clientX,startY:e.clientY,offsetX:photoDraftV142.offsetX,offsetY:photoDraftV142.offsetY}});p.addEventListener('pointermove',e=>{if(!photoDragV142||photoDragV142.pointerId!==e.pointerId)return;e.preventDefault();const r=p.getBoundingClientRect(),dx=(e.clientX-photoDragV142.startX)/Math.max(1,r.width)*100,dy=(e.clientY-photoDragV142.startY)/Math.max(1,r.height)*100;photoDraftV142.offsetX=Math.max(-100,Math.min(100,photoDragV142.offsetX+dx));photoDraftV142.offsetY=Math.max(-100,Math.min(100,photoDragV142.offsetY+dy));syncPhotoEditorV142()});const done=e=>{if(photoDragV142&&photoDragV142.pointerId===e.pointerId)photoDragV142=null};p.addEventListener('pointerup',done);p.addEventListener('pointercancel',done)}
+    async function compressRoomPhotoV142(file){if(!file||!file.type.startsWith('image/'))throw new Error('กรุณาเลือกไฟล์รูปภาพ');const url=URL.createObjectURL(file);try{const image=await new Promise((ok,bad)=>{const img=new Image();img.onload=()=>ok(img);img.onerror=()=>bad(new Error('อ่านรูปไม่สำเร็จ'));img.src=url});const max=1100,ratio=Math.min(1,max/Math.max(image.naturalWidth,image.naturalHeight)),w=Math.max(1,Math.round(image.naturalWidth*ratio)),h=Math.max(1,Math.round(image.naturalHeight*ratio)),canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const c=canvas.getContext('2d',{alpha:false});c.fillStyle='#111827';c.fillRect(0,0,w,h);c.drawImage(image,0,0,w,h);return canvas.toDataURL('image/jpeg',.82)}finally{URL.revokeObjectURL(url)}}
+    async function handleRoomPhotoFileV142(event){const input=event.target,file=input.files?.[0];if(!file)return;try{showToast('กำลังเตรียมรูป...');photoDraftV142.dataUrl=await compressRoomPhotoV142(file);photoDraftV142.scale=1;photoDraftV142.offsetX=0;photoDraftV142.offsetY=0;syncPhotoEditorV142();showToast('เลือกรูปแล้ว ลากหรือซูมได้เลย');softHaptic?.('success')}catch(error){console.error(error);showToast(error.message||'เปิดรูปไม่สำเร็จ')}finally{input.value=''}}
+    function removeRoomPhotoV142(){photoDraftV142={dataUrl:'',scale:1,offsetX:0,offsetY:0,frameScale:photoDraftV142.frameScale||1};syncPhotoEditorV142();showToast('ลบรูปออกแล้ว กดบันทึกเพื่อยืนยัน')}
+    function saveRoomPhotoV142(){const data=normalizeRoomV3(loadData());data.roomPhotoV142=normalizeRoomPhotoV142(photoDraftV142);saveData(data);renderRoomPhotoV142(data);closeRoomPhotoEditorV142();showToast(data.roomPhotoV142.dataUrl?'บันทึกรูปในห้องแล้ว':'นำรูปออกจากห้องแล้ว');softHaptic?.('success')}
+
     function renderRoomV3(data){
       data = normalizeRoomV3(data);
 
@@ -5640,6 +6226,9 @@
       if(coinElement) coinElement.textContent = String(Math.floor(data.coins));
       const wideCoin=document.getElementById("coinCountWideV10");
       if(wideCoin)wideCoin.textContent=String(Math.floor(data.coins));
+
+      const portraitCoin=document.getElementById("coinCountPortraitV143");
+      if(portraitCoin)portraitCoin.textContent=String(Math.floor(data.coins));
 
       document.querySelectorAll(".decor-v3").forEach(element=>{
         const itemId = element.dataset.item;
@@ -5699,6 +6288,7 @@
         }
       }
 
+      renderRoomPhotoV142(data);
       createRainV3();
       syncDogRoamingV3(data);
     }
@@ -8847,6 +9437,263 @@
     }
 
 
+
+
+    let deferredInstallPromptV15=null;
+    let installPromptReadyV15=false;
+
+    function isStandaloneV15(){
+      return Boolean(
+        window.navigator.standalone===true ||
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.matchMedia("(display-mode: fullscreen)").matches
+      );
+    }
+
+    function isIosV15(){
+      return /iphone|ipad|ipod/i.test(navigator.userAgent);
+    }
+
+    function updateInstallUiV15(){
+      const button=document.getElementById("floatingInstallBtnV15");
+      if(!button)return;
+
+      const shouldShow=!isStandaloneV15();
+      button.classList.toggle("show",shouldShow);
+    }
+
+    function openInstallPromptV15(){
+      if(isStandaloneV15())return;
+
+      document.getElementById("installAppModalV15")
+        ?.classList.add("show");
+      lockModalScrollV5?.("installAppModalV15");
+
+      const primary=document.getElementById("installPrimaryBtnV15");
+      if(primary){
+        primary.textContent=isIosV15()
+          ? "ดูวิธีติดตั้งบน iPhone"
+          : "ติดตั้งแอป";
+      }
+    }
+
+    function closeInstallBackdropV15(event){
+      if(event.target?.id==="installAppModalV15"){
+        dismissInstallPromptV15();
+      }
+    }
+
+    function dismissInstallPromptV15(){
+      const data=loadData();
+      data.installPromptDismissedAt=Date.now();
+      saveDataSilentV7?.(data);
+
+      document.getElementById("installAppModalV15")
+        ?.classList.remove("show");
+      unlockModalScrollV5?.("installAppModalV15");
+    }
+
+    async function installAppV15(){
+      if(isStandaloneV15()){
+        dismissInstallPromptV15();
+        return;
+      }
+
+      if(isIosV15()){
+        dismissInstallPromptV15();
+        document.getElementById("iosInstallModalV15")
+          ?.classList.add("show");
+        lockModalScrollV5?.("iosInstallModalV15");
+        return;
+      }
+
+      if(deferredInstallPromptV15){
+        deferredInstallPromptV15.prompt();
+        const result=await deferredInstallPromptV15.userChoice;
+        deferredInstallPromptV15=null;
+        installPromptReadyV15=false;
+
+        if(result.outcome==="accepted"){
+          dismissInstallPromptV15();
+          updateInstallUiV15();
+          showToast("กำลังติดตั้งพักใจ");
+        }
+        return;
+      }
+
+      showToast("เบราว์เซอร์นี้ยังไม่พร้อมติดตั้ง ลองเปิดผ่าน Chrome");
+    }
+
+    function closeIosInstallBackdropV15(event){
+      if(event.target?.id==="iosInstallModalV15"){
+        closeIosInstallGuideV15();
+      }
+    }
+
+    function closeIosInstallGuideV15(){
+      document.getElementById("iosInstallModalV15")
+        ?.classList.remove("show");
+      unlockModalScrollV5?.("iosInstallModalV15");
+    }
+
+    function validatePlayerNameV15(){
+      const input=document.getElementById("playerNameInputV15");
+      const button=document.getElementById("savePlayerNameBtnV15");
+      const error=document.getElementById("playerNameErrorV15");
+      const name=String(input?.value || "").trim();
+
+      let message="";
+      if(name.length>0 && name.length<2){
+        message="ชื่อควรมีอย่างน้อย 2 ตัวอักษร";
+      }else if(name.length>24){
+        message="ชื่อยาวเกิน 24 ตัวอักษร";
+      }
+
+      if(error)error.textContent=message;
+      if(button)button.disabled=Boolean(message) || name.length<2;
+    }
+
+    function openPlayerNameModalV15(){
+      const modal=document.getElementById("playerNameModalV15");
+      if(!modal)return;
+
+      document.body.classList.add("player-name-required-v15");
+      modal.classList.add("show");
+      lockModalScrollV5?.("playerNameModalV15");
+
+      const input=document.getElementById("playerNameInputV15");
+      setTimeout(()=>input?.focus(),220);
+    }
+
+    function savePlayerNameV15(){
+      const input=document.getElementById("playerNameInputV15");
+      const name=String(input?.value || "").trim().slice(0,24);
+
+      if(name.length<2){
+        validatePlayerNameV15();
+        return;
+      }
+
+      const data=loadData();
+      data.playerName=name;
+
+      if(!data.playerCreatedAt){
+        data.playerCreatedAt=Date.now();
+      }
+
+      saveData(data);
+
+      document.body.classList.remove("player-name-required-v15");
+      document.getElementById("playerNameModalV15")
+        ?.classList.remove("show");
+      unlockModalScrollV5?.("playerNameModalV15");
+
+      showToast(`ยินดีต้อนรับ ${name}`);
+      softHaptic?.("success");
+      setTimeout(maybeShowInstallPromptV15,700);
+    }
+
+    function ensurePlayerNameV15(){
+      const data=loadData();
+      if(String(data.playerName || "").trim().length>=2)return true;
+
+      openPlayerNameModalV15();
+      return false;
+    }
+
+    function maybeShowInstallPromptV15(){
+      if(isStandaloneV15())return;
+
+      const data=loadData();
+      const dismissed=Number(data.installPromptDismissedAt)||0;
+      const sevenDays=7*24*60*60*1000;
+
+      if(dismissed && Date.now()-dismissed<sevenDays)return;
+
+      setTimeout(()=>{
+        if(!document.getElementById("playerNameModalV15")
+          ?.classList.contains("show")){
+          openInstallPromptV15();
+        }
+      },900);
+    }
+
+    window.addEventListener("beforeinstallprompt",event=>{
+      event.preventDefault();
+      deferredInstallPromptV15=event;
+      installPromptReadyV15=true;
+      updateInstallUiV15();
+    });
+
+    window.addEventListener("appinstalled",()=>{
+      deferredInstallPromptV15=null;
+      installPromptReadyV15=false;
+      updateInstallUiV15();
+      document.getElementById("installAppModalV15")
+        ?.classList.remove("show");
+      showToast("ติดตั้งพักใจแล้ว");
+    });
+
+    let portraitRoomActiveV143=false;
+
+    function syncPortraitCoinV143(){
+      const source=document.getElementById("coinCountV3");
+      const target=document.getElementById("coinCountPortraitV143");
+      if(source && target)target.textContent=source.textContent;
+    }
+
+    function runRoomMenuActionV143(action){
+      closeRoomMenuV8();
+      if(action==="portrait"){
+        enterPortraitRoomV143();
+        return;
+      }
+      runRoomMenuActionV8(action);
+    }
+
+    function enterPortraitRoomV143(){
+      resetTransientRoomUIV14?.();
+      activateGardenPageV11();
+
+      portraitRoomActiveV143=true;
+      wideRoomV8=false;
+
+      document.body.classList.remove(
+        "wide-room-v8",
+        "standalone-game-v11",
+        "needs-landscape-v10"
+      );
+      document.body.classList.add("portrait-room-v143");
+
+      closeRoomMenuV8();
+
+      const data=normalizeRoomV3(loadData());
+      renderRoomV3(data);
+
+      requestAnimationFrame(()=>{
+        syncPortraitCoinV143();
+        clampAllPetsInsideRoomV10?.(data,true);
+        scheduleAllPetRoamingV6?.(data);
+      });
+    }
+
+    function exitPortraitRoomV143(){
+      resetTransientRoomUIV14?.();
+      portraitRoomActiveV143=false;
+      document.body.classList.remove("portrait-room-v143");
+
+      activateGardenPageV11();
+
+      const data=normalizeRoomV3(loadData());
+      renderRoomV3(data);
+
+      requestAnimationFrame(()=>{
+        clampAllPetsInsideRoomV10?.(data,true);
+        scheduleAllPetRoamingV6?.(data);
+        window.scrollTo({top:0,behavior:"auto"});
+      });
+    }
+
     function isInstalledAppV11(){
       return Boolean(
         window.navigator.standalone === true ||
@@ -8876,6 +9723,8 @@
     }
 
     async function enterStandaloneGameV11(){
+      document.body.classList.remove("portrait-room-v143");
+      portraitRoomActiveV143=false;
       resetTransientRoomUIV14();
       activateGardenPageV11();
       wideRoomV8=true;
@@ -9230,6 +10079,12 @@
     setupParallaxV13();
     syncDogRoamingV3(loadData());
 
+    updateInstallUiV15();
+    const hasPlayerNameV15=ensurePlayerNameV15();
+    if(hasPlayerNameV15){
+      maybeShowInstallPromptV15();
+    }
+
     setInterval(updateDayNightV13,60000);
 
     document.getElementById("petNameInputV4")?.addEventListener("keydown",event=>{
@@ -9275,5 +10130,13 @@
       }
     });
   </script>
+
+  <button class="floating-install-v15"
+          id="floatingInstallBtnV15"
+          type="button"
+          onclick="openInstallPromptV15()">
+    ติดตั้งแอป
+  </button>
+
 </body>
 </html>
