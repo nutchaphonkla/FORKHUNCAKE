@@ -7070,984 +7070,6 @@
       }
     }
 
-  
-    /* ========================================================
-       V20.0 Cinematic App Intro
-       ======================================================== */
-    .cinematic-intro-v200{
-      position:fixed;
-      inset:0;
-      z-index:30000;
-      display:none;
-      overflow:hidden;
-      color:#fff;
-      background:#090e1b;
-      opacity:0;
-      transition:opacity .65s ease;
-      touch-action:none;
-    }
-
-    .cinematic-intro-v200.show{
-      display:block;
-      opacity:1;
-    }
-
-    .cinematic-intro-v200.leaving{
-      opacity:0;
-      pointer-events:none;
-    }
-
-    .cinematic-sky-v200{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 50% 18%,rgba(120,132,226,.23),transparent 31%),
-        linear-gradient(180deg,#111831 0%,#0a1020 65%,#090d17 100%);
-    }
-
-    .cinematic-stars-v200{
-      position:absolute;
-      inset:-40px;
-      opacity:.7;
-      background-image:
-        radial-gradient(circle,#fff 0 1px,transparent 1.6px),
-        radial-gradient(circle,rgba(194,203,255,.85) 0 1px,transparent 1.5px),
-        radial-gradient(circle,rgba(255,229,177,.8) 0 .8px,transparent 1.4px);
-      background-size:91px 91px,137px 137px,183px 183px;
-      background-position:0 0,31px 47px,69px 19px;
-      animation:introStarsDriftV200 22s linear infinite;
-    }
-
-    @keyframes introStarsDriftV200{
-      to{transform:translate3d(-46px,30px,0)}
-    }
-
-    .cinematic-moon-v200{
-      position:absolute;
-      right:11vw;
-      top:10vh;
-      width:78px;
-      height:78px;
-      border-radius:50%;
-      background:
-        radial-gradient(circle at 38% 35%,#fff8da,#ecd79e 72%);
-      box-shadow:
-        0 0 35px rgba(255,234,178,.42),
-        0 0 110px rgba(170,177,255,.16);
-      opacity:0;
-      transform:translateY(-20px) scale(.8);
-      animation:introMoonInV200 1.2s .4s ease forwards;
-    }
-
-    @keyframes introMoonInV200{
-      to{opacity:1;transform:none}
-    }
-
-    .cinematic-floor-v200{
-      position:absolute;
-      left:-15%;
-      right:-15%;
-      bottom:-70px;
-      height:34vh;
-      opacity:.18;
-      background:
-        repeating-linear-gradient(90deg,transparent 0 74px,rgba(184,191,255,.25) 75px 77px),
-        repeating-linear-gradient(0deg,transparent 0 42px,rgba(184,191,255,.2) 43px 45px);
-      transform:perspective(440px) rotateX(61deg);
-      transform-origin:bottom;
-    }
-
-    .cinematic-skip-v200{
-      position:absolute;
-      right:calc(18px + env(safe-area-inset-right));
-      top:calc(18px + env(safe-area-inset-top));
-      z-index:5;
-      min-height:40px;
-      padding:0 15px;
-      border-radius:999px;
-      color:rgba(240,242,252,.72);
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      font-size:10px;
-      font-weight:850;
-      opacity:0;
-      animation:introFadeInV200 .5s 1s forwards;
-    }
-
-    .cinematic-logo-stage-v200{
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-content:center;
-      justify-items:center;
-      transform:translateY(-3vh);
-      animation:introLogoStageOutV200 .7s 2.55s ease forwards;
-    }
-
-    .cinematic-logo-v200{
-      position:relative;
-      width:112px;
-      height:112px;
-      padding:9px;
-      border-radius:34px;
-      background:
-        linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.025));
-      border:1px solid rgba(255,255,255,.13);
-      box-shadow:
-        0 0 0 10px rgba(148,128,255,.045),
-        0 24px 65px rgba(92,71,213,.33);
-      opacity:0;
-      transform:scale(.68) rotate(-7deg);
-      animation:introLogoInV200 .9s .2s cubic-bezier(.18,.9,.25,1.15) forwards;
-    }
-
-    .cinematic-logo-v200::before{
-      content:"";
-      position:absolute;
-      inset:8px;
-      border-radius:27px;
-      background:linear-gradient(145deg,#8074f5,#a77ce6);
-    }
-
-    .cinematic-logo-v200 span{
-      position:absolute;
-      left:50%;
-      top:48%;
-      width:48px;
-      height:43px;
-      z-index:2;
-      background:#fff;
-      transform:translate(-50%,-50%) rotate(-45deg);
-      border-radius:8px 0 8px 8px;
-    }
-
-    .cinematic-logo-v200 span::before,
-    .cinematic-logo-v200 span::after{
-      content:"";
-      position:absolute;
-      width:48px;
-      height:48px;
-      border-radius:50%;
-      background:#fff;
-    }
-
-    .cinematic-logo-v200 span::before{top:-24px;left:0}
-    .cinematic-logo-v200 span::after{left:24px;top:0}
-
-    @keyframes introLogoInV200{
-      to{opacity:1;transform:none}
-    }
-
-    .cinematic-logo-stage-v200 > strong{
-      margin-top:19px;
-      font-size:27px;
-      letter-spacing:.02em;
-      opacity:0;
-      transform:translateY(10px);
-      animation:introFadeUpV200 .65s .82s forwards;
-    }
-
-    .cinematic-loading-v200{
-      display:flex;
-      gap:6px;
-      margin-top:15px;
-      opacity:0;
-      animation:introFadeInV200 .45s 1.2s forwards;
-    }
-
-    .cinematic-loading-v200 i{
-      width:6px;
-      height:6px;
-      border-radius:50%;
-      background:#cfc8ff;
-      animation:introLoadingDotV200 .85s ease-in-out infinite;
-    }
-
-    .cinematic-loading-v200 i:nth-child(2){animation-delay:.14s}
-    .cinematic-loading-v200 i:nth-child(3){animation-delay:.28s}
-
-    @keyframes introLoadingDotV200{
-      0%,100%{transform:translateY(0);opacity:.3}
-      50%{transform:translateY(-5px);opacity:1}
-    }
-
-    @keyframes introLogoStageOutV200{
-      to{opacity:0;transform:translateY(-12vh) scale(.92);pointer-events:none}
-    }
-
-    .cinematic-khaitom-stage-v200{
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-content:center;
-      justify-items:center;
-      opacity:0;
-      pointer-events:none;
-      animation:introKhaitomStageInV200 .6s 2.65s forwards;
-    }
-
-    @keyframes introKhaitomStageInV200{
-      to{opacity:1;pointer-events:auto}
-    }
-
-    .cinematic-khaitom-v200{
-      position:relative;
-      width:150px;
-      height:190px;
-      display:grid;
-      place-items:center;
-      transform:translateX(-130vw);
-      animation:
-        introKhaitomWalkV200 1.75s 2.72s cubic-bezier(.2,.75,.25,1) forwards,
-        introKhaitomSitV200 .55s 4.5s cubic-bezier(.2,.9,.25,1) forwards;
-    }
-
-    @keyframes introKhaitomWalkV200{
-      0%{transform:translateX(-130vw) translateY(0) rotate(-4deg)}
-      18%{transform:translateX(-91vw) translateY(-8px) rotate(4deg)}
-      36%{transform:translateX(-57vw) translateY(0) rotate(-4deg)}
-      54%{transform:translateX(-29vw) translateY(-8px) rotate(4deg)}
-      76%{transform:translateX(-9vw) translateY(0) rotate(-3deg)}
-      100%{transform:translateX(0) translateY(-5px) rotate(0)}
-    }
-
-    @keyframes introKhaitomSitV200{
-      from{transform:translateY(-5px) scaleY(1)}
-      to{transform:translateY(14px) scaleY(.91)}
-    }
-
-    .cinematic-egg-v200{
-      position:relative;
-      width:126px;
-      height:157px;
-      border-radius:52% 52% 46% 46% / 58% 58% 42% 42%;
-      background:
-        radial-gradient(circle at 34% 22%,#fffef7 0 11%,transparent 12%),
-        linear-gradient(145deg,#fff4cb,#e7c26d);
-      border:4px solid rgba(102,72,34,.55);
-      box-shadow:
-        inset -13px -16px 22px rgba(149,99,32,.18),
-        inset 10px 10px 17px rgba(255,255,255,.66),
-        0 29px 50px rgba(0,0,0,.33),
-        0 0 55px rgba(246,211,130,.12);
-      transform-origin:50% 90%;
-      animation:introKhaitomTurnV200 .7s 4.85s ease-in-out both;
-    }
-
-    @keyframes introKhaitomTurnV200{
-      0%{transform:scaleX(.78)}
-      55%{transform:scaleX(1.08)}
-      100%{transform:scaleX(1)}
-    }
-
-    .cinematic-egg-v200 .eye{
-      position:absolute;
-      top:61px;
-      width:10px;
-      height:14px;
-      border-radius:50%;
-      background:#493524;
-      transform:scaleY(.08);
-      animation:introEyeOpenV200 .35s 5.32s forwards;
-    }
-
-    .cinematic-egg-v200 .eye.left{left:36px}
-    .cinematic-egg-v200 .eye.right{right:36px}
-
-    @keyframes introEyeOpenV200{
-      to{transform:scaleY(1)}
-    }
-
-    .cinematic-egg-v200 .mouth{
-      position:absolute;
-      left:50%;
-      top:88px;
-      width:21px;
-      height:10px;
-      border-bottom:3px solid #5f4534;
-      border-radius:0 0 50% 50%;
-      transform:translateX(-50%) scaleX(.2);
-      animation:introSmileV200 .5s 5.45s forwards;
-    }
-
-    @keyframes introSmileV200{
-      to{transform:translateX(-50%) scaleX(1)}
-    }
-
-    .cinematic-egg-v200 .cheek{
-      position:absolute;
-      top:82px;
-      width:20px;
-      height:10px;
-      border-radius:50%;
-      background:rgba(236,139,126,.36);
-      opacity:0;
-      animation:introFadeInV200 .4s 5.5s forwards;
-    }
-
-    .cinematic-egg-v200 .cheek.left{left:17px}
-    .cinematic-egg-v200 .cheek.right{right:17px}
-
-    .cinematic-shadow-v200{
-      position:absolute;
-      left:50%;
-      bottom:4px;
-      width:116px;
-      height:21px;
-      border-radius:50%;
-      background:rgba(0,0,0,.3);
-      filter:blur(7px);
-      transform:translateX(-50%);
-    }
-
-    .cinematic-heart-v200{
-      margin-top:-8px;
-      color:#ffd6e6;
-      font-size:38px;
-      opacity:0;
-      transform:translateY(20px) scale(.5);
-      text-shadow:0 0 22px rgba(255,181,211,.48);
-      animation:introHeartInV200 .8s 5.72s cubic-bezier(.2,.9,.25,1.2) forwards;
-    }
-
-    @keyframes introHeartInV200{
-      55%{opacity:1;transform:translateY(-7px) scale(1.18)}
-      100%{opacity:1;transform:translateY(0) scale(1)}
-    }
-
-    .cinematic-welcome-v200{
-      margin-top:8px;
-      text-align:center;
-      opacity:0;
-      transform:translateY(13px);
-      animation:introFadeUpV200 .65s 6.05s forwards;
-    }
-
-    .cinematic-welcome-v200 span{
-      display:block;
-      margin-bottom:5px;
-      color:#f4d98f;
-      font-size:10px;
-      font-weight:900;
-    }
-
-    .cinematic-welcome-v200 strong{
-      display:block;
-      font-size:25px;
-      letter-spacing:-.3px;
-    }
-
-    .cinematic-welcome-v200 small{
-      display:block;
-      margin-top:7px;
-      color:rgba(226,229,241,.6);
-      font-size:10px;
-    }
-
-    .cinematic-enter-v200{
-      position:absolute;
-      left:50%;
-      bottom:calc(28px + env(safe-area-inset-bottom));
-      z-index:5;
-      width:min(320px,calc(100% - 48px));
-      min-height:56px;
-      border:none;
-      border-radius:18px;
-      color:#211b12;
-      background:linear-gradient(135deg,#ffe19a,#efbf72 58%,#e6b9cb);
-      box-shadow:
-        0 18px 44px rgba(193,144,54,.25),
-        inset 0 1px 0 rgba(255,255,255,.52);
-      font-size:11px;
-      font-weight:950;
-      opacity:0;
-      transform:translate(-50%,15px);
-      animation:introEnterInV200 .6s 6.45s forwards;
-    }
-
-    @keyframes introEnterInV200{
-      to{opacity:1;transform:translate(-50%,0)}
-    }
-
-    @keyframes introFadeInV200{
-      to{opacity:1}
-    }
-
-    @keyframes introFadeUpV200{
-      to{opacity:1;transform:none}
-    }
-
-    @media(max-height:720px){
-      .cinematic-khaitom-stage-v200{
-        transform:scale(.86);
-      }
-
-      .cinematic-enter-v200{
-        bottom:calc(18px + env(safe-area-inset-bottom));
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      .cinematic-logo-stage-v200{
-        display:none;
-      }
-
-      .cinematic-khaitom-stage-v200,
-      .cinematic-khaitom-v200,
-      .cinematic-egg-v200,
-      .cinematic-welcome-v200,
-      .cinematic-heart-v200,
-      .cinematic-enter-v200{
-        opacity:1 !important;
-        transform:none !important;
-        animation:none !important;
-      }
-    }
-
-  
-    /* ========================================================
-       V21.0 Quiet Mode + Premium Mood Selector
-       ======================================================== */
-
-    /* Fix hidden overlays globally */
-    [hidden]{
-      display:none !important;
-    }
-
-    .quiet-premium-v210{
-      position:fixed;
-      inset:0;
-      z-index:40000;
-      overflow:hidden;
-      color:#f8f7ff;
-      background:#070b14;
-      opacity:0;
-      transition:opacity .45s ease;
-      touch-action:none;
-    }
-
-    .quiet-premium-v210.open{
-      opacity:1;
-    }
-
-    .quiet-premium-bg-v210{
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 50% 31%,rgba(128,139,220,.24),transparent 28%),
-        radial-gradient(circle at 20% 78%,rgba(118,102,190,.12),transparent 32%),
-        linear-gradient(180deg,#0b1120,#060910);
-    }
-
-    .quiet-premium-bg-v210::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      opacity:.32;
-      background-image:
-        radial-gradient(circle,rgba(255,255,255,.8) 0 1px,transparent 1.5px),
-        radial-gradient(circle,rgba(194,203,255,.75) 0 1px,transparent 1.5px);
-      background-size:113px 113px,167px 167px;
-      background-position:0 0,53px 31px;
-      animation:quietStarsV210 26s linear infinite;
-    }
-
-    @keyframes quietStarsV210{
-      to{transform:translate3d(-48px,30px,0)}
-    }
-
-    .quiet-premium-close-v210{
-      position:absolute;
-      right:calc(17px + env(safe-area-inset-right));
-      top:calc(17px + env(safe-area-inset-top));
-      z-index:3;
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      color:rgba(241,242,250,.76);
-      background:rgba(255,255,255,.055);
-      border:1px solid rgba(255,255,255,.09);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      font-size:24px;
-      line-height:1;
-    }
-
-    .quiet-premium-content-v210{
-      position:relative;
-      z-index:2;
-      min-height:100%;
-      padding:
-        calc(30px + env(safe-area-inset-top))
-        24px
-        calc(26px + env(safe-area-inset-bottom));
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-    }
-
-    .quiet-premium-khaitom-v210{
-      position:relative;
-      width:94px;
-      height:118px;
-      margin-bottom:6px;
-      display:grid;
-      place-items:center;
-      opacity:0;
-      transform:translateY(28px);
-      animation:quietKhaitomInV210 .75s .18s cubic-bezier(.2,.9,.25,1) forwards;
-    }
-
-    @keyframes quietKhaitomInV210{
-      to{opacity:1;transform:none}
-    }
-
-    .quiet-premium-egg-v210{
-      position:relative;
-      width:76px;
-      height:94px;
-      border-radius:52% 52% 46% 46% / 58% 58% 42% 42%;
-      background:
-        radial-gradient(circle at 34% 24%,#fffef7 0 11%,transparent 12%),
-        linear-gradient(145deg,#fff3c9,#e4c06f);
-      border:3px solid rgba(98,70,34,.52);
-      box-shadow:
-        inset -8px -10px 14px rgba(145,96,31,.16),
-        inset 7px 7px 12px rgba(255,255,255,.62),
-        0 18px 32px rgba(0,0,0,.28);
-      animation:quietEggBreatheV210 4.8s ease-in-out infinite;
-    }
-
-    @keyframes quietEggBreatheV210{
-      0%,100%{transform:translateY(0) scale(1)}
-      50%{transform:translateY(-4px) scale(1.025)}
-    }
-
-    .quiet-premium-egg-v210 i{
-      position:absolute;
-      top:36px;
-      width:6px;
-      height:9px;
-      border-radius:50%;
-      background:#4a3827;
-      animation:quietBlinkV210 5s infinite;
-    }
-
-    .quiet-premium-egg-v210 i.left{left:22px}
-    .quiet-premium-egg-v210 i.right{right:22px}
-
-    @keyframes quietBlinkV210{
-      0%,44%,48%,100%{transform:scaleY(1)}
-      46%{transform:scaleY(.08)}
-    }
-
-    .quiet-premium-egg-v210 b{
-      position:absolute;
-      left:50%;
-      top:54px;
-      width:14px;
-      height:7px;
-      border-bottom:2px solid #5d4533;
-      border-radius:0 0 50% 50%;
-      transform:translateX(-50%);
-    }
-
-    .quiet-premium-shadow-v210{
-      position:absolute;
-      left:50%;
-      bottom:2px;
-      width:70px;
-      height:14px;
-      border-radius:50%;
-      background:rgba(0,0,0,.28);
-      filter:blur(5px);
-      transform:translateX(-50%);
-    }
-
-    .quiet-premium-kicker-v210{
-      margin-top:6px;
-      color:#f1d992;
-      font-size:9px;
-      font-weight:900;
-      letter-spacing:.04em;
-      opacity:0;
-      animation:quietFadeUpV210 .6s .55s forwards;
-    }
-
-    .quiet-premium-content-v210 h2{
-      margin:7px 0 6px;
-      font-size:27px;
-      line-height:1.15;
-      opacity:0;
-      transform:translateY(10px);
-      animation:quietFadeUpV210 .6s .67s forwards;
-    }
-
-    .quiet-premium-content-v210 > p{
-      margin:0;
-      color:rgba(232,234,244,.68);
-      font-size:11px;
-      opacity:0;
-      animation:quietFadeUpV210 .6s .78s forwards;
-    }
-
-    @keyframes quietFadeUpV210{
-      to{opacity:1;transform:none}
-    }
-
-    .quiet-premium-breath-v210{
-      position:relative;
-      width:170px;
-      height:170px;
-      margin:22px 0 11px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-    }
-
-    .quiet-premium-breath-v210::before,
-    .quiet-premium-breath-v210::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      border:1px solid rgba(173,184,255,.14);
-      animation:quietBreathRingV210 8s ease-in-out infinite;
-    }
-
-    .quiet-premium-breath-v210::after{
-      inset:18px;
-      animation-delay:-4s;
-    }
-
-    @keyframes quietBreathRingV210{
-      0%,100%{transform:scale(.72);opacity:.22}
-      50%{transform:scale(1);opacity:.9}
-    }
-
-    .quiet-premium-breath-core-v210{
-      width:108px;
-      height:108px;
-      border-radius:50%;
-      background:
-        radial-gradient(circle at 35% 28%,#e6eaff,#939fdc 55%,#586493);
-      box-shadow:
-        0 0 0 15px rgba(137,151,224,.055),
-        0 0 70px rgba(118,133,215,.26);
-      animation:quietBreathCoreV210 8s ease-in-out infinite;
-    }
-
-    @keyframes quietBreathCoreV210{
-      0%,100%{transform:scale(.72);filter:brightness(.82)}
-      50%{transform:scale(1);filter:brightness(1.08)}
-    }
-
-    .quiet-premium-content-v210 time{
-      margin-top:2px;
-      color:#eef0ff;
-      font-size:42px;
-      font-weight:300;
-      font-variant-numeric:tabular-nums;
-      letter-spacing:.03em;
-    }
-
-    .quiet-premium-content-v210 > small{
-      margin-top:8px;
-      color:rgba(223,226,239,.48);
-      font-size:9px;
-    }
-
-    .quiet-premium-return-v210{
-      min-width:185px;
-      min-height:50px;
-      margin-top:23px;
-      border:none;
-      border-radius:16px;
-      color:#1c2031;
-      background:linear-gradient(135deg,#c6ceff,#aaa8f4);
-      box-shadow:
-        0 17px 36px rgba(98,105,186,.22),
-        inset 0 1px 0 rgba(255,255,255,.45);
-      font-size:10px;
-      font-weight:900;
-    }
-
-    /* Premium mood selector */
-    .mood-row{
-      display:grid !important;
-      grid-template-columns:repeat(5,minmax(0,1fr)) !important;
-      gap:8px !important;
-      padding:10px !important;
-      border-radius:24px !important;
-      background:
-        linear-gradient(145deg,rgba(22,31,46,.92),rgba(12,18,29,.94)) !important;
-      border:1px solid rgba(255,255,255,.065) !important;
-      box-shadow:
-        0 21px 51px rgba(0,0,0,.28),
-        inset 0 1px 0 rgba(255,255,255,.035) !important;
-    }
-
-    .mood-button{
-      min-width:0 !important;
-      min-height:116px !important;
-      padding:11px 7px !important;
-      display:flex !important;
-      flex-direction:column !important;
-      align-items:center !important;
-      justify-content:center !important;
-      border-radius:17px !important;
-      color:#e9ebf3 !important;
-      background:rgba(255,255,255,.025) !important;
-      border:1px solid rgba(255,255,255,.055) !important;
-      transition:
-        transform .2s cubic-bezier(.2,.85,.25,1),
-        background .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease !important;
-    }
-
-    .mood-button .face{
-      display:none !important;
-    }
-
-    .mood-button strong{
-      display:block;
-      margin-top:9px;
-      font-size:10px;
-      line-height:1.2;
-      text-align:center;
-    }
-
-    .mood-button small{
-      display:block;
-      margin-top:4px;
-      color:rgba(210,214,227,.48);
-      font-size:7px;
-      line-height:1.35;
-      text-align:center;
-    }
-
-    .mood-orb-v210{
-      position:relative;
-      width:36px;
-      height:36px;
-      display:block;
-      border-radius:50%;
-      background:var(--orb);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.28),
-        0 0 0 7px rgba(255,255,255,.025),
-        0 9px 19px rgba(0,0,0,.19);
-    }
-
-    .mood-orb-v210::after{
-      content:"";
-      position:absolute;
-      left:10px;
-      top:8px;
-      width:8px;
-      height:6px;
-      border-radius:50%;
-      background:rgba(255,255,255,.32);
-      filter:blur(.4px);
-      transform:rotate(-30deg);
-    }
-
-    .mood-orb-v210.calm{
-      --orb:linear-gradient(145deg,#cde5bd,#75b88f);
-    }
-
-    .mood-orb-v210.neutral{
-      --orb:linear-gradient(145deg,#dce0ec,#8e98af);
-    }
-
-    .mood-orb-v210.tired{
-      --orb:linear-gradient(145deg,#d7d1ff,#8f84d6);
-    }
-
-    .mood-orb-v210.worried{
-      --orb:linear-gradient(145deg,#f2d099,#c88f5e);
-    }
-
-    .mood-orb-v210.heavy{
-      --orb:linear-gradient(145deg,#e8aeb8,#ad6678);
-    }
-
-    .mood-button.active{
-      transform:translateY(-4px) scale(1.025) !important;
-      border-color:rgba(190,177,255,.32) !important;
-      background:
-        linear-gradient(145deg,rgba(158,143,255,.14),rgba(255,255,255,.045)) !important;
-      box-shadow:
-        0 14px 32px rgba(71,61,141,.22),
-        inset 0 1px 0 rgba(255,255,255,.055) !important;
-    }
-
-    .mood-button.active .mood-orb-v210{
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.32),
-        0 0 0 8px rgba(164,150,255,.08),
-        0 0 26px rgba(166,150,255,.34);
-    }
-
-    .mood-button:active{
-      transform:scale(.97) !important;
-    }
-
-    @media(max-width:520px){
-      .mood-row{
-        gap:6px !important;
-        padding:8px !important;
-      }
-
-      .mood-button{
-        min-height:100px !important;
-        padding:8px 4px !important;
-      }
-
-      .mood-orb-v210{
-        width:31px;
-        height:31px;
-      }
-
-      .mood-button strong{
-        font-size:8px;
-      }
-
-      .mood-button small{
-        display:none;
-      }
-
-      .quiet-premium-breath-v210{
-        width:150px;
-        height:150px;
-      }
-
-      .quiet-premium-breath-core-v210{
-        width:96px;
-        height:96px;
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      .quiet-premium-bg-v210::before,
-      .quiet-premium-egg-v210,
-      .quiet-premium-breath-v210::before,
-      .quiet-premium-breath-v210::after,
-      .quiet-premium-breath-core-v210{
-        animation:none !important;
-      }
-    }
-
-  
-    /* ===== V21.1 Intro touch/click reliability fix ===== */
-    .cinematic-intro-v200{
-      pointer-events:auto !important;
-      touch-action:manipulation !important;
-    }
-
-    .cinematic-sky-v200,
-    .cinematic-logo-stage-v200,
-    .cinematic-khaitom-stage-v200,
-    .cinematic-khaitom-v200,
-    .cinematic-egg-v200,
-    .cinematic-shadow-v200,
-    .cinematic-heart-v200,
-    .cinematic-welcome-v200{
-      pointer-events:none !important;
-    }
-
-    .cinematic-skip-v200,
-    .cinematic-enter-v200{
-      pointer-events:auto !important;
-      touch-action:manipulation !important;
-      -webkit-tap-highlight-color:transparent;
-      user-select:none;
-      -webkit-user-select:none;
-      cursor:pointer;
-    }
-
-    .cinematic-enter-v200{
-      z-index:999 !important;
-      isolation:isolate;
-    }
-
-    .cinematic-skip-v200{
-      z-index:1000 !important;
-    }
-
-    .cinematic-enter-v200::after{
-      content:"";
-      position:absolute;
-      inset:-12px;
-      border-radius:24px;
-    }
-
-    .cinematic-enter-v200:active{
-      transform:translate(-50%,2px) scale(.985) !important;
-      filter:brightness(.97);
-    }
-
-    .cinematic-intro-v200.leaving{
-      pointer-events:none !important;
-    }
-
-  
-    /* ===== V21.2 Absolute intro exit reliability ===== */
-    #cinematicEnterV200,
-    #cinematicSkipV200{
-      pointer-events:auto !important;
-      z-index:2147483647 !important;
-      position:absolute !important;
-      touch-action:manipulation !important;
-    }
-
-    #cinematicEnterV200{
-      left:50% !important;
-      transform:translateX(-50%) !important;
-    }
-
-    #cinematicEnterV200::before{
-      content:"";
-      position:absolute;
-      inset:-18px;
-      z-index:-1;
-    }
-
-    #cinematicIntroV200 *:not(#cinematicEnterV200):not(#cinematicSkipV200){
-      pointer-events:none !important;
-    }
-
-  
-    /* ===== V21.3 Single Intro Architecture ===== */
-    #appIntroV156,
-    .app-intro-v156{
-      display:none !important;
-      visibility:hidden !important;
-      opacity:0 !important;
-      pointer-events:none !important;
-    }
-
-    body.intro-open-v158{
-      overflow:auto !important;
-      height:auto !important;
-      touch-action:auto !important;
-    }
-
-    body.intro-open-v158 > *{
-      visibility:visible !important;
-      pointer-events:auto !important;
-    }
-
-    body.intro-open-v158 #cinematicIntroV200{
-      visibility:visible !important;
-    }
-
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -8057,132 +7079,62 @@
 
 <body>
 
-  <div class="quiet-premium-v210"
-       id="quietPremiumV210"
-       hidden
-       aria-hidden="true">
-    <div class="quiet-premium-bg-v210"></div>
-
-    <button class="quiet-premium-close-v210"
-            type="button"
-            onclick="closeQuietPremiumV210()"
-            aria-label="กลับเมื่อพร้อม">
-      ×
-    </button>
-
-    <div class="quiet-premium-content-v210">
-      <div class="quiet-premium-khaitom-v210">
-        <div class="quiet-premium-egg-v210">
-          <i class="left"></i>
-          <i class="right"></i>
-          <b></b>
-        </div>
-        <div class="quiet-premium-shadow-v210"></div>
-      </div>
-
-      <span class="quiet-premium-kicker-v210">
-        น้องไข่ต้มอยู่ตรงนี้
-      </span>
-
-      <h2>พักอยู่ตรงนี้ด้วยกัน</h2>
-
-      <p id="quietPremiumInstructionV210">
-        หายใจเข้าอย่างช้า ๆ
-      </p>
-
-      <div class="quiet-premium-breath-v210">
-        <div class="quiet-premium-breath-core-v210"></div>
-      </div>
-
-      <time id="quietPremiumTimerV210">02:00</time>
-
-      <small id="quietPremiumSubV210">
-        ไม่ต้องรีบดีขึ้น แค่ให้ใจได้พักก่อน
-      </small>
-
-      <button class="quiet-premium-return-v210"
-              type="button"
-              onclick="closeQuietPremiumV210()">
-        กลับเมื่อพร้อม
-      </button>
-    </div>
-  </div>
-
-
-  <div class="cinematic-intro-v200 show"
-       id="cinematicIntroV200"
-       aria-label="กำลังเข้าสู่พักใจ">
-    <div class="cinematic-sky-v200">
-      <div class="cinematic-moon-v200"></div>
-      <div class="cinematic-stars-v200"></div>
-      <div class="cinematic-floor-v200"></div>
-    </div>
-
-    <button class="cinematic-skip-v200"
-            id="cinematicSkipV200"
-            type="button"
-            aria-label="ข้ามอินโทร"
-            onclick="forceEnterPakjaiV212(event)"
-            ontouchend="forceEnterPakjaiV212(event)"
-            onpointerup="forceEnterPakjaiV212(event)">
-      ข้าม
-    </button>
-
-    <div class="cinematic-logo-stage-v200">
-      <div class="cinematic-logo-v200">
-        <span></span>
-      </div>
-      <strong>พักใจ</strong>
-      <div class="cinematic-loading-v200">
-        <i></i><i></i><i></i>
-      </div>
-    </div>
-
-    <div class="cinematic-khaitom-stage-v200">
-      <div class="cinematic-khaitom-v200"
-           id="cinematicKhaitomV200">
-        <div class="cinematic-egg-v200">
-          <i class="eye left"></i>
-          <i class="eye right"></i>
-          <b class="mouth"></b>
-          <em class="cheek left"></em>
-          <em class="cheek right"></em>
-        </div>
-        <div class="cinematic-shadow-v200"></div>
-      </div>
-
-      <div class="cinematic-heart-v200">♡</div>
-
-      <div class="cinematic-welcome-v200">
-        <span>น้องไข่ต้ม</span>
-        <strong id="cinematicWelcomeTextV200">
-          ยินดีต้อนรับกลับมา
-        </strong>
-        <small id="cinematicWelcomeSubV200">
-          วันนี้พักตรงนี้ได้นะ
-        </small>
-      </div>
-    </div>
-
-    <button class="cinematic-enter-v200"
-            id="cinematicEnterV200"
-            type="button"
-            aria-label="เข้าสู่พักใจ"
-            onclick="forceEnterPakjaiV212(event)"
-            ontouchend="forceEnterPakjaiV212(event)"
-            onpointerup="forceEnterPakjaiV212(event)">
-      เข้าสู่พักใจ
-    </button>
-  </div>
-
-
   <div class="cozy-world-v190" aria-hidden="true">
     <div class="cozy-orb-v190 one"></div>
     <div class="cozy-orb-v190 two"></div>
     <div class="cozy-stars-v190"></div>
     <div class="cozy-dust-v190" id="cozyDustV190"></div>
   </div>
-<div class="modal-v3 profile-summary-modal-v156"
+
+
+  <div class="app-intro-v156 show" id="appIntroV156" aria-hidden="false">
+    <div class="intro-ambient-v156"></div>
+    <div class="intro-stars-v158" aria-hidden="true"></div>
+    <div class="intro-rain-v158" id="introRainV158" aria-hidden="true"></div>
+    <div class="intro-glow-v158" aria-hidden="true"></div>
+
+    <div class="intro-content-v156">
+      <div class="intro-badge-v158">
+        <span id="introTimeBadgeV158">กำลังเตรียมห้องของเธอ...</span>
+      </div>
+      <div class="intro-logo-frame-v156">
+        <img src="data:image/png;base64,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" alt="พักใจ">
+        <i></i>
+      </div>
+      <span class="intro-kicker-v156">ยินดีต้อนรับกลับมา</span>
+      <h1 id="introPlayerNameV156">เธอ</h1>
+      <p id="introMessageV156">ห้องของเธอและน้องหมากำลังรออยู่</p>
+      <div class="intro-world-v156">
+        <span id="introWorldStatusV156">ห้องพร้อมแล้ว</span>
+        <b></b>
+      </div>
+      <button type="button"
+              id="introEnterBtnV156"
+              class="ready intro-enter-v163"
+              onclick="handleIntroEnterV163(event)">
+        <span>เข้าสู่พักใจ</span>
+        <i aria-hidden="true">→</i>
+      </button>
+
+      <small class="intro-tip-v158" id="introTipV158">
+        ห้องของเธอจะเปลี่ยนไปตามเวลาจริง
+      </small>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const intro = document.getElementById("appIntroV156");
+      const button = document.getElementById("introEnterBtnV156");
+      if (intro) {
+        intro.classList.add("show");
+        intro.setAttribute("aria-hidden", "false");
+      }
+      if (button) button.classList.add("ready");
+    })();
+  </script>
+
+  <div class="modal-v3 profile-summary-modal-v156"
        id="profileSummaryModalV156"
        onclick="closeProfileSummaryBackdropV156(event)">
     <div class="sheet-v3 profile-summary-sheet-v156">
@@ -8316,11 +7268,11 @@
 
         <div class="card">
           <div class="moods">
-            <button class="mood" data-mood="สบายใจ" onclick="selectMood(this)"><span class="mood-orb-v210 calm"></span><strong>สบายใจ</strong><small>ใจเบาและผ่อนคลาย</small></button>
-            <button class="mood" data-mood="ปกติ" onclick="selectMood(this)"><span class="mood-orb-v210 neutral"></span><strong>ปกติ</strong><small>เรื่อย ๆ ยังโอเค</small></button>
-            <button class="mood active" data-mood="เหนื่อย" onclick="selectMood(this)"><span class="mood-orb-v210 tired"></span><strong>เริ่มล้า</strong><small>อยากพักสักหน่อย</small></button>
-            <button class="mood" data-mood="เครียด" onclick="selectMood(this)"><span class="mood-orb-v210 worried"></span><strong>มีเรื่องกังวล</strong><small>ใจยังวางไม่ลง</small></button>
-            <button class="mood" data-mood="หนักมาก" onclick="selectMood(this)"><span class="mood-orb-v210 heavy"></span><strong>อยากพักจริง ๆ</strong><small>วันนี้หนักเกินไป</small></button>
+            <button class="mood" data-mood="สบายใจ" onclick="selectMood(this)"><span class="face">☺</span>สบายใจ</button>
+            <button class="mood" data-mood="ปกติ" onclick="selectMood(this)"><span class="face">•</span>ปกติ</button>
+            <button class="mood active" data-mood="เหนื่อย" onclick="selectMood(this)"><span class="face">–</span>เหนื่อย</button>
+            <button class="mood" data-mood="เครียด" onclick="selectMood(this)"><span class="face">~</span>เครียด</button>
+            <button class="mood" data-mood="หนักมาก" onclick="selectMood(this)"><span class="face">…</span>หนักมาก</button>
           </div>
         </div>
 
@@ -9364,7 +8316,7 @@
         foodHeldUntil: 0,
         lastWelcomeAt: 0
       },
-      schemaVersion: 213,
+      schemaVersion: 190,
       lastSavedAt: ""
     };
 
@@ -9548,7 +8500,7 @@
       saveInProgressV5=true;
       try{
         const safeData=mergeAppDataV5(data);
-        safeData.schemaVersion=21.3;
+        safeData.schemaVersion=19.0;
         safeData.lastSavedAt=new Date().toISOString();
         const previous=localStorage.getItem(STORAGE_KEY);
         if(previous){
@@ -16313,7 +15265,6 @@
     }
 
     function bootAppIntroV159(reason="boot"){
-      return false;
       clearTimeout(introBootTimerV159);
 
       if(canShowIntroV159()){
@@ -16336,13 +15287,64 @@
     }
 
     function showAppIntroV156(force=false){
-      return false;
+      const intro=document.getElementById("appIntroV156");
+      if(!intro)return false;
+
+      const data=loadData();
+
+      // Intro must be able to open even while an old save is still restoring.
+      // The displayed fallback name will be "เธอ".
+      if(introShownV156 && !force)return false;
+      introShownV156=true;
+
+      updatePlayerIdentityV156();
+      refreshIntroVisualV158();
+
+      const button=document.getElementById("introEnterBtnV156");
+      button?.classList.remove("ready");
+
+      intro.style.removeProperty("display");
+      intro.style.removeProperty("visibility");
+      intro.style.removeProperty("opacity");
+      intro.style.removeProperty("pointer-events");
+      intro.classList.remove("leaving");
+      intro.classList.add("show");
+      intro.setAttribute("aria-hidden","false");
+      intro.style.setProperty("display","grid","important");
+      intro.style.setProperty("visibility","visible","important");
+      intro.style.setProperty("opacity","1","important");
+      intro.style.setProperty("pointer-events","auto","important");
+      intro.style.setProperty("z-index","30000","important");
+      document.body.classList.add("intro-open-v158");
+
+      clearTimeout(introReadyTimerV156);
+      introReadyTimerV156=setTimeout(()=>{
+        button?.classList.add("ready");
+      },800);
+
+      return true;
     }
 
     function finishAppIntroV156(){
-      document.body.classList.remove("intro-open-v158");
-      document.body.style.overflow="";
-      return true;
+      const intro=document.getElementById("appIntroV156");
+      if(!intro)return;
+
+      softHaptic?.("success");
+      intro.classList.add("leaving");
+
+      setTimeout(()=>{
+        intro.classList.remove("show","leaving");
+        intro.setAttribute("aria-hidden","true");
+        intro.style.setProperty("display","none","important");
+        intro.style.setProperty("visibility","hidden","important");
+        intro.style.setProperty("opacity","0","important");
+        intro.style.setProperty("pointer-events","none","important");
+        document.body.classList.remove("intro-open-v158");
+
+        updatePlayerIdentityV156();
+        updateRealTimeGreetingV157?.();
+        welcomePlayerV154?.().catch?.(()=>{});
+      },430);
     }
 
 
@@ -16379,7 +15381,6 @@
     let introHardBootCountV16=0;
 
     function hardBootIntroV16(){
-      return false;
       clearTimeout(introHardBootTimerV16);
 
       const intro=document.getElementById("appIntroV156");
@@ -16648,526 +15649,6 @@
       document.getElementById("khaitomHomeCharacterV180")
         ?.addEventListener("pointerdown",animateKhaitomHomeV190);
     });
-
-
-
-    /* ===== V20.0 Cinematic Intro ===== */
-    let cinematicIntroFinishedV200=false;
-    let cinematicIntroAutoTimerV200=0;
-
-    function getCinematicWelcomeV200(){
-      const hour=new Date().getHours();
-      const data=typeof loadData==="function"?loadData():{};
-      const player=String(data?.playerName||"เธอ").trim()||"เธอ";
-
-      if(hour>=5 && hour<11){
-        return{
-          title:`อรุณสวัสดิ์ ${player}`,
-          sub:"วันนี้ค่อย ๆ เริ่มไปด้วยกันนะ"
-        };
-      }
-
-      if(hour>=11 && hour<17){
-        return{
-          title:`ยินดีต้อนรับกลับมา ${player}`,
-          sub:"วันนี้เป็นยังไงบ้าง เล่าให้ไข่ต้มฟังได้นะ"
-        };
-      }
-
-      if(hour>=17 && hour<22){
-        return{
-          title:`กลับมาแล้วนะ ${player}`,
-          sub:"วันนี้เหนื่อยไหม พักตรงนี้ก่อนได้"
-        };
-      }
-
-      return{
-        title:`ยินดีต้อนรับกลับมา ${player}`,
-        sub:"ดึกแล้วนะ คืนนี้วางเรื่องหนักไว้กับไข่ต้มก่อน"
-      };
-    }
-
-    function setupCinematicIntroV200(){
-      const intro=document.getElementById("cinematicIntroV200");
-      if(!intro)return;
-
-      const welcome=getCinematicWelcomeV200();
-      const title=document.getElementById("cinematicWelcomeTextV200");
-      const sub=document.getElementById("cinematicWelcomeSubV200");
-
-      if(title)title.textContent=welcome.title;
-      if(sub)sub.textContent=welcome.sub;
-
-      document.body.style.overflow="hidden";
-
-      clearTimeout(cinematicIntroAutoTimerV200);
-      cinematicIntroAutoTimerV200=setTimeout(()=>{
-        const enter=document.getElementById("cinematicEnterV200");
-        if(enter && !cinematicIntroFinishedV200){
-          enter.animate(
-            [
-              {transform:"translateX(-50%) scale(1)"},
-              {transform:"translateX(-50%) scale(1.025)"},
-              {transform:"translateX(-50%) scale(1)"}
-            ],
-            {duration:1050,iterations:Infinity}
-          );
-        }
-      },7200);
-    }
-
-    function finishCinematicIntroV200(skipped=false){
-      const intro=document.getElementById("cinematicIntroV200");
-      if(!intro)return;
-
-      if(cinematicIntroFinishedV200 && intro.style.display==="none"){
-        return;
-      }
-
-      cinematicIntroFinishedV200=true;
-      clearTimeout(cinematicIntroAutoTimerV200);
-
-      /* ปิดการรับสัมผัสทันที ป้องกันการกดซ้ำ */
-      intro.style.pointerEvents="none";
-      intro.classList.add("leaving");
-      document.body.style.overflow="";
-
-      try{
-        if(typeof softHaptic==="function"){
-          softHaptic(skipped?"light":"success");
-        }else if(navigator.vibrate){
-          navigator.vibrate(skipped?8:14);
-        }
-      }catch(error){
-        console.warn("Haptic skipped:",error);
-      }
-
-      const removeIntro=()=>{
-        intro.classList.remove("show","leaving");
-        intro.hidden=true;
-        intro.style.display="none";
-        intro.setAttribute("aria-hidden","true");
-        intro.style.pointerEvents="";
-      };
-
-      setTimeout(removeIntro,420);
-    }
-
-    document.addEventListener("DOMContentLoaded",()=>{
-      setupCinematicIntroV200();
-    });
-
-
-
-    /* ========================================================
-       V21.0 Quiet Mode + Premium Mood Interaction
-       ======================================================== */
-    let quietPremiumIntervalV210=0;
-    let quietPremiumStartedAtV210=0;
-    let quietPremiumDurationV210=120;
-
-    function openQuietPremiumV210(){
-      const overlay=document.getElementById("quietPremiumV210");
-      if(!overlay)return;
-
-      clearInterval(quietPremiumIntervalV210);
-      quietPremiumIntervalV210=0;
-      quietPremiumStartedAtV210=Date.now();
-      quietPremiumDurationV210=120;
-
-      const timer=document.getElementById("quietPremiumTimerV210");
-      const instruction=document.getElementById(
-        "quietPremiumInstructionV210"
-      );
-      const sub=document.getElementById("quietPremiumSubV210");
-
-      if(timer)timer.textContent="02:00";
-      if(instruction)instruction.textContent="หายใจเข้าอย่างช้า ๆ";
-      if(sub){
-        sub.textContent=
-          "ไม่ต้องรีบดีขึ้น แค่ให้ใจได้พักก่อน";
-      }
-
-      overlay.hidden=false;
-      overlay.setAttribute("aria-hidden","false");
-      document.body.style.overflow="hidden";
-
-      requestAnimationFrame(()=>{
-        overlay.classList.add("open");
-      });
-
-      updateQuietPremiumV210();
-
-      quietPremiumIntervalV210=setInterval(
-        updateQuietPremiumV210,
-        250
-      );
-
-      softHaptic?.("light");
-    }
-
-    function updateQuietPremiumV210(){
-      const elapsed=Math.floor(
-        (Date.now()-quietPremiumStartedAtV210)/1000
-      );
-      const remaining=Math.max(
-        0,
-        quietPremiumDurationV210-elapsed
-      );
-
-      const timer=document.getElementById("quietPremiumTimerV210");
-      const instruction=document.getElementById(
-        "quietPremiumInstructionV210"
-      );
-      const sub=document.getElementById("quietPremiumSubV210");
-
-      const minute=String(
-        Math.floor(remaining/60)
-      ).padStart(2,"0");
-      const second=String(
-        remaining%60
-      ).padStart(2,"0");
-
-      if(timer)timer.textContent=`${minute}:${second}`;
-
-      const cycle=elapsed%8;
-      if(instruction){
-        instruction.textContent=
-          cycle<4
-            ?"หายใจเข้าอย่างช้า ๆ"
-            :"ค่อย ๆ ปล่อยลมหายใจออก";
-      }
-
-      if(remaining<=0){
-        clearInterval(quietPremiumIntervalV210);
-        quietPremiumIntervalV210=0;
-
-        if(instruction){
-          instruction.textContent="ครบสองนาทีแล้ว";
-        }
-        if(sub){
-          sub.textContent=
-            "ขอบคุณที่ให้เวลากับตัวเองนะ กลับเมื่อพร้อมได้เลย";
-        }
-
-        softHaptic?.("success");
-      }
-    }
-
-    function closeQuietPremiumV210(){
-      clearInterval(quietPremiumIntervalV210);
-      quietPremiumIntervalV210=0;
-
-      const overlay=document.getElementById("quietPremiumV210");
-      if(!overlay)return;
-
-      overlay.classList.remove("open");
-      overlay.setAttribute("aria-hidden","true");
-      document.body.style.overflow="";
-
-      setTimeout(()=>{
-        overlay.hidden=true;
-      },460);
-
-      showToast?.(
-        "กลับมาแล้วนะ น้องไข่ต้มยังอยู่ตรงนี้"
-      );
-      softHaptic?.("light");
-    }
-
-    /* Override all old quiet-mode entry points */
-    function openKhaitomQuietV180(){
-      openQuietPremiumV210();
-    }
-
-    function khaitomQuietV170(){
-      openQuietPremiumV210();
-    }
-
-    function openQuietFromCheckinV171(){
-      openQuietPremiumV210();
-    }
-
-    const MOOD_REPLIES_V210={
-      "สบายใจ":[
-        "ไข่ต้มดีใจที่วันนี้ใจของเธอเบานะ เก็บช่วงเวลานี้ไว้เป็นแรงใจได้เลย",
-        "วันนี้ดูเหมือนจะเป็นวันที่อ่อนโยนกับเธอ ไข่ต้มยิ้มตามเลย",
-        "ความสบายใจเล็ก ๆ แบบนี้มีความหมายมากนะ"
-      ],
-      "ปกติ":[
-        "วันนี้อาจไม่ได้ดีหรือแย่เป็นพิเศษ และแบบนั้นก็โอเคมาก",
-        "วันธรรมดาก็มีคุณค่าของมันนะ ค่อย ๆ ใช้เวลาไปได้เลย",
-        "ไข่ต้มอยู่ตรงนี้ แม้วันนี้ยังไม่มีเรื่องอะไรชัดเป็นพิเศษ"
-      ],
-      "เหนื่อย":[
-        "รับรู้แล้วนะว่าวันนี้เริ่มล้า เธอไม่ต้องฝืนทำทุกอย่างต่อ",
-        "วันนี้ใช้พลังไปเยอะแล้ว พักก่อนโดยไม่ต้องรู้สึกผิดก็ได้",
-        "ถ้าแรงเหลือน้อย เลือกทำแค่สิ่งจำเป็นที่สุดก็พอนะ"
-      ],
-      "เครียด":[
-        "ไข่ต้มรับรู้ว่าตอนนี้มีเรื่องที่ยังวางไม่ลงนะ",
-        "ยังไม่ต้องแก้ทุกอย่างพร้อมกัน เลือกดูเพียงเรื่องเดียวก่อนก็ได้",
-        "ความกังวลทำให้ใจเหนื่อยได้จริง คืนนี้พักจากการหาคำตอบสักครู่ก็ได้"
-      ],
-      "หนักมาก":[
-        "วันนี้หนักมากจริง ๆ นะ ตอนนี้ไม่ต้องเก่งหรือเข้มแข็งต่อแล้ว",
-        "ถ้าไหว ลองอยู่ใกล้คนที่ไว้ใจ และอย่าเก็บทุกอย่างไว้คนเดียว",
-        "ไข่ต้มรับรู้ว่าเธอกำลังรับสิ่งที่หนักมากอยู่ เราพักตรงนี้ก่อนนะ"
-      ]
-    };
-
-    function getMoodValueV210(button){
-      return button?.dataset?.mood
-        || button?.getAttribute("data-value")
-        || button?.textContent?.trim()
-        || "";
-    }
-
-    function normalizeMoodV210(value){
-      const text=String(value||"");
-      if(/สบายใจ/.test(text))return"สบายใจ";
-      if(/ปกติ/.test(text))return"ปกติ";
-      if(/เหนื่อย|เริ่มล้า/.test(text))return"เหนื่อย";
-      if(/เครียด|กังวล/.test(text))return"เครียด";
-      if(/หนักมาก|พักจริง/.test(text))return"หนักมาก";
-      return"ปกติ";
-    }
-
-    function showMoodReplyV210(mood){
-      const replies=MOOD_REPLIES_V210[mood]
-        || MOOD_REPLIES_V210["ปกติ"];
-      const reply=replies[
-        Math.floor(Math.random()*replies.length)
-      ];
-
-      const greeting=document.getElementById(
-        "khaitomHomeGreetingV180"
-      );
-      if(greeting)greeting.textContent=reply;
-
-      const character=document.getElementById(
-        "khaitomHomeCharacterV180"
-      );
-
-      character?.animate(
-        [
-          {transform:"translateY(0) scale(1)"},
-          {transform:"translateY(-6px) scale(1.04)"},
-          {transform:"translateY(0) scale(1)"}
-        ],
-        {
-          duration:650,
-          easing:"cubic-bezier(.2,.9,.25,1)"
-        }
-      );
-
-      softHaptic?.(
-        mood==="หนักมาก"?"warning":"light"
-      );
-    }
-
-    function bindPremiumMoodV210(){
-      const buttons=[
-        ...document.querySelectorAll(".mood-button")
-      ];
-
-      buttons.forEach(button=>{
-        button.addEventListener("click",()=>{
-          const mood=normalizeMoodV210(
-            getMoodValueV210(button)
-          );
-
-          requestAnimationFrame(()=>{
-            buttons.forEach(item=>
-              item.classList.remove("active")
-            );
-            button.classList.add("active");
-          });
-
-          showMoodReplyV210(mood);
-        });
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded",()=>{
-      bindPremiumMoodV210();
-
-      /* Force every visible quiet button to use the fixed flow */
-      document.querySelectorAll(
-        'button,[role="button"]'
-      ).forEach(node=>{
-        const text=String(node.textContent||"").trim();
-
-        if(
-          /พักเงียบ/.test(text)
-          || /พักกับไข่ต้ม 2 นาที/.test(text)
-        ){
-          node.addEventListener(
-            "click",
-            event=>{
-              event.preventDefault();
-              event.stopImmediatePropagation();
-              openQuietPremiumV210();
-            },
-            true
-          );
-        }
-      });
-    });
-
-
-
-    /* ===== V21.1 Reliable Intro Controls ===== */
-    function bindCinematicIntroControlsV211(){
-      const enter=document.getElementById("cinematicEnterV200");
-      const skip=document.getElementById("cinematicSkipV200");
-
-      const bind=(element,skipped)=>{
-        if(!element || element.dataset.boundV211==="1")return;
-        element.dataset.boundV211="1";
-
-        let handled=false;
-        const activate=event=>{
-          event?.preventDefault?.();
-          event?.stopPropagation?.();
-
-          if(handled)return;
-          handled=true;
-          finishCinematicIntroV200(skipped);
-
-          setTimeout(()=>{
-            handled=false;
-          },500);
-        };
-
-        element.addEventListener("pointerup",activate,{passive:false});
-        element.addEventListener("touchend",activate,{passive:false});
-        element.addEventListener("click",activate,{passive:false});
-      };
-
-      bind(enter,false);
-      bind(skip,true);
-    }
-
-    document.addEventListener("DOMContentLoaded",()=>{
-      bindCinematicIntroControlsV211();
-
-      /* ผูกซ้ำหลังแอนิเมชัน เผื่อ Safari สร้าง layer ใหม่ */
-      setTimeout(bindCinematicIntroControlsV211,7000);
-    });
-
-
-
-    /* ===== V21.2 Force Enter Pakjai ===== */
-    let pakjaiEnterLockV212=false;
-
-    function forceEnterPakjaiV212(event){
-      try{
-        event?.preventDefault?.();
-        event?.stopPropagation?.();
-        event?.stopImmediatePropagation?.();
-      }catch(error){}
-
-      if(pakjaiEnterLockV212)return false;
-      pakjaiEnterLockV212=true;
-
-      clearTimeout(cinematicIntroAutoTimerV200);
-      cinematicIntroFinishedV200=true;
-
-      /* ล้างสถานะล็อกหน้าจอจาก Intro ทุกเวอร์ชัน */
-      document.documentElement.style.overflow="";
-      document.documentElement.style.height="";
-      document.body.style.overflow="";
-      document.body.style.height="";
-      document.body.style.pointerEvents="";
-      document.body.classList.remove(
-        "intro-open-v158",
-        "browser-blocked-v152"
-      );
-      document.body.removeAttribute("aria-hidden");
-
-      const introIds=[
-        "cinematicIntroV200",
-        "appIntroV156"
-      ];
-
-      introIds.forEach(id=>{
-        const intro=document.getElementById(id);
-        if(!intro)return;
-
-        intro.classList.remove("show","leaving","open");
-        intro.setAttribute("aria-hidden","true");
-        intro.hidden=true;
-        intro.style.setProperty("display","none","important");
-        intro.style.setProperty("visibility","hidden","important");
-        intro.style.setProperty("opacity","0","important");
-        intro.style.setProperty("pointer-events","none","important");
-
-        try{
-          intro.remove();
-        }catch(error){}
-      });
-
-      /* เปิดหน้าแรกโดยตรง */
-      document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
-        page.removeAttribute("aria-hidden");
-      });
-
-      const home=document.getElementById("home");
-      if(home){
-        home.classList.add("active");
-        home.style.removeProperty("display");
-        home.style.removeProperty("visibility");
-        home.style.removeProperty("opacity");
-        home.style.removeProperty("pointer-events");
-      }
-
-      const app=document.querySelector(".app");
-      if(app){
-        app.style.removeProperty("display");
-        app.style.removeProperty("visibility");
-        app.style.removeProperty("opacity");
-        app.style.removeProperty("pointer-events");
-      }
-
-      document.querySelectorAll(".tab").forEach(tab=>{
-        tab.classList.toggle(
-          "active",
-          tab.dataset.page==="home"
-        );
-      });
-
-      try{
-        window.scrollTo(0,0);
-      }catch(error){}
-
-      requestAnimationFrame(()=>{
-        document.body.style.overflow="";
-        home?.focus?.({preventScroll:true});
-      });
-
-      setTimeout(()=>{
-        pakjaiEnterLockV212=false;
-      },400);
-
-      return false;
-    }
-
-    /* ตัวสำรองระดับ document สำหรับ Safari */
-    document.addEventListener("pointerup",event=>{
-      const target=event.target?.closest?.(
-        "#cinematicEnterV200,#cinematicSkipV200"
-      );
-      if(target)forceEnterPakjaiV212(event);
-    },true);
-
-    document.addEventListener("touchend",event=>{
-      const target=event.target?.closest?.(
-        "#cinematicEnterV200,#cinematicSkipV200"
-      );
-      if(target)forceEnterPakjaiV212(event);
-    },{capture:true,passive:false});
 
 </script>
 
