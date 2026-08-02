@@ -6241,7 +6241,7 @@
       saveInProgressV5=true;
       try{
         const safeData=mergeAppDataV5(data);
-        safeData.schemaVersion=15.6;
+        safeData.schemaVersion=15.7;
         safeData.lastSavedAt=new Date().toISOString();
         const previous=localStorage.getItem(STORAGE_KEY);
         if(previous){
@@ -7795,6 +7795,9 @@
 
       window.addEventListener("blur",releaseDrag);
       document.addEventListener("visibilitychange",()=>{
+      if(!document.hidden){
+        updateRealTimeGreetingV157();
+      }
         if(document.hidden) releaseDrag();
       });
     }
@@ -11794,6 +11797,7 @@
     enforceAppOnlyV152();
     startLivingWorldV154();
     updatePlayerIdentityV156();
+    startRealTimeGreetingV157();
 
     setTimeout(()=>{
       if(
@@ -11863,6 +11867,104 @@
       return name.length>=2 ? name : "เธอ";
     }
 
+    let realTimeGreetingTimerV157=0;
+
+    function getRealTimeGreetingV157(){
+      const now=new Date();
+      const hour=now.getHours();
+
+      const timeText=now.toLocaleTimeString("th-TH",{
+        hour:"2-digit",
+        minute:"2-digit",
+        hour12:false
+      });
+
+      let period="";
+      let message="";
+      let phase="night";
+
+      if(hour>=5 && hour<11){
+        period="เช้า";
+        message="อรุณสวัสดิ์ ขอให้วันนี้เป็นวันที่ดีนะ";
+        phase="morning";
+      }else if(hour>=11 && hour<16){
+        period="กลางวัน";
+        message="วันนี้อย่าลืมพักและดื่มน้ำด้วยนะ";
+        phase="day";
+      }else if(hour>=16 && hour<18){
+        period="เย็น";
+        message="วันนี้เหนื่อยไหม พักกับน้องหมากัน";
+        phase="evening";
+      }else if(hour>=18 && hour<22){
+        period="ค่ำ";
+        message="ค่ำแล้ว พักผ่อนกับน้องหมาได้เลย";
+        phase="evening";
+      }else{
+        period="กลางคืน";
+        message="คืนนี้นอนให้สบาย ฝันดีนะ";
+        phase="night";
+      }
+
+      return{
+        now,
+        hour,
+        period,
+        message,
+        phase,
+        timeText,
+        label:`${period} • ${timeText} น.`
+      };
+    }
+
+    function updateRealTimeGreetingV157(playerName){
+      const info=getRealTimeGreetingV157();
+      const name=String(
+        playerName || getPlayerDisplayNameV156?.() || "เธอ"
+      ).trim() || "เธอ";
+
+      document.documentElement.dataset.dayPhase=info.phase;
+      document.documentElement.dataset.worldPhaseV154=info.phase;
+
+      const header=document.getElementById("headerGreetingV156");
+      if(header){
+        header.textContent=`${info.label} · ${info.message}`;
+      }
+
+      const intro=document.getElementById("introWorldStatusV156");
+      if(intro){
+        intro.textContent=info.label;
+      }
+
+      const roomStatus=document.getElementById("livingWorldStatusV154");
+      if(roomStatus){
+        roomStatus.textContent=info.label;
+      }
+
+      const introMessage=document.getElementById("introMessageV156");
+      if(introMessage){
+        introMessage.textContent=
+          info.hour>=22 || info.hour<5
+            ? `คืนนี้${name}นอนให้สบาย ฝันดีนะ`
+            : `${info.message} ${name}`;
+      }
+
+      const wideMood=document.getElementById("wideRoomMoodV156");
+      if(wideMood){
+        wideMood.textContent=info.label;
+      }
+
+      return info;
+    }
+
+    function startRealTimeGreetingV157(){
+      clearInterval(realTimeGreetingTimerV157);
+      updateRealTimeGreetingV157();
+
+      realTimeGreetingTimerV157=setInterval(()=>{
+        updateRealTimeGreetingV157();
+      },1000);
+    }
+
     function updatePlayerIdentityV156(){
       const data=normalizeRoomV3(loadData());
       const name=getPlayerDisplayNameV156();
@@ -11880,16 +11982,7 @@
         if(node)node.textContent=value;
       });
 
-      const greeting=document.getElementById("headerGreetingV156");
-      if(greeting){
-        const hour=new Date().getHours();
-        const prefix=
-          hour<11 ? "สวัสดีตอนเช้า" :
-          hour<17 ? "สวัสดี" :
-          hour<21 ? "สวัสดีตอนเย็น" :
-          "คืนนี้พักให้สบายนะ";
-        greeting.textContent=`${prefix} ${name}`;
-      }
+      updateRealTimeGreetingV157(name);
 
       const pets=getRoomPetsV6?.(data) || [];
       const introMessage=document.getElementById("introMessageV156");
