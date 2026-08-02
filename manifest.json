@@ -1,0 +1,11 @@
+{
+  "name": "พักใจ",
+  "short_name": "พักใจ",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090e18",
+  "theme_color": "#090e18",
+  "orientation": "landscape",
+  "icons": []
+}
