@@ -3011,6 +3011,7 @@
       pets: [],
       activePetId: "",
       petLastDecayAt: "",
+      petDuplicateRepairV62: true,
       schemaVersion: 5,
       lastSavedAt: ""
     };
@@ -4681,8 +4682,9 @@
         String(Math.floor(data.coins));
 
       const title = document.getElementById("petHouseTitleV4");
+      const roomPets = getRoomPetsV6(data);
       title.textContent = data.pets.length
-        ? `มีน้องหมา ${data.pets.length} ตัว${activePet ? ` · ${activePet.name}อยู่ในห้อง` : " · ทุกตัวพักอยู่ในบ้านหมา"}`
+        ? `มีน้องหมา ${data.pets.length} ตัว · อยู่ในห้อง ${roomPets.length} ตัว`
         : "ยังไม่มีน้องหมา";
 
       const grid = document.getElementById("petGridV4");
@@ -5291,9 +5293,110 @@
       shopToolbarV6.appendChild(button);
     }
 
+    function repairDuplicateLegacyPetsV62(data){
+      if(data.petDuplicateRepairV62 === true){
+        return data;
+      }
+
+      const pets = Array.isArray(data.pets) ? data.pets : [];
+      const groups = new Map();
+
+      pets.forEach(pet=>{
+        const normalizedName = String(pet.name || "")
+          .trim()
+          .toLocaleLowerCase("th-TH");
+        const breed = String(pet.breed || "poodle");
+        const key = `${breed}::${normalizedName}`;
+
+        if(!groups.has(key)){
+          groups.set(key,[]);
+        }
+        groups.get(key).push(pet);
+      });
+
+      const removedToKept = new Map();
+      const repairedPets = [];
+
+      groups.forEach(group=>{
+        if(group.length === 1){
+          repairedPets.push(group[0]);
+          return;
+        }
+
+        const hasMigrationPet = group.some(pet=>
+          String(pet.id).includes("legacy") ||
+          String(pet.id).includes("migrated")
+        );
+
+        // ชื่อและสายพันธุ์เหมือนกันจะรวมเฉพาะกรณีที่มีตัวจากระบบย้ายข้อมูล
+        // จึงไม่ลบหมาที่ผู้ใช้ตั้งใจซื้อซ้ำเอง
+        if(!hasMigrationPet){
+          repairedPets.push(...group);
+          return;
+        }
+
+        const kept = [...group].sort((a,b)=>{
+          const xpDiff = (Number(b.xp)||0) - (Number(a.xp)||0);
+          if(xpDiff !== 0) return xpDiff;
+
+          const levelA = Math.floor((Number(a.xp)||0)/50)+1;
+          const levelB = Math.floor((Number(b.xp)||0)/50)+1;
+          if(levelB !== levelA) return levelB-levelA;
+
+          return (Number(a.adoptedAt)||0) - (Number(b.adoptedAt)||0);
+        })[0];
+
+        const merged = {
+          ...kept,
+          hunger:Math.max(...group.map(pet=>Number(pet.hunger)||0)),
+          happiness:Math.max(...group.map(pet=>Number(pet.happiness)||0)),
+          cleanliness:Math.max(...group.map(pet=>Number(pet.cleanliness)||0)),
+          xp:Math.max(...group.map(pet=>Number(pet.xp)||0)),
+          adoptedAt:Math.min(...group.map(pet=>Number(pet.adoptedAt)||Date.now())),
+          lastUpdatedAt:Math.max(...group.map(pet=>Number(pet.lastUpdatedAt)||0))
+        };
+
+        group.forEach(pet=>{
+          if(pet.id !== kept.id){
+            removedToKept.set(String(pet.id),String(kept.id));
+          }
+        });
+
+        repairedPets.push(merged);
+      });
+
+      data.pets = repairedPets;
+
+      const remapId = id=>{
+        const value = String(id || "");
+        return removedToKept.get(value) || value;
+      };
+
+      if(Array.isArray(data.roomPetIds)){
+        data.roomPetIds = [...new Set(
+          data.roomPetIds.map(remapId).filter(Boolean)
+        )];
+      }
+
+      data.activePetId = remapId(data.activePetId);
+
+      if(data.petRoomPositions && typeof data.petRoomPositions === "object"){
+        removedToKept.forEach((keptId,removedId)=>{
+          if(!data.petRoomPositions[keptId] && data.petRoomPositions[removedId]){
+            data.petRoomPositions[keptId] = data.petRoomPositions[removedId];
+          }
+          delete data.petRoomPositions[removedId];
+        });
+      }
+
+      data.petDuplicateRepairV62 = true;
+      return data;
+    }
+
     const normalizeRoomV3BaseV6 = normalizeRoomV3;
     normalizeRoomV3 = function(data){
       data=normalizeRoomV3BaseV6(data);
+      data=repairDuplicateLegacyPetsV62(data);
 
       if(!Array.isArray(data.roomPetIds)){
         data.roomPetIds=data.activePetId ? [data.activePetId] : data.pets.slice(0,3).map(p=>p.id);
@@ -5332,9 +5435,15 @@
     };
 
     function getRoomPetsV6(data){
+      const seen = new Set();
+
       return data.roomPetIds
         .map(id=>data.pets.find(pet=>pet.id===id))
-        .filter(Boolean);
+        .filter(pet=>{
+          if(!pet || seen.has(pet.id)) return false;
+          seen.add(pet.id);
+          return true;
+        });
     }
 
     function petActorMarkupV6(pet,index,data){
