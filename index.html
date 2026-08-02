@@ -2398,6 +2398,305 @@
       }
     }
 
+  
+    /* ===== V7 Stability and accessibility ===== */
+    .room-pet-v6{
+      transform-origin:center center;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .room-pet-v6.walking-v6,
+    .room-pet-v6.action-lock-v6{
+      pointer-events:none;
+    }
+
+    .pet-card-v4,
+    .inventory-card-v4,
+    .shop-card-v3{
+      content-visibility:auto;
+      contain-intrinsic-size:260px;
+    }
+
+    .modal-close-v3,
+    .dog-action-close-v6{
+      min-width:44px;
+      min-height:44px;
+    }
+
+    button:focus-visible,
+    .room-pet-v6:focus-visible{
+      outline:3px solid rgba(190,175,255,.9);
+      outline-offset:3px;
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .room-pet-v6,
+      .room-pet-v6 *,
+      .rain-v3,
+      .heart-v3{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+    }
+
+  
+    /* ===== Room UI V8: compact menu + wide room ===== */
+    .room-commandbar-v8{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .room-command-actions-v8{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .wide-room-button-v8,
+    .hamburger-button-v8{
+      min-height:44px;
+      border:1px solid var(--line);
+      color:var(--text);
+      background:rgba(255,255,255,.045);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+      touch-action:manipulation;
+    }
+
+    .wide-room-button-v8{
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:900;
+    }
+
+    .wide-room-button-v8.active{
+      color:#171927;
+      background:linear-gradient(135deg,#aab5ff,#c5abff);
+      border-color:transparent;
+    }
+
+    .hamburger-button-v8{
+      width:46px;
+      padding:0;
+      border-radius:15px;
+      display:grid;
+      place-content:center;
+      gap:4px;
+    }
+
+    .hamburger-button-v8 span{
+      display:block;
+      width:20px;
+      height:2px;
+      border-radius:99px;
+      background:currentColor;
+      transition:.2s ease;
+    }
+
+    .hamburger-button-v8[aria-expanded="true"] span:nth-child(1){
+      transform:translateY(6px) rotate(45deg);
+    }
+    .hamburger-button-v8[aria-expanded="true"] span:nth-child(2){
+      opacity:0;
+    }
+    .hamburger-button-v8[aria-expanded="true"] span:nth-child(3){
+      transform:translateY(-6px) rotate(-45deg);
+    }
+
+    .room-drawer-backdrop-v8{
+      position:fixed;
+      inset:0;
+      z-index:1390;
+      background:rgba(5,8,16,.55);
+      backdrop-filter:blur(7px);
+      -webkit-backdrop-filter:blur(7px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+
+    .room-drawer-backdrop-v8.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .room-drawer-v8{
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:0;
+      z-index:1400;
+      width:min(365px,88vw);
+      padding:
+        calc(18px + env(safe-area-inset-top))
+        16px
+        calc(22px + env(safe-area-inset-bottom));
+      overflow:auto;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 0,rgba(143,130,255,.15),transparent 34%),
+        linear-gradient(180deg,#172033,#0e1522);
+      border-left:1px solid rgba(255,255,255,.1);
+      box-shadow:-28px 0 70px rgba(0,0,0,.45);
+      transform:translate3d(105%,0,0);
+      transition:transform .28s cubic-bezier(.25,.76,.3,1);
+    }
+
+    .room-drawer-v8.show{
+      transform:translate3d(0,0,0);
+    }
+
+    .room-drawer-head-v8{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:17px;
+    }
+
+    .room-drawer-head-v8 strong{
+      display:block;
+      font-size:19px;
+    }
+
+    .room-drawer-head-v8 span{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:10px;
+    }
+
+    .room-drawer-head-v8 button{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      font-size:25px;
+    }
+
+    .room-drawer-grid-v8{
+      display:grid;
+      gap:9px;
+    }
+
+    .room-drawer-grid-v8 > button{
+      min-height:68px;
+      padding:12px 14px;
+      text-align:left;
+      border-radius:17px;
+      color:#f3f3fb;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.075);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+    }
+
+    .room-drawer-grid-v8 > button:active{
+      transform:scale(.985);
+    }
+
+    .room-drawer-grid-v8 b{
+      display:block;
+      margin-bottom:4px;
+      font-size:13px;
+    }
+
+    .room-drawer-grid-v8 span{
+      display:block;
+      color:var(--muted);
+      font-size:9px;
+    }
+
+    .room-drawer-grid-v8 .danger-v8{
+      color:#ffdbe3;
+      border-color:rgba(255,130,150,.14);
+      background:rgba(255,110,135,.055);
+    }
+
+    body.room-drawer-open-v8{
+      overflow:hidden;
+    }
+
+    /* Wide landscape canvas while the phone can stay vertical */
+    body.wide-room-v8 #garden{
+      position:fixed;
+      inset:0;
+      z-index:1300;
+      overflow:auto;
+      padding:
+        calc(10px + env(safe-area-inset-top))
+        10px
+        calc(24px + env(safe-area-inset-bottom));
+      background:
+        radial-gradient(circle at 50% -10%,rgba(114,105,220,.18),transparent 45%),
+        var(--bg);
+    }
+
+    body.wide-room-v8 #garden > .section-head,
+    body.wide-room-v8 #garden > .room-hud,
+    body.wide-room-v8 #garden > .room-actions,
+    body.wide-room-v8 #garden > .progress,
+    body.wide-room-v8 #garden > .stats,
+    body.wide-room-v8 #garden > .edit-hint-v3,
+    body.wide-room-v8 #garden > .layer-tools-v3{
+      display:none !important;
+    }
+
+    body.wide-room-v8 .room-commandbar-v8{
+      position:sticky;
+      top:0;
+      z-index:1310;
+      width:min(1100px,100%);
+      margin:0 auto 9px;
+      padding:7px;
+      border-radius:18px;
+      background:rgba(12,17,30,.78);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    body.wide-room-v8 .decor-room-v3{
+      width:min(1100px,calc(100vw - 20px));
+      height:auto !important;
+      aspect-ratio:16 / 9;
+      margin:0 auto;
+      border-radius:23px;
+    }
+
+    body.wide-room-v8 .tabs{
+      display:none !important;
+    }
+
+    /* Smooth pet motion is handled by Web Animations; no competing left/top transition */
+    .room-pet-v6{
+      transition:filter .18s ease !important;
+      will-change:transform;
+      backface-visibility:hidden;
+      -webkit-backface-visibility:hidden;
+    }
+
+    .room-pet-v6.motion-v8{
+      pointer-events:none;
+    }
+
+    @media(orientation:landscape){
+      body.wide-room-v8 #garden{
+        overflow:hidden;
+      }
+      body.wide-room-v8 .decor-room-v3{
+        width:auto;
+        height:calc(100vh - 78px) !important;
+        max-width:calc(100vw - 20px);
+        aspect-ratio:16 / 9;
+      }
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -2601,15 +2900,57 @@
           <span>เล่นเกม หาเหรียญ และแต่งห้องได้เอง</span>
         </div>
 
-        <div class="room-toolbar-v3">
+        <div class="room-commandbar-v8">
           <div class="coin-pill-v3">เหรียญ <strong id="coinCountV3">0</strong></div>
-          <button class="room-tool-v3" id="editRoomBtnV3" onclick="toggleRoomEditV3()">จัดห้อง</button>
-          <button class="room-tool-v3" onclick="openShopV3()">ร้านค้า</button>
-          <button class="room-tool-v3" onclick="openInventoryV4()">คลังของ</button>
-          <button class="room-tool-v3" onclick="openPetHouseV4()">บ้านหมา</button>
-          <button class="room-tool-v3" onclick="openHeartGameV3()">เกมหัวใจ</button>
-          <button class="room-tool-v3" onclick="resetRoomV3()">รีเซ็ตตำแหน่ง</button>
+          <div class="room-command-actions-v8">
+            <button class="wide-room-button-v8" id="wideRoomButtonV8"
+                    type="button" onclick="toggleWideRoomV8()">
+              ห้องกว้าง
+            </button>
+            <button class="hamburger-button-v8" id="roomMenuButtonV8"
+                    type="button" aria-label="เปิดเมนูห้อง"
+                    aria-expanded="false" onclick="toggleRoomMenuV8()">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
+
+        <div class="room-drawer-backdrop-v8" id="roomDrawerBackdropV8"
+             onclick="closeRoomMenuV8()"></div>
+
+        <aside class="room-drawer-v8" id="roomDrawerV8" aria-hidden="true">
+          <div class="room-drawer-head-v8">
+            <div>
+              <strong>เมนูห้อง</strong>
+              <span>จัดการทุกระบบจากตรงนี้</span>
+            </div>
+            <button type="button" onclick="closeRoomMenuV8()">×</button>
+          </div>
+
+          <div class="room-drawer-grid-v8">
+            <button id="editRoomBtnV3" onclick="runRoomMenuActionV8('edit')">
+              <b>จัดห้อง</b><span>ลากและเรียงของ</span>
+            </button>
+            <button onclick="runRoomMenuActionV8('shop')">
+              <b>ร้านค้า</b><span>ซื้อหมาและของแต่ง</span>
+            </button>
+            <button onclick="runRoomMenuActionV8('inventory')">
+              <b>คลังของ</b><span>เก็บหรือนำของออกมา</span>
+            </button>
+            <button onclick="runRoomMenuActionV8('pets')">
+              <b>บ้านหมา</b><span>ดูแลและเลือกน้องหมา</span>
+            </button>
+            <button onclick="runRoomMenuActionV8('game')">
+              <b>เกมหัวใจ</b><span>หาเหรียญเพิ่ม</span>
+            </button>
+            <button onclick="runRoomMenuActionV8('wide')">
+              <b>ห้องกว้าง</b><span>มุมมองแนวนอน</span>
+            </button>
+            <button class="danger-v8" onclick="runRoomMenuActionV8('reset')">
+              <b>รีเซ็ตตำแหน่ง</b><span>จัดของกลับค่าเริ่มต้น</span>
+            </button>
+          </div>
+        </aside>
 
         <div class="decor-room-v3" id="decorRoomV3">
           <div class="wall-v3"></div>
@@ -3011,7 +3352,8 @@
       pets: [],
       activePetId: "",
       petLastDecayAt: "",
-      petDuplicateRepairV62: true,
+      petDuplicateRepairV62: false,
+      petRepairVersion: 0,
       schemaVersion: 5,
       lastSavedAt: ""
     };
@@ -3116,7 +3458,7 @@
       saveInProgressV5=true;
       try{
         const safeData=mergeAppDataV5(data);
-        safeData.schemaVersion=5;
+        safeData.schemaVersion=7;
         safeData.lastSavedAt=new Date().toISOString();
         const previous=localStorage.getItem(STORAGE_KEY);
         if(previous){
@@ -4697,7 +5039,11 @@
         return;
       }
 
-      grid.innerHTML = data.pets.map(pet=>{
+      const uniquePetsV7 = [...new Map(
+        data.pets.map(pet=>[String(pet.id),pet])
+      ).values()];
+
+      grid.innerHTML = uniquePetsV7.map(pet=>{
         const breed = DOG_BREEDS_V4[pet.breed] || DOG_BREEDS_V4.poodle;
         const isActive = pet.id === data.activePetId;
         const level = getPetLevelV4(pet);
@@ -5294,7 +5640,8 @@
     }
 
     function repairDuplicateLegacyPetsV62(data){
-      if(data.petDuplicateRepairV62 === true){
+      const repairVersion = Number(data.petRepairVersion) || 0;
+      if(repairVersion >= 3){
         return data;
       }
 
@@ -5390,6 +5737,7 @@
       }
 
       data.petDuplicateRepairV62 = true;
+      data.petRepairVersion = 3;
       return data;
     }
 
@@ -5431,6 +5779,7 @@
       data.foodBowlLevel=Math.max(0,Math.min(100,Number(data.foodBowlLevel)||0));
       data.waterBowlLevel=Math.max(0,Math.min(100,Number(data.waterBowlLevel)||0));
       data.lastBowlUseAt=Number(data.lastBowlUseAt)||0;
+      data=repairPetRoomStateV7(data);
       return data;
     };
 
@@ -5451,6 +5800,8 @@
       return `<div class="room-pet-v6"
                    id="roomPetV6_${escapeHtml(pet.id)}"
                    data-pet-id="${escapeHtml(pet.id)}"
+                   data-x="${position.x}"
+                   data-y="${position.y}"
                    style="left:${position.x}%;top:${position.y}%;z-index:${930+index}"
                    onclick="openDogActionV6(event,'${escapeHtml(pet.id)}')">
         ${dogMarkupV4(pet.breed)}
@@ -5531,8 +5882,36 @@
     function clearPetRoamingV6(){
       petRoamTimersV6.forEach(timer=>clearTimeout(timer));
       petRoamTimersV6.clear();
-      document.querySelectorAll(".room-pet-v6.walking-v6")
-        .forEach(actor=>actor.classList.remove("walking-v6"));
+
+      document.querySelectorAll(".room-pet-v6").forEach(actor=>{
+        if(actor._motionV8){
+          try{
+            const style=getComputedStyle(actor);
+            const room=document.getElementById("decorRoomV3");
+            const roomRect=room.getBoundingClientRect();
+            const actorRect=actor.getBoundingClientRect();
+
+            const x=((actorRect.left+actorRect.width/2-roomRect.left)/
+              roomRect.width)*100;
+            const y=((actorRect.top+actorRect.height/2-roomRect.top)/
+              roomRect.height)*100;
+
+            actor._motionV8.cancel();
+            actor._motionV8=null;
+            setPetStaticPositionV8(actor,x,y);
+          }catch{
+            cancelPetAnimationV8(actor);
+          }
+        }
+
+        actor.classList.remove(
+          "walking-v6",
+          "eating-v6",
+          "queue-wait-v6",
+          "action-lock-v6",
+          "motion-v8"
+        );
+      });
     }
 
     function scheduleAllPetRoamingV6(data){
@@ -5540,56 +5919,198 @@
       if(editV3 || dogQueueRunningV6 || !document.getElementById("garden")?.classList.contains("active"))return;
 
       getRoomPetsV6(data).forEach((pet,index)=>{
-        const timer=setTimeout(
-          ()=>roamPetV6(pet.id),
-          1800+index*650+Math.random()*2300
-        );
+        const oldTimer=petRoamTimersV6.get(pet.id);
+        if(oldTimer)clearTimeout(oldTimer);
+
+        const timer=setTimeout(()=>{
+          petRoamTimersV6.delete(pet.id);
+          roamPetV6(pet.id);
+        },1800+index*650+Math.random()*2300);
+
         petRoamTimersV6.set(pet.id,timer);
       });
     }
 
-    function roamPetV6(petId){
-      const data=normalizeRoomV3(loadData());
-      if(editV3 || dogQueueRunningV6 || !data.roomPetIds.includes(petId))return;
+    function getPetPercentPositionV8(actor){
+      return {
+        x:Number(actor?.dataset.x) ||
+          Number.parseFloat(actor?.style.left) || 50,
+        y:Number(actor?.dataset.y) ||
+          Number.parseFloat(actor?.style.top) || 80
+      };
+    }
 
-      const actor=document.querySelector(`.room-pet-v6[data-pet-id="${CSS.escape(petId)}"]`);
+    function setPetStaticPositionV8(actor,x,y){
       if(!actor)return;
+      const safeX=Math.max(7,Math.min(93,Number(x)||50));
+      const safeY=Math.max(65,Math.min(93,Number(y)||80));
 
-      const others=[...document.querySelectorAll(".room-pet-v6")]
-        .filter(el=>el!==actor)
-        .map(el=>({
-          x:parseFloat(el.style.left)||0,
-          y:parseFloat(el.style.top)||0
-        }));
+      actor.dataset.x=String(safeX);
+      actor.dataset.y=String(safeY);
+      actor.style.left=`${safeX}%`;
+      actor.style.top=`${safeY}%`;
+      actor.style.transform="translate(-50%,-50%)";
+    }
 
-      let x=30,y=78;
-      for(let tryIndex=0;tryIndex<15;tryIndex++){
-        const candidate={x:18+Math.random()*67,y:72+Math.random()*17};
-        const clear=others.every(other=>
-          Math.hypot(candidate.x-other.x,(candidate.y-other.y)*1.7)>13
-        );
-        if(clear){x=candidate.x;y=candidate.y;break}
+    function cancelPetAnimationV8(actor){
+      if(!actor)return;
+      if(actor._motionV8){
+        try{actor._motionV8.cancel()}catch{}
+        actor._motionV8=null;
       }
+      actor.classList.remove("motion-v8","walking-v6");
+    }
 
-      actor.classList.add("walking-v6");
-      actor.style.left=`${x}%`;
-      actor.style.top=`${y}%`;
-
-      const pet=data.pets.find(item=>item.id===petId);
-      if(pet){
-        data.petRoomPositions[petId]={x,y};
-        saveData(data);
-      }
-
-      const timer=setTimeout(()=>{
-        actor.classList.remove("walking-v6");
-        if(Math.random()<.25)showPetEmoteV6(petId,"♥");
-        if(!editV3 && !dogQueueRunningV6){
-          const next=setTimeout(()=>roamPetV6(petId),2200+Math.random()*4000);
-          petRoamTimersV6.set(petId,next);
+    function animatePetToV8(actor,targetX,targetY,options={}){
+      return new Promise(resolve=>{
+        if(!actor){
+          resolve(false);
+          return;
         }
-      },1650);
-      petRoamTimersV6.set(petId,timer);
+
+        cancelPetAnimationV8(actor);
+
+        const room=document.getElementById("decorRoomV3");
+        const roomRect=room.getBoundingClientRect();
+        const current=getPetPercentPositionV8(actor);
+
+        const safeX=Math.max(7,Math.min(93,Number(targetX)||50));
+        const safeY=Math.max(65,Math.min(93,Number(targetY)||80));
+
+        const deltaX=(safeX-current.x)/100*roomRect.width;
+        const deltaY=(safeY-current.y)/100*roomRect.height;
+        const distance=Math.hypot(deltaX,deltaY);
+
+        if(distance<2){
+          setPetStaticPositionV8(actor,safeX,safeY);
+          resolve(true);
+          return;
+        }
+
+        const duration=options.duration ||
+          Math.max(1150,Math.min(3300,distance*7.2));
+
+        actor.classList.add("motion-v8","walking-v6");
+
+        const dog=actor.querySelector(".dog-v3");
+        if(dog){
+          dog.style.transform=safeX<current.x
+            ? "translate(-50%,-50%) scaleX(-1)"
+            : "translate(-50%,-50%) scaleX(1)";
+        }
+
+        const animation=actor.animate(
+          [
+            {
+              transform:"translate(-50%,-50%) translate3d(0,0,0)"
+            },
+            {
+              transform:`translate(-50%,-50%) translate3d(${deltaX}px,${deltaY}px,0)`
+            }
+          ],
+          {
+            duration,
+            easing:"cubic-bezier(.22,.72,.24,1)",
+            fill:"forwards"
+          }
+        );
+
+        actor._motionV8=animation;
+
+        let finished=false;
+        const finish=success=>{
+          if(finished)return;
+          finished=true;
+
+          if(success){
+            setPetStaticPositionV8(actor,safeX,safeY);
+          }
+
+          actor.classList.remove("motion-v8","walking-v6");
+          actor._motionV8=null;
+          resolve(success);
+        };
+
+        animation.onfinish=()=>finish(true);
+        animation.oncancel=()=>finish(false);
+        setTimeout(()=>finish(true),duration+180);
+      });
+    }
+
+    function chooseFreePointV8(petId){
+      const actors=[...document.querySelectorAll(".room-pet-v6")];
+
+      for(let attempt=0;attempt<30;attempt++){
+        const point={
+          x:15+Math.random()*72,
+          y:69+Math.random()*20
+        };
+
+        const clear=actors.every(actor=>{
+          if(actor.dataset.petId===petId)return true;
+          const position=getPetPercentPositionV8(actor);
+          return Math.hypot(
+            point.x-position.x,
+            (point.y-position.y)*1.65
+          )>=14;
+        });
+
+        if(clear)return point;
+      }
+
+      const index=Math.max(
+        0,
+        actors.findIndex(actor=>actor.dataset.petId===petId)
+      );
+
+      return {
+        x:22+(index%3)*25,
+        y:75+Math.floor(index/3)*10
+      };
+    }
+
+    async function roamPetV6(petId){
+      const data=normalizeRoomV3(loadData());
+
+      if(editV3 ||
+         dogQueueRunningV6 ||
+         !data.roomPetIds.includes(petId)){
+        return;
+      }
+
+      const actor=[...document.querySelectorAll(".room-pet-v6")]
+        .find(element=>element.dataset.petId===petId);
+
+      if(!actor || actor.classList.contains("action-lock-v6"))return;
+
+      const point=chooseFreePointV8(petId);
+      const success=await animatePetToV8(actor,point.x,point.y);
+
+      if(!success)return;
+
+      const latest=normalizeRoomV3(loadData());
+      const pet=latest.pets.find(item=>item.id===petId);
+
+      if(pet){
+        latest.petRoomPositions[petId]={x:point.x,y:point.y};
+        saveDataSilentV7(latest);
+      }
+
+      if(Math.random()<.25){
+        showPetEmoteV6(petId,"♥");
+      }
+
+      if(!editV3 && !dogQueueRunningV6){
+        const previous=petRoamTimersV6.get(petId);
+        if(previous)clearTimeout(previous);
+
+        const next=setTimeout(()=>{
+          petRoamTimersV6.delete(petId);
+          roamPetV6(petId);
+        },1800+Math.random()*3500);
+
+        petRoamTimersV6.set(petId,next);
+      }
     }
 
     function showPetEmoteV6(petId,text){
@@ -5719,12 +6240,19 @@
       if(!bowl || !menu)return;
 
       const level=type==="food"?data.foodBowlLevel:data.waterBowlLevel;
-      document.getElementById("bowlMenuTitleV6").textContent=
-        type==="food"?"ถาดอาหาร":"ถาดน้ำ";
-      document.getElementById("bowlMenuStatusV6").textContent=
-        `เหลือ ${Math.round(level)}% · เติมเต็ม 15 เหรียญ`;
-      document.getElementById("bowlRefillBtnV6").textContent=
-        `เติม${type==="food"?"อาหาร":"น้ำ"} 15 เหรียญ`;
+      const isFull=level>=95;
+      const title=type==="food"?"ถาดอาหาร":"ถาดน้ำ";
+      const button=document.getElementById("bowlRefillBtnV6");
+
+      document.getElementById("bowlMenuTitleV6").textContent=title;
+      document.getElementById("bowlMenuStatusV6").textContent=isFull
+        ? `${title}เต็มแล้ว ${Math.round(level)}%`
+        : `เหลือ ${Math.round(level)}% · เติมเต็ม 15 เหรียญ`;
+
+      button.textContent=isFull
+        ? `${title}เต็มแล้ว`
+        : `เติม${type==="food"?"อาหาร":"น้ำ"} 15 เหรียญ`;
+      button.disabled=isFull;
 
       placeFloatingMenuV6(menu,bowl);
     }
@@ -5738,28 +6266,49 @@
 
     function refillBowlV6(){
       const data=normalizeRoomV3(loadData());
-      const itemId=bowlTypeV6==="food"?"foodBowl":"waterBowl";
+      const isFood=bowlTypeV6==="food";
+      const itemId=isFood?"foodBowl":"waterBowl";
+      const title=isFood?"อาหาร":"น้ำ";
+      const currentLevel=isFood
+        ? data.foodBowlLevel
+        : data.waterBowlLevel;
 
-      if(!data.ownedItems.includes(itemId) || !data.placedItems.includes(itemId)){
-        showToast("ต้องซื้อและวางถาดไว้ในห้องก่อน");
+      if(!data.ownedItems.includes(itemId) ||
+         !data.placedItems.includes(itemId)){
+        showToast(`ต้องซื้อและวางถาด${title}ไว้ในห้องก่อน`);
         return;
       }
+
+      if(currentLevel>=95){
+        showToast(`${title}เต็มแล้ว ไม่ได้หักเหรียญ`);
+        openBowlMenuV6(null,bowlTypeV6);
+        return;
+      }
+
       if(data.coins<15){
-        showToast("เหรียญไม่พอเติมถาด");
+        showToast(`เหรียญไม่พอเติม${title}`);
         return;
       }
 
       data.coins-=15;
-      if(bowlTypeV6==="food")data.foodBowlLevel=100;
-      else data.waterBowlLevel=100;
+
+      if(isFood){
+        data.foodBowlLevel=100;
+      }else{
+        data.waterBowlLevel=100;
+      }
+
       saveData(data);
       closeBowlMenuV6();
-      queuePetsToBowlV6(bowlTypeV6);
+      queuePetsToBowlV6(isFood?"food":"water");
     }
 
     async function queuePetsToBowlV6(type){
+      if(dogQueueRunningV6)return;
+
       const data=normalizeRoomV3(loadData());
       const pets=getRoomPetsV6(data);
+
       if(!pets.length){
         showToast("ยังไม่มีน้องหมาอยู่ในห้อง");
         return;
@@ -5767,77 +6316,126 @@
 
       const itemId=type==="food"?"foodBowl":"waterBowl";
       const bowl=document.querySelector(`[data-item="${itemId}"]`);
+
       if(!bowl || bowl.classList.contains("locked-v3")){
         showToast("นำถาดออกมาวางในห้องก่อน");
         return;
       }
 
-      clearPetRoamingV6();
       dogQueueRunningV6=true;
+      clearPetRoamingV6();
 
-      const bowlX=parseFloat(bowl.style.left)||70;
-      const bowlY=parseFloat(bowl.style.top)||86;
-      const queuePoints=pets.map((_,index)=>({
-        x:Math.max(13,Math.min(88,bowlX-15-index*11)),
-        y:Math.max(69,Math.min(91,bowlY-1+(index%2)*6))
-      }));
+      try{
+        const bowlX=parseFloat(bowl.style.left)||70;
+        const bowlY=parseFloat(bowl.style.top)||86;
 
-      pets.forEach((pet,index)=>{
-        const actor=document.querySelector(`.room-pet-v6[data-pet-id="${CSS.escape(pet.id)}"]`);
-        if(!actor)return;
-        actor.classList.add("walking-v6","queue-wait-v6");
-        actor.style.left=`${queuePoints[index].x}%`;
-        actor.style.top=`${queuePoints[index].y}%`;
-        actor.style.zIndex=String(970+index);
-      });
+        const actors=pets.map(pet=>
+          [...document.querySelectorAll(".room-pet-v6")]
+            .find(actor=>actor.dataset.petId===pet.id)
+        );
 
-      await new Promise(resolve=>setTimeout(resolve,1750));
+        const queuePoints=pets.map((_,index)=>{
+          const row=Math.floor(index/3);
+          const col=index%3;
+          return {
+            x:Math.max(12,Math.min(89,bowlX-18-col*13)),
+            y:Math.max(68,Math.min(91,bowlY-2-row*10))
+          };
+        });
 
-      for(let index=0;index<pets.length;index++){
-        const pet=pets[index];
-        const actor=document.querySelector(`.room-pet-v6[data-pet-id="${CSS.escape(pet.id)}"]`);
-        if(!actor)continue;
+        actors.forEach(actor=>actor?.classList.add(
+          "queue-wait-v6",
+          "action-lock-v6"
+        ));
 
-        actor.classList.remove("walking-v6");
-        actor.style.left=`${Math.max(12,Math.min(91,bowlX-8))}%`;
-        actor.style.top=`${Math.max(70,Math.min(92,bowlY-1))}%`;
-        showPetEmoteV6(pet.id,type==="food"?"●":"~");
+        await Promise.all(
+          actors.map((actor,index)=>
+            animatePetToV8(
+              actor,
+              queuePoints[index].x,
+              queuePoints[index].y,
+              {duration:1700+index*80}
+            )
+          )
+        );
 
-        await new Promise(resolve=>setTimeout(resolve,650));
+        for(let index=0;index<pets.length;index++){
+          const pet=pets[index];
+          const actor=actors[index];
+          if(!actor)continue;
 
-        if(type==="food"){
-          pet.hunger=clampPetStatV4(pet.hunger+35);
-          data.foodBowlLevel=Math.max(0,data.foodBowlLevel-16);
-        }else{
-          pet.happiness=clampPetStatV4(pet.happiness+6);
-          pet.cleanliness=clampPetStatV4(pet.cleanliness+2);
-          data.waterBowlLevel=Math.max(0,data.waterBowlLevel-13);
+          actor.classList.remove("queue-wait-v6");
+
+          await animatePetToV8(
+            actor,
+            Math.max(11,Math.min(91,bowlX-7)),
+            Math.max(69,Math.min(92,bowlY-1)),
+            {duration:1150}
+          );
+
+          actor.classList.add("eating-v6");
+          showPetEmoteV6(pet.id,type==="food"?"●":"~");
+          await new Promise(resolve=>setTimeout(resolve,800));
+          actor.classList.remove("eating-v6");
+
+          if(type==="food"){
+            pet.hunger=clampPetStatV4(pet.hunger+35);
+            data.foodBowlLevel=Math.max(0,data.foodBowlLevel-16);
+          }else{
+            pet.happiness=clampPetStatV4(pet.happiness+6);
+            pet.cleanliness=clampPetStatV4(pet.cleanliness+2);
+            data.waterBowlLevel=Math.max(0,data.waterBowlLevel-13);
+          }
+
+          pet.xp+=3;
+          pet.lastUpdatedAt=Date.now();
+
+          await animatePetToV8(
+            actor,
+            queuePoints[index].x,
+            queuePoints[index].y,
+            {duration:1100}
+          );
+
+          actor.classList.add("queue-wait-v6");
         }
-        pet.xp+=3;
-        pet.lastUpdatedAt=Date.now();
 
-        actor.style.left=`${queuePoints[index].x}%`;
-        actor.style.top=`${queuePoints[index].y}%`;
-        await new Promise(resolve=>setTimeout(resolve,380));
-      }
+        await Promise.all(
+          pets.map((pet,index)=>{
+            const base=data.petRoomPositions[pet.id] || {
+              x:24+(index%3)*24,
+              y:76+Math.floor(index/3)*10
+            };
 
-      pets.forEach((pet,index)=>{
-        const actor=document.querySelector(`.room-pet-v6[data-pet-id="${CSS.escape(pet.id)}"]`);
-        if(!actor)return;
-        const base=data.petRoomPositions[pet.id]||{x:30+index*14,y:80};
-        actor.classList.add("walking-v6");
-        actor.classList.remove("queue-wait-v6");
-        actor.style.left=`${base.x}%`;
-        actor.style.top=`${base.y}%`;
-      });
+            actors[index]?.classList.remove("queue-wait-v6");
 
-      saveData(data);
-      setTimeout(()=>{
-        document.querySelectorAll(".room-pet-v6")
-          .forEach(actor=>actor.classList.remove("walking-v6","queue-wait-v6"));
+            return animatePetToV8(
+              actors[index],
+              base.x,
+              base.y,
+              {duration:1550}
+            );
+          })
+        );
+
+        saveDataSilentV7(data);
+        updateBowlsV6(data);
+      }catch(error){
+        console.error("Pet bowl queue error",error);
+        showToast("ระบบเดินไปที่ถาดขัดข้อง ลองใหม่อีกครั้ง");
+      }finally{
+        document.querySelectorAll(".room-pet-v6").forEach(actor=>{
+          cancelPetAnimationV8(actor);
+          actor.classList.remove(
+            "queue-wait-v6",
+            "action-lock-v6",
+            "eating-v6"
+          );
+        });
+
         dogQueueRunningV6=false;
         scheduleAllPetRoamingV6(normalizeRoomV3(loadData()));
-      },1700);
+      }
     }
 
     function playWithRoomToyV6(event,itemId){
@@ -5889,8 +6487,12 @@
       const data=normalizeRoomV3(loadData());
       const roomSet=new Set(data.roomPetIds);
 
+      const uniquePets = [...new Map(
+        data.pets.map(pet=>[String(pet.id),pet])
+      ).values()];
+
       document.querySelectorAll("#petGridV4 .pet-card-v4").forEach((card,index)=>{
-        const pet=data.pets[index];
+        const pet=uniquePets[index];
         if(!pet)return;
         const manage=card.querySelector(".pet-manage-v4");
         if(!manage)return;
@@ -5943,6 +6545,127 @@
     });
 
 
+
+    function saveDataSilentV7(data){
+      return saveData(data,{render:false});
+    }
+
+    function repairPetRoomStateV7(data){
+      const validPetIds = new Set((data.pets || []).map(pet=>String(pet.id)));
+
+      data.roomPetIds = [...new Set(
+        (Array.isArray(data.roomPetIds) ? data.roomPetIds : [])
+          .map(String)
+          .filter(id=>validPetIds.has(id))
+      )].slice(0,6);
+
+      if(data.activePetId && !validPetIds.has(String(data.activePetId))){
+        data.activePetId = "";
+      }
+
+      if(data.activePetId && !data.roomPetIds.includes(String(data.activePetId))){
+        data.roomPetIds.unshift(String(data.activePetId));
+        data.roomPetIds = [...new Set(data.roomPetIds)].slice(0,6);
+      }
+
+      data.activePetId = data.roomPetIds[0] || "";
+
+      if(!data.petRoomPositions || typeof data.petRoomPositions !== "object"){
+        data.petRoomPositions = {};
+      }
+
+      Object.keys(data.petRoomPositions).forEach(petId=>{
+        if(!validPetIds.has(petId)){
+          delete data.petRoomPositions[petId];
+        }
+      });
+
+      return data;
+    }
+
+    function runDataHealthCheckV7(){
+      try{
+        const before = loadData();
+        const beforeJson = JSON.stringify(before);
+        let data = normalizeRoomV3(before);
+        data = repairPetRoomStateV7(data);
+
+        if(beforeJson !== JSON.stringify(data)){
+          saveDataSilentV7(data);
+          console.info("พักใจ: ซ่อมข้อมูลอัตโนมัติแล้ว");
+        }
+
+        return true;
+      }catch(error){
+        console.warn("พักใจ: ตรวจสุขภาพข้อมูลไม่สำเร็จ",error);
+        return false;
+      }
+    }
+
+
+    let roomMenuOpenV8=false;
+    let wideRoomV8=false;
+
+    function toggleRoomMenuV8(){
+      roomMenuOpenV8=!roomMenuOpenV8;
+
+      document.getElementById("roomDrawerV8")
+        ?.classList.toggle("show",roomMenuOpenV8);
+      document.getElementById("roomDrawerBackdropV8")
+        ?.classList.toggle("show",roomMenuOpenV8);
+
+      const button=document.getElementById("roomMenuButtonV8");
+      if(button){
+        button.setAttribute("aria-expanded",String(roomMenuOpenV8));
+      }
+
+      document.body.classList.toggle("room-drawer-open-v8",roomMenuOpenV8);
+    }
+
+    function closeRoomMenuV8(){
+      if(!roomMenuOpenV8)return;
+      roomMenuOpenV8=false;
+
+      document.getElementById("roomDrawerV8")?.classList.remove("show");
+      document.getElementById("roomDrawerBackdropV8")?.classList.remove("show");
+      document.getElementById("roomMenuButtonV8")
+        ?.setAttribute("aria-expanded","false");
+
+      document.body.classList.remove("room-drawer-open-v8");
+    }
+
+    function runRoomMenuActionV8(action){
+      closeRoomMenuV8();
+
+      window.setTimeout(()=>{
+        if(action==="edit")toggleRoomEditV3();
+        if(action==="shop")openShopV3();
+        if(action==="inventory")openInventoryV4();
+        if(action==="pets")openPetHouseV4();
+        if(action==="game")openHeartGameV3();
+        if(action==="wide")toggleWideRoomV8();
+        if(action==="reset")resetRoomV3();
+      },120);
+    }
+
+    function toggleWideRoomV8(force){
+      wideRoomV8=typeof force==="boolean" ? force : !wideRoomV8;
+      document.body.classList.toggle("wide-room-v8",wideRoomV8);
+
+      const button=document.getElementById("wideRoomButtonV8");
+      if(button){
+        button.classList.toggle("active",wideRoomV8);
+        button.textContent=wideRoomV8 ? "ออกจากห้องกว้าง" : "ห้องกว้าง";
+      }
+
+      closeRoomMenuV8();
+
+      window.setTimeout(()=>{
+        const data=normalizeRoomV3(loadData());
+        renderRoomV3(data);
+      },90);
+    }
+
     function renderAll(){
       const data = loadData();
       renderVents(data);
@@ -5976,6 +6699,7 @@
     }
 
     runSelfCheckV5();
+    runDataHealthCheckV7();
     renderAll();
     setupDraft();
     createRain();
@@ -5998,8 +6722,25 @@
       if(document.hidden){
         endGameV3(false);
         clearDogRoamTimersV3();
+        if(typeof clearPetRoamingV6==="function"){
+          clearPetRoamingV6();
+        }
+        closeDogActionV6?.();
+        closeBowlMenuV6?.();
       }else{
-        syncDogRoamingV3(loadData());
+        const data=normalizeRoomV3(loadData());
+        renderRoomV3(data);
+        if(typeof scheduleAllPetRoamingV6==="function"){
+          scheduleAllPetRoamingV6(data);
+        }
+      }
+    });
+
+    window.addEventListener("pageshow",event=>{
+      if(event.persisted){
+        const data=normalizeRoomV3(loadData());
+        renderRoomV3(data);
+        scheduleAllPetRoamingV6?.(data);
       }
     });
   </script>
