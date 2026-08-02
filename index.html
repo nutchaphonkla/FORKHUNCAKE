@@ -4731,6 +4731,98 @@
       display:none !important;
     }
 
+  
+    /* ===== V15.4 Living World + Smart Dog AI ===== */
+    .living-world-light-v154,.lightning-flash-v154,.sun-rays-v154{
+      position:absolute;inset:0;pointer-events:none;z-index:8
+    }
+    .living-world-light-v154{
+      background:linear-gradient(180deg,
+        rgba(var(--world-top-v154,120,130,210),var(--world-alpha-v154,.08)),
+        rgba(var(--world-bottom-v154,80,65,100),.06));
+      mix-blend-mode:screen;
+      transition:background 1.4s ease,opacity 1.4s ease
+    }
+    .sun-rays-v154{
+      opacity:0;
+      background:linear-gradient(118deg,transparent 0 45%,
+        rgba(255,224,158,.15) 48% 51%,transparent 54% 61%,
+        rgba(255,224,158,.08) 64% 67%,transparent 70%);
+      filter:blur(4px);
+      transform:translate3d(-8%,-4%,0);
+      transition:opacity .8s ease
+    }
+    .sun-rays-v154.show{
+      opacity:1;
+      animation:sunDriftV154 10s ease-in-out infinite alternate
+    }
+    @keyframes sunDriftV154{
+      from{transform:translate3d(-8%,-4%,0)}
+      to{transform:translate3d(5%,2%,0)}
+    }
+    .lightning-flash-v154{opacity:0;background:rgba(235,240,255,.94)}
+    .lightning-flash-v154.flash{animation:lightningFlashV154 .55s ease-out}
+    @keyframes lightningFlashV154{
+      0%{opacity:0}8%{opacity:.95}18%{opacity:.15}
+      30%{opacity:.72}48%{opacity:.08}100%{opacity:0}
+    }
+    .dog-ai-toast-v154{
+      position:absolute;left:50%;bottom:16px;z-index:1700;
+      max-width:min(420px,calc(100% - 28px));padding:9px 14px;
+      border-radius:999px;color:#f7f5ff;background:rgba(12,17,29,.82);
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+      backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      opacity:0;transform:translate3d(-50%,12px,0) scale(.96);
+      pointer-events:none;font-size:9px;font-weight:800;text-align:center
+    }
+    .dog-ai-toast-v154.show{animation:dogAiToastV154 2.2s ease forwards}
+    @keyframes dogAiToastV154{
+      0%{opacity:0;transform:translate3d(-50%,12px,0) scale(.96)}
+      16%,72%{opacity:1;transform:translate3d(-50%,0,0) scale(1)}
+      100%{opacity:0;transform:translate3d(-50%,-6px,0) scale(.98)}
+    }
+    .room-pet-v6.ai-sleeping-v154 .dog-v3{
+      animation:dogSleepV154 2.8s ease-in-out infinite
+    }
+    @keyframes dogSleepV154{
+      0%,100%{transform:translate(-50%,-50%) rotate(0deg) scale(1)}
+      50%{transform:translate(-50%,-50%) rotate(-2deg) scale(1.02,.97)}
+    }
+    .room-pet-v6.ai-talking-v154::before{
+      content:"•••";position:absolute;left:50%;top:-18px;
+      transform:translateX(-50%);padding:2px 6px;border-radius:999px;
+      color:#f6efff;background:rgba(18,20,34,.82);font-size:8px;
+      animation:talkBubbleV154 1s ease-in-out infinite
+    }
+    @keyframes talkBubbleV154{
+      0%,100%{transform:translateX(-50%) translateY(0)}
+      50%{transform:translateX(-50%) translateY(-3px)}
+    }
+    .room-pet-v6.ai-playing-v154 .dtail-v3{
+      animation:smartTailV154 .24s ease-in-out infinite alternate
+    }
+    @keyframes smartTailV154{from{transform:rotate(-12deg)}to{transform:rotate(18deg)}}
+    html[data-world-phase-v154="morning"]{
+      --world-top-v154:255,207,158;--world-bottom-v154:178,152,206;--world-alpha-v154:.16
+    }
+    html[data-world-phase-v154="day"]{
+      --world-top-v154:180,213,255;--world-bottom-v154:130,150,210;--world-alpha-v154:.10
+    }
+    html[data-world-phase-v154="evening"]{
+      --world-top-v154:255,158,137;--world-bottom-v154:128,102,179;--world-alpha-v154:.20
+    }
+    html[data-world-phase-v154="night"]{
+      --world-top-v154:116,108,201;--world-bottom-v154:50,57,103;--world-alpha-v154:.20
+    }
+    html[data-world-weather-v154="storm"] .decor-room-v3{filter:saturate(.88) brightness(.9)}
+    html[data-world-weather-v154="sunny"] .decor-room-v3{filter:saturate(1.06) brightness(1.03)}
+    @media(prefers-reduced-motion:reduce){
+      .sun-rays-v154,.room-pet-v6.ai-sleeping-v154 .dog-v3,
+      .room-pet-v6.ai-talking-v154::before,
+      .room-pet-v6.ai-playing-v154 .dtail-v3{animation:none!important}
+    }
+
   </style>
 
   <link rel="apple-touch-icon" href="data:image/png;base64,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" />
@@ -4954,7 +5046,7 @@
           </div>
           <div class="portrait-room-title-v143">
             <strong>ห้องของฉัน</strong>
-            <span>พื้นที่พักใจของเธอ</span>
+            <span id="livingWorldStatusV154">พื้นที่พักใจของเธอ</span>
           </div>
           <div class="portrait-room-actions-v143">
             <button type="button"
@@ -5014,6 +5106,12 @@
             <button onclick="runRoomMenuActionV8('inventory')">
               <b>คลังของ</b><span>เก็บหรือนำของออกมา</span>
             </button>
+            <button onclick="callAllDogsV154()">
+              <b>เรียกชื่อหมา</b><span>ให้น้องเดินมาหาเธอ</span>
+            </button>
+            <button onclick="holdFoodV154()">
+              <b>ถืออาหาร</b><span>ให้น้องมารอรับอาหาร</span>
+            </button>
             <button onclick="runRoomMenuActionV8('pets')">
               <b>บ้านหมา</b><span>ดูแลและเลือกน้องหมา</span>
             </button>
@@ -5052,6 +5150,9 @@
 
           <div class="decor-v3 window-v3" data-item="window" style="left:82%;top:22%">
             <div class="sky-v3" id="roomSkyV3"><div class="moon-v3"></div></div>
+            <div class="living-world-light-v154" id="livingWorldLightV154"></div>
+            <div class="lightning-flash-v154" id="lightningFlashV154"></div>
+            <div class="sun-rays-v154" id="sunRaysV154"></div>
           </div>
 
           <div class="decor-v3 rug-v3" data-item="rug" style="left:53%;top:84%"></div>
@@ -5273,6 +5374,7 @@
               <b>⌂</b><span>เก็บ</span>
             </button>
           </div>
+          <div class="dog-ai-toast-v154" id="dogAiToastV154"></div>
         </div>
 
         <div class="room-hud">
@@ -5678,6 +5780,12 @@
       playerName: "",
       playerCreatedAt: 0,
       installPromptDismissedAt: 0,
+      livingWorldV154: {
+        weather: "auto",
+        lastWeatherChange: 0,
+        foodHeldUntil: 0,
+        lastWelcomeAt: 0
+      },
       schemaVersion: 5,
       lastSavedAt: ""
     };
@@ -5752,6 +5860,14 @@
         playerName:String(source.playerName || "").trim().slice(0,24),
         playerCreatedAt:Number(source.playerCreatedAt) || 0,
         installPromptDismissedAt:Number(source.installPromptDismissedAt) || 0,
+        livingWorldV154:isPlainObjectV5(source.livingWorldV154)
+          ? {
+              weather:String(source.livingWorldV154.weather || "auto"),
+              lastWeatherChange:Number(source.livingWorldV154.lastWeatherChange) || 0,
+              foodHeldUntil:Number(source.livingWorldV154.foodHeldUntil) || 0,
+              lastWelcomeAt:Number(source.livingWorldV154.lastWelcomeAt) || 0
+            }
+          : {...defaultData.livingWorldV154},
         schemaVersion:5
       };
     }
@@ -5854,7 +5970,7 @@
       saveInProgressV5=true;
       try{
         const safeData=mergeAppDataV5(data);
-        safeData.schemaVersion=14.1;
+        safeData.schemaVersion=15.4;
         safeData.lastSavedAt=new Date().toISOString();
         const previous=localStorage.getItem(STORAGE_KEY);
         if(previous){
@@ -10395,6 +10511,340 @@
       return false;
     }
 
+
+    const DOG_AI_STATES_V154={
+      IDLE:"idle",WANDER:"wander",COME:"come",WELCOME:"welcome",
+      FOOD:"food",PLAY:"play",TALK:"talk",SLEEP:"sleep",BED:"bed",AVOID:"avoid"
+    };
+
+    const dogAiStateV154=new Map();
+    const dogAiTimersV154=new Map();
+    let dogAiLoopTimerV154=0;
+    let livingWorldTimerV154=0;
+    let lightningTimerV154=0;
+
+    function getWorldPhaseV154(){
+      const hour=new Date().getHours();
+      if(hour>=5 && hour<10)return "morning";
+      if(hour>=10 && hour<17)return "day";
+      if(hour>=17 && hour<20)return "evening";
+      return "night";
+    }
+
+    function getWorldWeatherV154(data){
+      const world=data.livingWorldV154 || {...defaultData.livingWorldV154};
+      const now=Date.now();
+
+      if(!world.lastWeatherChange || now-world.lastWeatherChange>12*60*1000){
+        const phase=getWorldPhaseV154();
+        const roll=Math.random();
+        world.weather=
+          roll<.14 ? "storm" :
+          roll<.48 ? "rain" :
+          phase==="day" && roll>.78 ? "sunny" : "calm";
+        world.lastWeatherChange=now;
+        data.livingWorldV154=world;
+        saveDataSilentV7?.(data);
+      }
+
+      return world.weather || "calm";
+    }
+
+    function showDogAiToastV154(message){
+      const toast=document.getElementById("dogAiToastV154");
+      if(!toast)return;
+      toast.textContent=message;
+      toast.classList.remove("show");
+      void toast.offsetWidth;
+      toast.classList.add("show");
+    }
+
+    function updateLivingWorldV154(){
+      const data=normalizeRoomV3(loadData());
+      const phase=getWorldPhaseV154();
+      const weather=getWorldWeatherV154(data);
+
+      document.documentElement.dataset.worldPhaseV154=phase;
+      document.documentElement.dataset.worldWeatherV154=weather;
+
+      const phaseText={morning:"เช้าอุ่น ๆ",day:"กลางวัน",evening:"เย็นสบาย",night:"กลางคืน"};
+      const weatherText={calm:"อากาศสงบ",sunny:"แสงแดดอ่อน",rain:"ฝนตก",storm:"ฝนฟ้าคะนอง"};
+
+      const status=document.getElementById("livingWorldStatusV154");
+      if(status)status.textContent=`${phaseText[phase]} · ${weatherText[weather]}`;
+
+      document.getElementById("sunRaysV154")?.classList.toggle(
+        "show",
+        weather==="sunny" || (phase==="morning" && weather==="calm")
+      );
+
+      document.querySelectorAll("#roomSkyV3 .rain-v3").forEach(drop=>{
+        drop.hidden=!(weather==="rain" || weather==="storm");
+      });
+
+      if(weather==="storm")scheduleLightningV154();
+      else if(lightningTimerV154){
+        clearTimeout(lightningTimerV154);
+        lightningTimerV154=0;
+      }
+
+      return {phase,weather,data};
+    }
+
+    function scheduleLightningV154(){
+      if(lightningTimerV154)return;
+      lightningTimerV154=setTimeout(()=>{
+        lightningTimerV154=0;
+        const flash=document.getElementById("lightningFlashV154");
+        flash?.classList.remove("flash");
+        if(flash){void flash.offsetWidth;flash.classList.add("flash")}
+        const data=normalizeRoomV3(loadData());
+        if(getWorldWeatherV154(data)==="storm")scheduleLightningV154();
+      },3500+Math.random()*8000);
+    }
+
+    function clearDogAiTimerV154(petId){
+      const timer=dogAiTimersV154.get(petId);
+      if(timer){clearTimeout(timer);dogAiTimersV154.delete(petId)}
+    }
+
+    function setDogAiStateV154(petId,state,duration=0){
+      clearDogAiTimerV154(petId);
+      dogAiStateV154.set(petId,{state,until:duration?Date.now()+duration:0});
+      const actor=getRoomPetActorV9?.(petId);
+      if(actor){
+        actor.classList.remove("ai-sleeping-v154","ai-talking-v154","ai-playing-v154");
+        if(state===DOG_AI_STATES_V154.SLEEP || state===DOG_AI_STATES_V154.BED)
+          actor.classList.add("ai-sleeping-v154");
+        if(state===DOG_AI_STATES_V154.TALK)actor.classList.add("ai-talking-v154");
+        if(state===DOG_AI_STATES_V154.PLAY)actor.classList.add("ai-playing-v154");
+      }
+      if(duration){
+        dogAiTimersV154.set(petId,setTimeout(()=>{
+          dogAiTimersV154.delete(petId);
+          setDogAiStateV154(petId,DOG_AI_STATES_V154.IDLE);
+        },duration));
+      }
+    }
+
+    function getDogSafeTargetV154(actor,x,y,occupied=[]){
+      let safe=clampPetPointV10(actor,x,y);
+      for(const point of occupied){
+        const distance=Math.hypot(safe.x-point.x,safe.y-point.y);
+        if(distance<11){
+          const angle=Math.atan2(safe.y-point.y || Math.random()-.5,
+                                 safe.x-point.x || Math.random()-.5);
+          safe=clampPetPointV10(
+            actor,
+            safe.x+Math.cos(angle)*12,
+            safe.y+Math.sin(angle)*8
+          );
+        }
+      }
+      return safe;
+    }
+
+    function moveDogSmartV154(petId,x,y,options={}){
+      const actor=getRoomPetActorV9?.(petId);
+      if(!actor)return Promise.resolve(false);
+
+      const occupied=[...document.querySelectorAll(".room-pet-v6")]
+        .filter(item=>item!==actor)
+        .map(item=>getPetPercentPositionV8(item));
+
+      const safe=getDogSafeTargetV154(actor,x,y,occupied);
+      const current=getPetPercentPositionV8(actor);
+      const distance=Math.hypot(safe.x-current.x,safe.y-current.y);
+      const duration=Math.max(
+        options.running?520:900,
+        Math.min(options.running?1500:2600,distance*(options.running?18:28))
+      );
+
+      return animatePetToV8(actor,safe.x,safe.y,{duration});
+    }
+
+    function getPlayerTargetV154(index=0,total=1){
+      const spacing=Math.min(13,52/Math.max(1,total));
+      return {x:50+(index-(total-1)/2)*spacing,y:84};
+    }
+
+    async function callAllDogsV154(){
+      closeRoomMenuV8?.();
+      clearPetRoamingV6?.();
+
+      const data=normalizeRoomV3(loadData());
+      const pets=getRoomPetsV6(data);
+      if(!pets.length){showToast("ยังไม่มีน้องหมาในห้อง");return}
+
+      showDogAiToastV154("เรียกชื่อแล้ว น้องกำลังเดินมาหา");
+
+      await Promise.all(pets.map(async(pet,index)=>{
+        setDogAiStateV154(pet.id,DOG_AI_STATES_V154.COME,3200);
+        const target=getPlayerTargetV154(index,pets.length);
+        await moveDogSmartV154(pet.id,target.x,target.y,{running:true});
+        playStationaryPetReactionV14?.(pet.id);
+      }));
+    }
+
+    async function holdFoodV154(){
+      closeRoomMenuV8?.();
+      const data=normalizeRoomV3(loadData());
+      data.livingWorldV154.foodHeldUntil=Date.now()+12000;
+      saveDataSilentV7?.(data);
+      showDogAiToastV154("ถืออาหารแล้ว น้องกำลังมารอ");
+      await callDogsForFoodV154();
+    }
+
+    async function callDogsForFoodV154(){
+      clearPetRoamingV6?.();
+      const data=normalizeRoomV3(loadData());
+      const pets=getRoomPetsV6(data);
+
+      await Promise.all(pets.map(async(pet,index)=>{
+        setDogAiStateV154(pet.id,DOG_AI_STATES_V154.FOOD,9000);
+        const target=getPlayerTargetV154(index,pets.length);
+        target.y=80;
+        await moveDogSmartV154(pet.id,target.x,target.y,{running:true});
+      }));
+    }
+
+    function getPlacedItemPositionV154(itemId,fallback){
+      const el=document.querySelector(`.decor-v3[data-item="${itemId}"]`);
+      if(!el || el.classList.contains("locked-v3"))return fallback;
+      return {x:parseFloat(el.style.left)||fallback.x,y:parseFloat(el.style.top)||fallback.y};
+    }
+
+    async function sendDogToBedV154(pet){
+      const bed=getPlacedItemPositionV154("bed",{x:23,y:82});
+      setDogAiStateV154(pet.id,DOG_AI_STATES_V154.BED,18000);
+      await moveDogSmartV154(pet.id,bed.x+Math.random()*7-3.5,Math.max(70,bed.y-2));
+    }
+
+    async function sendDogToToyV154(pet){
+      const toyIds=["toyBallV6","ropeToyV6","chewToyV6","toy"];
+      let target=null;
+      for(const id of toyIds){
+        const el=document.querySelector(`.decor-v3[data-item="${id}"]`);
+        if(el && !el.classList.contains("locked-v3")){
+          target={x:parseFloat(el.style.left)||60,y:parseFloat(el.style.top)||84};
+          break;
+        }
+      }
+      if(!target)target={x:58+Math.random()*20,y:82+Math.random()*8};
+
+      setDogAiStateV154(pet.id,DOG_AI_STATES_V154.PLAY,6500);
+      await moveDogSmartV154(pet.id,target.x,target.y,{running:true});
+      showPetEmoteV6?.(pet.id,"!");
+    }
+
+    async function makeDogsTalkV154(a,b){
+      const center={x:38+Math.random()*26,y:79+Math.random()*10};
+      setDogAiStateV154(a.id,DOG_AI_STATES_V154.TALK,5500);
+      setDogAiStateV154(b.id,DOG_AI_STATES_V154.TALK,5500);
+      await Promise.all([
+        moveDogSmartV154(a.id,center.x-6,center.y),
+        moveDogSmartV154(b.id,center.x+6,center.y)
+      ]);
+      showPetEmoteV6?.(a.id,"♥");
+      showPetEmoteV6?.(b.id,"♥");
+    }
+
+    async function welcomePlayerV154(){
+      const data=normalizeRoomV3(loadData());
+      const world=data.livingWorldV154;
+      if(Date.now()-Number(world.lastWelcomeAt||0)<5*60*1000)return;
+
+      world.lastWelcomeAt=Date.now();
+      saveDataSilentV7?.(data);
+
+      const pets=getRoomPetsV6(data);
+      if(!pets.length)return;
+
+      showDogAiToastV154("น้องดีใจที่เธอกลับมาแล้ว");
+      await Promise.all(pets.map(async(pet,index)=>{
+        setDogAiStateV154(pet.id,DOG_AI_STATES_V154.WELCOME,5200);
+        const target=getPlayerTargetV154(index,pets.length);
+        await moveDogSmartV154(pet.id,target.x,target.y,{running:true});
+        playStationaryPetReactionV14?.(pet.id);
+      }));
+    }
+
+    async function runDogAiDecisionV154(){
+      if(
+        document.hidden || editV3 || dogQueueRunningV6 || roomMenuOpenV8 ||
+        document.getElementById("dogActionMenuV6")?.classList.contains("show") ||
+        !document.getElementById("garden")?.classList.contains("active")
+      )return;
+
+      const {phase,weather,data}=updateLivingWorldV154();
+      const pets=getRoomPetsV6(data);
+      if(!pets.length)return;
+
+      if(Number(data.livingWorldV154.foodHeldUntil||0)>Date.now()){
+        const busy=pets.some(pet=>dogAiStateV154.get(pet.id)?.state===DOG_AI_STATES_V154.FOOD);
+        if(!busy)await callDogsForFoodV154();
+        return;
+      }
+
+      const available=pets.filter(pet=>{
+        const state=dogAiStateV154.get(pet.id);
+        return !state || !state.until || state.until<Date.now();
+      });
+      if(!available.length)return;
+
+      if(phase==="night"){
+        const pet=available[Math.floor(Math.random()*available.length)];
+        if(Math.random()<.7)await sendDogToBedV154(pet);
+        else setDogAiStateV154(pet.id,DOG_AI_STATES_V154.SLEEP,14000);
+        return;
+      }
+
+      if(available.length>=2 && Math.random()<.28){
+        const shuffled=[...available].sort(()=>Math.random()-.5);
+        await makeDogsTalkV154(shuffled[0],shuffled[1]);
+        return;
+      }
+
+      const pet=available[Math.floor(Math.random()*available.length)];
+
+      if(Math.random()<.34){
+        await sendDogToToyV154(pet);
+        return;
+      }
+
+      if(weather==="storm" && Math.random()<.55){
+        const bed=getPlacedItemPositionV154("bed",{x:23,y:82});
+        setDogAiStateV154(pet.id,DOG_AI_STATES_V154.AVOID,7000);
+        await moveDogSmartV154(pet.id,bed.x,bed.y);
+        return;
+      }
+
+      setDogAiStateV154(pet.id,DOG_AI_STATES_V154.WANDER,5000);
+      await moveDogSmartV154(pet.id,12+Math.random()*76,66+Math.random()*25);
+    }
+
+    function startLivingWorldV154(){
+      if(livingWorldTimerV154)clearInterval(livingWorldTimerV154);
+      if(dogAiLoopTimerV154)clearInterval(dogAiLoopTimerV154);
+
+      updateLivingWorldV154();
+      livingWorldTimerV154=setInterval(updateLivingWorldV154,30000);
+      dogAiLoopTimerV154=setInterval(()=>{
+        runDogAiDecisionV154().catch(error=>console.warn("Dog AI V15.4",error));
+      },4200);
+
+      setTimeout(()=>welcomePlayerV154().catch(()=>{}),900);
+    }
+
+    function stopLivingWorldV154(){
+      if(livingWorldTimerV154){clearInterval(livingWorldTimerV154);livingWorldTimerV154=0}
+      if(dogAiLoopTimerV154){clearInterval(dogAiLoopTimerV154);dogAiLoopTimerV154=0}
+      if(lightningTimerV154){clearTimeout(lightningTimerV154);lightningTimerV154=0}
+      dogAiTimersV154.forEach(timer=>clearTimeout(timer));
+      dogAiTimersV154.clear();
+      dogAiStateV154.clear();
+    }
+
     let deferredInstallPromptV15=null;
     let installPromptReadyV15=false;
 
@@ -11069,6 +11519,7 @@
     }
     updateInstallUiV15();
     enforceAppOnlyV152();
+    startLivingWorldV154();
 
     setInterval(updateDayNightV13,60000);
 
@@ -11085,6 +11536,7 @@
 
     document.addEventListener("visibilitychange",()=>{
       if(document.hidden){
+        stopLivingWorldV154();
         if(parallaxFrameV13){
           cancelAnimationFrame(parallaxFrameV13);
           parallaxFrameV13=0;
@@ -11099,6 +11551,7 @@
         closeDogActionV6?.();
         closeBowlMenuV6?.();
       }else{
+        startLivingWorldV154();
         const data=normalizeRoomV3(loadData());
         renderRoomV3(data);
         if(typeof scheduleAllPetRoamingV6==="function"){
